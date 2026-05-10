@@ -154,20 +154,17 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic; font-size: 18px;
     }
-    .hero-logo-card {
+    .hero-visual {
       aspect-ratio: 4/5;
       background: var(--ink);
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px;
+      overflow: hidden;
     }
-    .hero-logo-card img { width: 100%; max-width: 320px; object-fit: contain; }
+    .hero-visual svg { width: 100%; height: 100%; display: block; }
     @media (max-width: 820px) {
       .hero { padding: 50px 0 40px; }
       .hero-grid { grid-template-columns: 1fr; gap: 34px; }
-      .hero-logo-card { aspect-ratio: 1/1; order: -1; padding: 36px; }
+      .hero-visual { aspect-ratio: 1/1; order: -1; }
     }
 
     /* ─── MARQUEE ─── */
@@ -542,8 +539,36 @@
           <span class="meta-pill">15 posti · 25€</span>
         </div>
       </div>
-      <div class="hero-logo-card" aria-hidden="true">
-        <img src="assets/bemore-logo-white.png" alt="BeMore logo" />
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <!-- outer rings -->
+          <circle cx="240" cy="205" r="185" fill="none" stroke="#9FE1CB" stroke-width="0.5" opacity="0.12"/>
+          <circle cx="240" cy="205" r="148" fill="none" stroke="#9FE1CB" stroke-width="0.5" opacity="0.18"/>
+          <circle cx="240" cy="205" r="112" fill="none" stroke="#9FE1CB" stroke-width="0.5" opacity="0.22"/>
+          <!-- sun glow -->
+          <circle cx="240" cy="205" r="86"  fill="#9FE1CB" opacity="0.05"/>
+          <circle cx="240" cy="205" r="62"  fill="#9FE1CB" opacity="0.08"/>
+          <circle cx="240" cy="205" r="40"  fill="#9FE1CB" opacity="0.14"/>
+          <circle cx="240" cy="205" r="22"  fill="#9FE1CB" opacity="0.22"/>
+          <!-- horizon -->
+          <line x1="36" y1="332" x2="444" y2="332" stroke="#9FE1CB" stroke-width="0.6" opacity="0.35"/>
+          <!-- water ripples -->
+          <path d="M 36 350 Q 120 344 200 352 Q 290 360 364 352 Q 410 348 444 352" fill="none" stroke="#9FE1CB" stroke-width="0.45" opacity="0.2"/>
+          <path d="M 36 366 Q 130 360 218 368 Q 308 376 388 368 Q 420 364 444 368" fill="none" stroke="#9FE1CB" stroke-width="0.4" opacity="0.14"/>
+          <path d="M 60 382 Q 155 376 240 384 Q 325 392 404 384" fill="none" stroke="#9FE1CB" stroke-width="0.35" opacity="0.09"/>
+          <!-- botanical left -->
+          <line x1="72" y1="490" x2="72" y2="298" stroke="#9FE1CB" stroke-width="0.6" opacity="0.28"/>
+          <path d="M72 370 Q42 346 54 322 Q86 336 72 370Z" fill="#9FE1CB" opacity="0.1" stroke="#9FE1CB" stroke-width="0.4"/>
+          <path d="M72 412 Q36 388 52 362 Q88 380 72 412Z" fill="#9FE1CB" opacity="0.08" stroke="#9FE1CB" stroke-width="0.4"/>
+          <path d="M72 338 Q104 314 100 290 Q70 302 72 338Z" fill="#9FE1CB" opacity="0.08" stroke="#9FE1CB" stroke-width="0.4"/>
+          <!-- botanical right -->
+          <line x1="408" y1="490" x2="408" y2="308" stroke="#9FE1CB" stroke-width="0.6" opacity="0.22"/>
+          <path d="M408 382 Q440 358 434 334 Q402 348 408 382Z" fill="#9FE1CB" opacity="0.08" stroke="#9FE1CB" stroke-width="0.4"/>
+          <path d="M408 424 Q446 400 438 374 Q402 392 408 424Z" fill="#9FE1CB" opacity="0.06" stroke="#9FE1CB" stroke-width="0.4"/>
+          <path d="M408 348 Q376 324 380 300 Q410 312 408 348Z" fill="#9FE1CB" opacity="0.07" stroke="#9FE1CB" stroke-width="0.4"/>
+          <!-- label -->
+          <text x="240" y="548" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9" letter-spacing="5" fill="#9FE1CB" opacity="0.45">WELLNESS · MESSINA · EST. 2026</text>
+        </svg>
       </div>
     </div>
   </section>
