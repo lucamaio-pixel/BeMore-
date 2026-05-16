@@ -34,11 +34,13 @@
 
   /* BIG DATE */
   .v3-hero { margin-top: 22px; position:relative; }
-  .v3-bigdate { display:flex; align-items:flex-end; gap: 10px; }
-  .v3-bigdate .d { font-family:'Italiana', serif; font-size: 218px; line-height: .8; letter-spacing: -0.03em; color:#2A352D; }
-  .v3-bigdate .ms { display:flex; flex-direction:column; padding-bottom: 16px; }
-  .v3-bigdate .ms span:first-child { font-family:'Cormorant Garamond', serif; font-style: italic; font-size: 30px; line-height: 1; color:#3F5A4D; }
-  .v3-bigdate .ms span:last-child { font-size: 10.5px; letter-spacing:.3em; text-transform:uppercase; margin-top: 6px; color:#5F6F62; }
+  .v3-bigdate { display:flex; align-items:flex-end; gap: 4px; }
+  .v3-bigdate .d { font-family:'Cormorant Garamond', serif; font-weight: 300; font-size: 218px; line-height: .82; letter-spacing: -0.03em; color:#2A352D; }
+  .v3-bigdate .ms { display:flex; flex-direction:column; justify-content:flex-end; padding-bottom: 14px; gap: 4px; }
+  .v3-bigdate .ms span { font-family:'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color:#3F5A4D; letter-spacing: 0.22em; text-transform:uppercase; line-height: 1.15; }
+  .v3-bigdate .ms .m1 { font-size: 26px; }
+  .v3-bigdate .ms .m2 { font-size: 22px; }
+  .v3-bigdate .ms .m3 { font-size: 22px; color:#5F6F62; }
   .v3-headline { font-family:'Cormorant Garamond', serif; font-size: 24px; line-height: 1.05; margin-top: 8px; font-weight: 400; max-width: 92%; }
   .v3-headline em { font-style: italic; color:#3F5A4D; }
 
@@ -84,8 +86,9 @@
     <div class="v3-bigdate">
       <div class="d">30</div>
       <div class="ms">
-        <span>maggio</span>
-        <span>Sabato · 10—12:30</span>
+        <span class="m1">Maggio</span>
+        <span class="m2">Sabato · 10</span>
+        <span class="m3">— 12:30</span>
       </div>
     </div>
     <div class="v3-headline">Una mattina di <em>movimento, respiro e cura</em> sulla terrazza panoramica BonHome.</div>
