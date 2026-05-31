@@ -529,6 +529,53 @@
       .mf-body .l { position: static; }
     }
 
+    /* ─── EARLY BIRD BOX ─── */
+    .earlybird {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 0.5px solid var(--line); border-radius: 14px;
+      overflow: hidden; margin-top: 34px;
+    }
+    .eb-slot {
+      padding: 22px 24px;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .eb-slot.featured { background: var(--ink); color: var(--cream); }
+    .eb-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; line-height: 1;
+    }
+    .eb-lbl { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
+    .eb-desc {
+      grid-column: 1 / -1; padding: 12px 20px;
+      font-size: 12px; color: var(--muted);
+      border-top: 0.5px solid var(--line); text-align: center;
+    }
+
+    /* ─── WORKSHOP SECTION ─── */
+    .workshop { margin-top: 60px; }
+    .workshop > h3, .porta > h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 36px; margin: 0 0 24px;
+    }
+    .workshop-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .wc {
+      background: var(--cream-2); border-radius: 12px; padding: 22px 20px;
+      border: 0.5px solid var(--line);
+    }
+    .wc-ttl { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 8px; color: var(--ink); font-weight: 400; }
+    .wc-txt { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 720px) { .workshop-grid { grid-template-columns: 1fr; } }
+
+    /* ─── COSA PORTARE ─── */
+    .porta { margin-top: 50px; }
+    .porta ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .porta li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; padding: 13px 16px;
+      background: var(--cream-2); border-radius: 10px; border: 0.5px solid var(--line);
+    }
+    .porta li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 12px; }
+
     /* ─── ROUTING ─── */
     .page { display: none; }
     .page.active { display: block; }
@@ -556,7 +603,7 @@
       <a href="#manifesto" data-nav="manifesto">Manifesto</a>
       <a href="#newsletter" data-nav="newsletter">Community</a>
     </nav>
-    <a href="#evento/30-maggio-2026" class="nav-cta" data-nav="evento">Prenota →</a>
+    <a href="#evento/20-giugno-2026" class="nav-cta" data-nav="evento">Prenota →</a>
   </div>
 </header>
 
@@ -573,7 +620,7 @@
         <h1>Rimettiti in <em>equilibrio</em>.<br/>Mente, corpo,<br/>presenza.</h1>
         <p class="lead">BeMore è una community di esperienze wellness che si sostiene a vicenda. Ogni mese, in un luogo diverso, un nuovo rituale di movimento, respiro e cura — semplice, accessibile, mai improvvisato.</p>
         <div class="meta-row">
-          <span class="meta-pill"><span class="dot" aria-hidden="true"></span>Prossimo · 30 Maggio 2026</span>
+          <span class="meta-pill"><span class="dot" aria-hidden="true"></span>Prossimo · 20 Giugno 2026</span>
           <span class="meta-pill">Terrazza BonHome · Messina</span>
           <span class="meta-pill">15 posti · 25€</span>
         </div>
@@ -708,111 +755,8 @@
 <!-- ════════════════════════════════════════
      EVENTO DETTAGLIO
 ════════════════════════════════════════ -->
-<main id="page-evento" class="page" data-screen-label="Evento — 30 Maggio">
-  <section class="ed-hero">
-    <div class="container">
-      <div class="crumb">
-        <a href="#home" data-nav="home">Home</a> ·
-        <a href="#eventi" data-nav="eventi">Eventi</a> ·
-        30 Maggio 2026
-      </div>
-      <div class="ed-grid">
-
-        <!-- Left: info -->
-        <div>
-          <div class="ed-eyebrow">Vol. 01 · Wellness Sunday</div>
-          <h1 class="ed-title">Una mattina<br/>per <em>respirare</em>,<br/>muoversi, brindare.</h1>
-
-          <dl class="ed-meta">
-            <div class="row">
-              <dt class="k">Quando</dt>
-              <dd class="v"><b>Sabato 30 Maggio 2026</b><br/>10:00 — 12:30</dd>
-            </div>
-            <div class="row">
-              <dt class="k">Dove</dt>
-              <dd class="v"><b>Terrazza Panoramica BonHome</b><br/>Sant'Agata · Messina</dd>
-            </div>
-            <div class="row">
-              <dt class="k">Con</dt>
-              <dd class="v">Mimma · yoga &amp; camminata zen<br/>Mileidy · wellness bar</dd>
-            </div>
-            <div class="row">
-              <dt class="k">Posti</dt>
-              <dd class="v">15 max · su prenotazione</dd>
-            </div>
-            <div class="row">
-              <dt class="k">Welcome kit</dt>
-              <dd class="v">Barretta Energy · campione siero Vit. C · card BeMore · ricetta MAMI Morning</dd>
-            </div>
-          </dl>
-
-          <div class="ed-actions">
-            <a class="btn btn-primary"
-               href="https://wa.me/?text=Ciao%2C%20vorrei%20prenotare%20l%27evento%20BeMore%20del%2030%20maggio"
-               target="_blank" rel="noopener noreferrer">
-              Prenota su WhatsApp →
-            </a>
-            <button class="btn btn-secondary" onclick="scrollToNewsletter()">
-              Form di prenotazione
-            </button>
-          </div>
-        </div>
-
-        <!-- Right: photo + price badge -->
-        <div class="ed-photo">
-          <img src="assets/terrazza.png" alt="Terrazza Panoramica BonHome, Messina" loading="lazy" />
-          <div class="price">
-            <div class="v">25€</div>
-            <div class="l">welcome kit incluso</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cronoprogramma -->
-  <section>
-    <div class="container">
-      <div class="ed-program">
-        <h3>Cronoprogramma</h3>
-        <div class="ed-prog-row">
-          <div class="t">10:00</div>
-          <div>
-            <div class="h">Accoglienza &amp; Welcome Drink</div>
-            <div class="d">Arrivo in terrazza, OxiGlow Spritz, connessione con il gruppo</div>
-          </div>
-        </div>
-        <div class="ed-prog-row">
-          <div class="t">10:20</div>
-          <div>
-            <div class="h">Camminata Zen con Mimma</div>
-            <div class="d">Movimento consapevole · respiro e presenza</div>
-          </div>
-        </div>
-        <div class="ed-prog-row">
-          <div class="t">11:00</div>
-          <div>
-            <div class="h">Pratica Yoga con Mimma</div>
-            <div class="d">Sessione guidata · energia, equilibrio, corpo</div>
-          </div>
-        </div>
-        <div class="ed-prog-row">
-          <div class="t">11:50</div>
-          <div>
-            <div class="h">Wellness Bar con Mileidy</div>
-            <div class="d">Due cocktail wellness · momento di condivisione</div>
-          </div>
-        </div>
-        <div class="ed-prog-row">
-          <div class="t">12:20</div>
-          <div>
-            <div class="h">Chiusura &amp; Intenzione</div>
-            <div class="d">Welcome kit · invito al prossimo evento</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<main id="page-evento" class="page" data-screen-label="Evento">
+  <div id="evento-content"></div>
 </main>
 
 <!-- ════════════════════════════════════════
@@ -869,7 +813,7 @@
       <div>
         <h4>Newsletter</h4>
         <a href="#newsletter" data-nav="newsletter">Unisciti alla community</a>
-        <a href="#evento/30-maggio-2026" data-nav="evento">Prossimo evento</a>
+        <a href="#evento/20-giugno-2026" data-nav="evento">Prossimo evento</a>
       </div>
     </div>
     <div class="ft-bottom">
@@ -888,17 +832,84 @@
       title: "Wellness Sunday",
       subtitle: "Yoga &amp; wellness bar",
       loc: "Terrazza BonHome · Messina",
-      status: "available",
-      statusLabel: "Disponibile"
+      status: "soldout",
+      statusLabel: "Sold out",
+      detail: {
+        vol: "Vol. 01 · Wellness Sunday",
+        heroTitle: "Una mattina<br/>per <em>respirare</em>,<br/>muoversi, brindare.",
+        quando: "Sabato 30 Maggio 2026",
+        orario: "10:00 — 12:30",
+        dove: "Terrazza Panoramica BonHome",
+        luogo: "Sant'Agata · Messina",
+        con: "Mimma · yoga &amp; camminata zen<br/>Mileidy · wellness bar",
+        posti: "15 max · su prenotazione",
+        kit: "Barretta Energy · campione siero Vit. C · card BeMore · ricetta MAMI Morning",
+        foto: "assets/terrazza.png",
+        fotoAlt: "Terrazza Panoramica BonHome, Messina",
+        prezzoVal: "25€",
+        prezzoLabel: "welcome kit incluso",
+        earlyBird: null,
+        waText: "Ciao%2C%20vorrei%20sapere%20di%20pi%C3%B9%20sugli%20eventi%20BeMore",
+        program: [
+          { t: "10:00", h: "Accoglienza &amp; Welcome Drink", d: "Arrivo in terrazza, OxiGlow Spritz, connessione con il gruppo" },
+          { t: "10:20", h: "Camminata Zen con Mimma", d: "Movimento consapevole · respiro e presenza" },
+          { t: "11:00", h: "Pratica Yoga con Mimma", d: "Sessione guidata · energia, equilibrio, corpo" },
+          { t: "11:50", h: "Wellness Bar con Mileidy", d: "Due cocktail wellness · momento di condivisione" },
+          { t: "12:20", h: "Chiusura &amp; Intenzione", d: "Welcome kit · invito al prossimo evento" }
+        ],
+        workshop: null,
+        cosaPortare: null
+      }
     },
     {
-      id: "giugno-2026",
+      id: "20-giugno-2026",
       day: "20", month: "GIU", monthNum: "06", year: "2026",
-      title: "Yoga &amp; Self Care",
+      title: "Yoga &amp; Massaggio Viso",
       subtitle: "Meditazione &amp; corso massaggio viso",
-      loc: "Location · Messina",
-      status: "soon",
-      statusLabel: "Presto"
+      loc: "Terrazza BonHome · Messina",
+      status: "available",
+      statusLabel: "Early bird · 20€",
+      detail: {
+        vol: "Vol. 02 · Yoga &amp; Massaggio Viso",
+        heroTitle: "Muoversi, meditare,<br/><em>prendersi cura.</em>",
+        quando: "Sabato 20 Giugno 2026",
+        orario: "10:00 — 12:30",
+        dove: "Terrazza Panoramica BonHome",
+        luogo: "Sant'Agata · Messina",
+        con: "Mimma · yoga &amp; meditazione<br/>Mileidy · wellness bar<br/>Workshop: corso massaggio viso",
+        posti: "20 max · su prenotazione",
+        kit: "In aggiornamento — vi aggiorneremo a breve",
+        foto: "assets/mor-shani-55wo5KpgYBk-unsplash.jpg",
+        fotoAlt: "BeMore · Yoga &amp; Massaggio Viso · 20 Giugno 2026",
+        prezzoVal: "20€",
+        prezzoLabel: "early bird · poi 25€",
+        earlyBird: {
+          early: "20€",
+          std: "25€",
+          desc: "Riserva il tuo posto con 10€ di acconto (PayPal o Satispay). Il saldo si paga in loco. Offerta valida per i primi 8 posti."
+        },
+        waText: "Ciao%2C%20vorrei%20prenotare%20il%20mio%20posto%20per%20l%27evento%20BeMore%20del%2020%20giugno",
+        program: [
+          { t: "10:00", h: "Accoglienza &amp; Welcome Drink", d: "Arrivo in terrazza · benvenuto · primo momento di connessione" },
+          { t: "10:20", h: "Meditazione guidata con Mimma", d: "Respiro consapevole · presenza · ritmo interiore" },
+          { t: "10:50", h: "Pratica Yoga con Mimma", d: "Sessione di movimento guidata · energia e leggerezza" },
+          { t: "11:40", h: "Corso Massaggio Viso", d: "Workshop pratico · tecniche di automassaggio facciale da portare a casa" },
+          { t: "12:20", h: "Wellness Bar con Mileidy + Chiusura", d: "Due cocktail wellness · welcome kit · invito al prossimo evento" }
+        ],
+        workshop: {
+          title: "Il workshop: massaggio viso",
+          items: [
+            { h: "Automassaggio facciale", d: "Movimenti guidati per tonificare e distendere la muscolatura del viso, passo dopo passo." },
+            { h: "Digitopressione", d: "Punti specifici su viso, mandibola e collo per sciogliere le tensioni accumulate." },
+            { h: "Routine da portare a casa", d: "Una sequenza di 5 minuti da fare ogni mattina — un rituale, non una performance." }
+          ]
+        },
+        cosaPortare: [
+          "Tappetino yoga (o lo forniamo noi)",
+          "Abbigliamento comodo",
+          "Detergente o acqua micellare per il massaggio viso"
+        ]
+      }
     },
     {
       id: "luglio-2026",
@@ -907,7 +918,8 @@
       subtitle: "Tema in definizione",
       loc: "Location · Sicilia",
       status: "soon",
-      statusLabel: "Presto"
+      statusLabel: "Presto",
+      detail: null
     },
     {
       id: "settembre-2026",
@@ -916,15 +928,17 @@
       subtitle: "Tema in definizione",
       loc: "Location · Sicilia",
       status: "soon",
-      statusLabel: "Presto"
-    },
+      statusLabel: "Presto",
+      detail: null
+    }
   ];
 
+  // ─── RENDER EVENT LIST ───
   function renderEvents(targetId) {
     const el = document.getElementById(targetId);
     if (!el) return;
     el.innerHTML = EVENTS.map(e => `
-      <a class="event" href="#evento/${e.id}" data-nav="evento" aria-label="${e.title}, ${e.day} ${e.month} ${e.year}">
+      <a class="event" href="#evento/${e.id}" aria-label="${e.title}, ${e.day} ${e.month} ${e.year}">
         <div class="event-date">
           <div class="d">${e.day}</div>
           <div class="m">${e.month} · ${e.year}</div>
@@ -939,6 +953,105 @@
         </div>
       </a>
     `).join("");
+  }
+
+  // ─── RENDER EVENT DETAIL ───
+  function renderEventDetail(eventId) {
+    const e = EVENTS.find(ev => ev.id === eventId) || EVENTS.find(ev => ev.status === "available");
+    if (!e || !e.detail) return;
+    const d = e.detail;
+
+    const progRows = d.program.map(p => `
+      <div class="ed-prog-row">
+        <div class="t">${p.t}</div>
+        <div>
+          <div class="h">${p.h}</div>
+          <div class="d">${p.d}</div>
+        </div>
+      </div>`).join("");
+
+    const earlyHtml = d.earlyBird ? `
+      <div class="earlybird">
+        <div class="eb-slot featured">
+          <div class="eb-price">${d.earlyBird.early}</div>
+          <div class="eb-lbl">Early bird · Primi 8 posti</div>
+        </div>
+        <div class="eb-slot">
+          <div class="eb-price">${d.earlyBird.std}</div>
+          <div class="eb-lbl">Prezzo standard</div>
+        </div>
+        <div class="eb-desc">${d.earlyBird.desc}</div>
+      </div>` : "";
+
+    const workshopHtml = d.workshop ? `
+      <div class="workshop">
+        <h3>${d.workshop.title}</h3>
+        <div class="workshop-grid">
+          ${d.workshop.items.map(i => `
+            <div class="wc">
+              <div class="wc-ttl">${i.h}</div>
+              <div class="wc-txt">${i.d}</div>
+            </div>`).join("")}
+        </div>
+      </div>` : "";
+
+    const portaHtml = d.cosaPortare ? `
+      <div class="porta">
+        <h3>Cosa portare</h3>
+        <ul>${d.cosaPortare.map(p => `<li>${p}</li>`).join("")}</ul>
+      </div>` : "";
+
+    document.getElementById("evento-content").innerHTML = `
+      <section class="ed-hero">
+        <div class="container">
+          <div class="crumb">
+            <a href="#home">Home</a> ·
+            <a href="#eventi">Eventi</a> ·
+            ${d.quando}
+          </div>
+          <div class="ed-grid">
+            <div>
+              <div class="ed-eyebrow">${d.vol}</div>
+              <h1 class="ed-title">${d.heroTitle}</h1>
+              <dl class="ed-meta">
+                <div class="row"><dt class="k">Quando</dt><dd class="v"><b>${d.quando}</b><br/>${d.orario}</dd></div>
+                <div class="row"><dt class="k">Dove</dt><dd class="v"><b>${d.dove}</b><br/>${d.luogo}</dd></div>
+                <div class="row"><dt class="k">Con</dt><dd class="v">${d.con}</dd></div>
+                <div class="row"><dt class="k">Posti</dt><dd class="v">${d.posti}</dd></div>
+                <div class="row"><dt class="k">Welcome kit</dt><dd class="v">${d.kit}</dd></div>
+              </dl>
+              ${earlyHtml}
+              <div class="ed-actions">
+                <a class="btn btn-primary"
+                   href="https://wa.me/?text=${d.waText}"
+                   target="_blank" rel="noopener noreferrer">
+                  Prenota su WhatsApp →
+                </a>
+                <button class="btn btn-secondary" onclick="scrollToNewsletter()">
+                  Iscriviti alla newsletter
+                </button>
+              </div>
+            </div>
+            <div class="ed-photo">
+              <img src="${d.foto}" alt="${d.fotoAlt}" loading="lazy" />
+              <div class="price">
+                <div class="v">${d.prezzoVal}</div>
+                <div class="l">${d.prezzoLabel}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="ed-program">
+            <h3>Cronoprogramma</h3>
+            ${progRows}
+          </div>
+          ${workshopHtml}
+          ${portaHtml}
+        </div>
+      </section>`;
   }
 
   renderEvents("events-list");
@@ -962,12 +1075,15 @@
     if (h === "manifesto")  { showPage("manifesto"); return; }
     if (h === "newsletter") {
       showPage("home");
-      setTimeout(() => {
-        document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" });
-      }, 60);
+      setTimeout(() => document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" }), 60);
       return;
     }
-    if (h.startsWith("evento/")) { showPage("evento"); return; }
+    if (h.startsWith("evento/")) {
+      const eventId = h.slice(7);
+      showPage("evento");
+      renderEventDetail(eventId);
+      return;
+    }
     showPage("home");
   }
 
@@ -983,12 +1099,10 @@
     btn.style.background = "var(--ink-2)";
   });
 
-  // ─── SCROLL TO NEWSLETTER (used by event detail CTA) ───
+  // ─── SCROLL TO NEWSLETTER ───
   function scrollToNewsletter() {
     showPage("home");
-    setTimeout(() => {
-      document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" });
-    }, 60);
+    setTimeout(() => document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" }), 60);
     history.pushState(null, "", "#newsletter");
   }
 </script>
