@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeMore — Wellness Community</title>
+  <meta name="description" content="BeMore è una community di esperienze wellness. Ogni mese, in un luogo diverso, un nuovo rituale di movimento, respiro e cura — semplice, accessibile, mai improvvisato." />
+  <meta property="og:title" content="BeMore — Wellness Community" />
+  <meta property="og:description" content="Un evento al mese, un rituale alla volta, un equilibrio costruito insieme." />
+  <meta property="og:image" content="assets/terrazza.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Italiana&family=Manrope:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --cream:   #F1ECE2;
+      --cream-2: #E6DFCF;
+      --cream-3: #DCD4BF;
+      --ink:     #1F2A24;
+      --ink-2:   #3F5A4D;
+      --muted:   #5C6B62;
+      --line:    #C8C0AB;
+      --accent:  #3F5A4D;
+      --sage:    #9FE1CB;
+      --rose:    #E8B5B0;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Manrope', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    button { font-family: inherit; }
+
+    /* ─── UTILITIES ─── */
+    .serif  { font-family: 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: -0.012em; }
+    .display{ font-family: 'Italiana', serif; letter-spacing: 0.01em; }
+    .mono   { font-family: 'DM Mono', ui-monospace, monospace; }
+
+    .eyebrow {
+      font-size: 11px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--muted); font-weight: 500;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 36px; }
+    @media (max-width: 720px) { .container { padding: 0 22px; } }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky; top: 0; z-index: 30;
+      background: color-mix(in srgb, var(--cream) 92%, transparent);
+      backdrop-filter: saturate(140%) blur(8px);
+      -webkit-backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 0.5px solid color-mix(in srgb, var(--ink) 14%, transparent);
+    }
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 74px;
+    }
+    .brand { display: flex; flex-direction: column; line-height: 1; }
+    .brand .b1 {
+      font-family: 'Italiana', serif; font-size: 30px;
+      letter-spacing: .18em; color: var(--ink);
+    }
+    .brand .b1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 400;
+    }
+    .brand .b2 {
+      font-size: 9px; letter-spacing: .4em;
+      text-transform: uppercase; color: var(--muted); margin-top: 4px;
+    }
+    .nav-links { display: flex; gap: 34px; align-items: center; }
+    .nav-links a {
+      font-size: 14px; color: var(--ink);
+      position: relative; padding: 6px 0;
+    }
+    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active::after {
+      content: ""; position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 1px; background: var(--accent);
+    }
+    .nav-cta {
+      font-size: 12px; letter-spacing: .06em;
+      text-transform: uppercase; font-weight: 600;
+      background: var(--ink); color: var(--cream);
+      padding: 10px 18px; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--ink-2); }
+    @media (max-width: 820px) { .nav-links { display: none; } }
+
+    /* ─── HERO ─── */
+    .hero { padding: 90px 0 80px; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.05fr .95fr;
+      gap: 56px; align-items: center;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(48px, 7vw, 104px);
+      line-height: .94; letter-spacing: -0.02em;
+      margin: 0; color: var(--ink);
+    }
+    .hero h1 em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .hero .lead {
+      font-size: 16px; color: var(--muted);
+      max-width: 460px; margin-top: 26px; line-height: 1.6;
+    }
+    .meta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+    .meta-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--ink);
+      padding: 9px 14px;
+      border: 0.5px solid var(--line); border-radius: 999px;
+      background: color-mix(in srgb, var(--cream-2) 60%, transparent);
+    }
+    .meta-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%; background: var(--accent); flex-shrink: 0;
+    }
+    .hero-photo {
+      position: relative; aspect-ratio: 4/5;
+      background: #1F2A24; border-radius: 8px; overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28) 100%);
+      pointer-events: none;
+    }
+    .hero-photo .stamp {
+      position: absolute; bottom: 22px; left: 22px; right: 22px;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      color: #F1ECE2; z-index: 2;
+    }
+    .hero-photo .stamp .e {
+      font-size: 10px; letter-spacing: .32em;
+      text-transform: uppercase; opacity: .85;
+    }
+    .hero-photo .stamp .t {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 18px;
+    }
+    .hero-visual {
+      aspect-ratio: 4/5;
+      background: var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-visual > img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 70%;
+      display: block;
+    }
+    .hv-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(31,42,36,.82) 0%,
+        rgba(31,42,36,.35) 45%,
+        rgba(31,42,36,.0) 75%
+      );
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px 38px 42px;
+    }
+    .hv-label {
+      font-size: 10px; letter-spacing: .36em;
+      text-transform: uppercase; color: rgba(241,236,226,.65);
+      font-weight: 500; margin-bottom: 14px;
+    }
+    .hv-word {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(60px, 9vw, 88px);
+      line-height: .92; letter-spacing: -0.03em;
+      color: #F1ECE2;
+    }
+    .hv-word em { font-style: italic; color: var(--sage); }
+    .hv-sub {
+      margin-top: 20px;
+      font-size: 11px; letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(241,236,226,.55);
+      border-top: 0.5px solid rgba(241,236,226,.2);
+      padding-top: 14px;
+    }
+    @media (max-width: 820px) {
+      .hero { padding: 50px 0 40px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero-visual { aspect-ratio: 3/2; order: -1; }
+      .hv-word { font-size: clamp(48px, 11vw, 72px); }
+    }
+
+    /* ─── MARQUEE ─── */
+    .strip {
+      border-top: 0.5px solid var(--line);
+      border-bottom: 0.5px solid var(--line);
+      padding: 18px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; color: var(--ink-2);
+      overflow: hidden; white-space: nowrap;
+    }
+    .strip-inner {
+      display: inline-flex; gap: 48px;
+      animation: marq 38s linear infinite;
+      padding-right: 48px;
+    }
+    .strip span { font-style: italic; }
+    .strip .sep { color: var(--line); font-style: normal; }
+    @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 90px 0; }
+    .sec-head {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; gap: 30px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+    .sec-head h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1; letter-spacing: -0.018em;
+      margin: 0; max-width: 14ch;
+    }
+    .sec-head h2 em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .sec-head .right {
+      display: flex; flex-direction: column;
+      align-items: flex-end; gap: 8px;
+      text-align: right; font-size: 13px;
+      color: var(--muted); max-width: 340px;
+    }
+
+    /* ─── EVENTS TIMELINE ─── */
+    .events { display: flex; flex-direction: column; gap: 14px; }
+    .event {
+      display: grid; grid-template-columns: 160px 1fr auto;
+      gap: 28px; align-items: center;
+      background: var(--cream-2); border-radius: 14px;
+      padding: 24px 28px; cursor: pointer;
+      transition: background .25s, transform .25s;
+      text-decoration: none; color: inherit;
+    }
+    .event:hover { background: var(--cream-3); transform: translateX(4px); }
+    .event-date {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--cream); border: 0.5px solid var(--line);
+      border-radius: 10px; padding: 18px 10px; min-height: 96px;
+    }
+    .event-date .d {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px; line-height: 1; color: var(--ink);
+    }
+    .event-date .m {
+      font-size: 10px; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--muted); margin-top: 6px;
+    }
+    .event-body .ttl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.05; color: var(--ink); font-weight: 400;
+    }
+    .event-body .ttl em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .event-body .loc {
+      margin-top: 8px; font-size: 13px; color: var(--muted);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .event-body .loc::before {
+      content: ""; width: 10px; height: 10px;
+      border: 1.2px solid currentColor; border-radius: 50%;
+      display: inline-block; flex-shrink: 0;
+    }
+    .event-status { display: flex; align-items: center; gap: 14px; }
+    .pill {
+      font-size: 11px; letter-spacing: .16em;
+      text-transform: uppercase; font-weight: 600;
+      padding: 8px 14px; border-radius: 999px;
+      border: 0.5px solid var(--line);
+      background: var(--cream);
+    }
+    .pill.available {
+      background: var(--cream); color: var(--accent);
+      border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+    }
+    .pill.soldout { background: #F2D9D4; color: #A03A2E; border-color: #E8B5AE; }
+    .pill.soon    { background: transparent; color: var(--muted); }
+    .arr {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px; color: var(--ink);
+      transition: transform .25s;
+    }
+    .event:hover .arr { transform: translateX(6px); }
+    @media (max-width: 720px) {
+      .event { grid-template-columns: 90px 1fr; gap: 18px; padding: 18px; }
+      .event-date { min-height: 80px; padding: 12px 8px; }
+      .event-date .d { font-size: 24px; }
+      .event-status {
+        grid-column: 1 / -1; justify-content: space-between;
+        border-top: 0.5px solid var(--line); padding-top: 12px;
+      }
+    }
+
+    /* ─── MANIFESTO BLOCK ─── */
+    .manifesto {
+      background: var(--ink); color: var(--cream);
+      border-radius: 18px; padding: clamp(42px, 6vw, 84px);
+      position: relative; overflow: hidden;
+    }
+    .manifesto .mn-eye {
+      font-size: 11px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--sage); font-weight: 500;
+    }
+    .manifesto h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(36px, 5.4vw, 72px);
+      line-height: 1.06; letter-spacing: -0.018em;
+      margin: 18px 0 0; max-width: 18ch; color: var(--cream);
+    }
+    .manifesto h2 em { font-style: italic; color: var(--sage); font-weight: 300; }
+    .mn-pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 36px; margin-top: 60px;
+    }
+    .mn-pillars .p {
+      border-top: 0.5px solid color-mix(in srgb, var(--cream) 25%, transparent);
+      padding-top: 18px;
+    }
+    .mn-pillars .p .n { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--sage); }
+    .mn-pillars .p .h { font-family: 'Cormorant Garamond', serif; font-size: 24px; margin: 6px 0 8px; color: var(--cream); font-weight: 400; }
+    .mn-pillars .p .b { font-size: 13px; color: color-mix(in srgb, var(--cream) 70%, transparent); line-height: 1.6; }
+    @media (max-width: 820px) { .mn-pillars { grid-template-columns: 1fr; gap: 22px; } }
+
+    /* ─── NEWSLETTER / COMMUNITY ─── */
+    .news { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .news h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.02; letter-spacing: -0.018em; margin: 0;
+    }
+    .news h2 em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .news p { color: var(--muted); max-width: 42ch; margin-top: 18px; }
+    .news-card {
+      background: var(--cream-2); border-radius: 18px;
+      padding: 36px; border: 0.5px solid var(--line);
+    }
+    .news-form { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; }
+    .news-form label {
+      font-size: 11px; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--muted); font-weight: 500;
+    }
+    .news-form input {
+      background: var(--cream); border: 0.5px solid var(--line);
+      border-radius: 10px; padding: 14px 16px;
+      font-family: inherit; font-size: 14px;
+      color: var(--ink); width: 100%;
+      outline: none; transition: border-color .2s;
+    }
+    .news-form input:focus { border-color: var(--accent); }
+    .news-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .news-cta {
+      margin-top: 6px;
+      background: var(--ink); color: var(--cream);
+      font-size: 13px; letter-spacing: .06em;
+      text-transform: uppercase; font-weight: 600;
+      padding: 14px 22px; border-radius: 999px;
+      border: none; cursor: pointer;
+      display: inline-flex; justify-content: center;
+      align-items: center; gap: 10px;
+      transition: background .2s;
+    }
+    .news-cta:hover { background: var(--ink-2); }
+    .news-tiny { font-size: 11px; color: var(--muted); margin-top: 10px; }
+    @media (max-width: 820px) {
+      .news { grid-template-columns: 1fr; gap: 30px; }
+      .news-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 0.5px solid var(--line);
+      margin-top: 30px; padding: 60px 0 36px;
+      color: var(--muted); font-size: 13px;
+    }
+    .ft-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px; align-items: start;
+    }
+    .ft-grid h4 {
+      font-size: 11px; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--ink);
+      margin: 0 0 14px; font-weight: 600;
+    }
+    .ft-grid a { display: block; padding: 4px 0; }
+    .ft-grid a:hover { color: var(--ink); }
+    .ft-bottom {
+      display: flex; justify-content: space-between;
+      margin-top: 50px; padding-top: 24px;
+      border-top: 0.5px solid var(--line);
+      font-size: 12px; flex-wrap: wrap; gap: 12px;
+    }
+    @media (max-width: 820px) { .ft-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
+
+    /* ─── EVENT DETAIL PAGE ─── */
+    .ed-hero { padding: 60px 0 0; }
+    .crumb {
+      font-size: 12px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 30px;
+    }
+    .crumb a:hover { color: var(--ink); }
+    .ed-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: start; }
+    .ed-eyebrow {
+      font-size: 11px; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--accent); font-weight: 500;
+    }
+    .ed-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(48px, 6.4vw, 96px);
+      line-height: .96; letter-spacing: -0.018em; margin: 18px 0 0;
+    }
+    .ed-title em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .ed-meta { margin-top: 34px; display: flex; flex-direction: column; border-top: 0.5px solid var(--line); }
+    .ed-meta .row {
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 20px; padding: 14px 0; border-bottom: 0.5px solid var(--line);
+    }
+    .ed-meta .k { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+    .ed-meta .v { font-size: 15px; color: var(--ink); line-height: 1.45; }
+    .ed-meta .v b { font-weight: 600; }
+    .ed-photo {
+      position: relative; aspect-ratio: 4/5;
+      border-radius: 14px; overflow: hidden; background: #1F2A24;
+    }
+    .ed-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .ed-photo .price {
+      position: absolute; top: 20px; right: 20px;
+      background: color-mix(in srgb, var(--cream) 95%, transparent);
+      padding: 14px 18px; border-radius: 12px;
+      display: flex; flex-direction: column; align-items: center;
+      backdrop-filter: blur(4px);
+    }
+    .ed-photo .price .v {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px; line-height: 1; color: var(--ink);
+    }
+    .ed-photo .price .l {
+      font-size: 9px; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--muted); margin-top: 4px;
+    }
+    .ed-program { margin-top: 60px; }
+    .ed-program h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 36px; margin: 0 0 24px;
+    }
+    .ed-prog-row {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 24px; padding: 18px 0; border-top: 0.5px solid var(--line);
+    }
+    .ed-prog-row:last-child { border-bottom: 0.5px solid var(--line); }
+    .ed-prog-row .t { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); padding-top: 4px; }
+    .ed-prog-row .h { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--ink); font-weight: 500; }
+    .ed-prog-row .d { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .ed-actions { display: flex; gap: 14px; margin-top: 42px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 24px; border-radius: 999px;
+      font-size: 13px; letter-spacing: .06em;
+      text-transform: uppercase; font-weight: 600;
+      cursor: pointer; border: none; font-family: inherit;
+      transition: background .2s, color .2s;
+    }
+    .btn-primary { background: var(--ink); color: var(--cream); }
+    .btn-primary:hover { background: var(--ink-2); }
+    .btn-secondary { background: transparent; color: var(--ink); border: 0.5px solid var(--ink); }
+    .btn-secondary:hover { background: var(--cream-2); }
+    @media (max-width: 820px) {
+      .ed-grid { grid-template-columns: 1fr; gap: 30px; }
+      .ed-photo { aspect-ratio: 1/1; order: -1; }
+      .ed-meta .row { grid-template-columns: 100px 1fr; }
+    }
+
+    /* ─── MANIFESTO PAGE ─── */
+    .mf-hero { padding: 80px 0 40px; border-bottom: 0.5px solid var(--line); }
+    .mf-eyebrow { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+    .mf-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(56px, 8vw, 128px);
+      line-height: .92; letter-spacing: -0.022em;
+      margin: 18px 0 0; max-width: 14ch;
+    }
+    .mf-title em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .mf-body {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 80px; padding: 80px 0;
+    }
+    .mf-body .l { position: sticky; top: 110px; align-self: start; }
+    .mf-body .l .lbl { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+    .mf-body .l p {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 24px; line-height: 1.45;
+      color: var(--ink-2); margin-top: 18px;
+    }
+    .mf-body .r p {
+      font-size: 18px; line-height: 1.7;
+      color: var(--ink); margin: 0 0 22px; font-weight: 300;
+    }
+    .mf-body .r p:first-of-type::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px; float: left;
+      line-height: .85; padding: 6px 12px 0 0;
+      color: var(--ink-2);
+    }
+    @media (max-width: 820px) {
+      .mf-body { grid-template-columns: 1fr; gap: 30px; padding: 50px 0; }
+      .mf-body .l { position: static; }
+    }
+
+    /* ─── EARLY BIRD BOX ─── */
+    .earlybird {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 0.5px solid var(--line); border-radius: 14px;
+      overflow: hidden; margin-top: 34px;
+    }
+    .eb-slot {
+      padding: 22px 24px;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .eb-slot.featured { background: var(--ink); color: var(--cream); }
+    .eb-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; line-height: 1;
+    }
+    .eb-lbl { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
+    .eb-desc {
+      grid-column: 1 / -1; padding: 12px 20px;
+      font-size: 12px; color: var(--muted);
+      border-top: 0.5px solid var(--line); text-align: center;
+    }
+
+    /* ─── REFERRAL BOX ─── */
+    .referral-box {
+      margin-top: 16px;
+      border: 0.5px solid color-mix(in srgb, var(--sage) 50%, transparent);
+      border-radius: 14px; overflow: hidden;
+      background: color-mix(in srgb, var(--sage) 8%, var(--cream));
+    }
+    .referral-top {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 22px;
+    }
+    .referral-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; line-height: 1; color: var(--ink); flex-shrink: 0;
+    }
+    .referral-copy .referral-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 400; color: var(--ink); line-height: 1.1;
+    }
+    .referral-copy .referral-sub {
+      font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;
+    }
+    .referral-terms {
+      padding: 12px 22px;
+      font-size: 11px; color: var(--muted);
+      border-top: 0.5px solid color-mix(in srgb, var(--sage) 30%, transparent);
+      line-height: 1.55;
+    }
+
+    /* ─── WORKSHOP SECTION ─── */
+    .workshop { margin-top: 60px; }
+    .workshop > h3, .porta > h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 36px; margin: 0 0 24px;
+    }
+    .workshop-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .wc {
+      background: var(--cream-2); border-radius: 12px; padding: 22px 20px;
+      border: 0.5px solid var(--line);
+    }
+    .wc-ttl { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 8px; color: var(--ink); font-weight: 400; }
+    .wc-txt { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 720px) { .workshop-grid { grid-template-columns: 1fr; } }
+
+    /* ─── COLLABORA ─── */
+    .collab-grid {
+      display: grid; grid-template-columns: 1.2fr .8fr;
+      gap: 80px; align-items: center;
+    }
+    .collab-grid h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: clamp(40px, 5.5vw, 72px);
+      line-height: 1; letter-spacing: -0.018em; margin: 18px 0 0;
+    }
+    .collab-grid h2 em { font-style: italic; color: var(--ink-2); font-weight: 300; }
+    .collab-left > p {
+      font-size: 16px; color: var(--muted); line-height: 1.7;
+      max-width: 48ch; margin-top: 18px;
+    }
+    .collab-benefits {
+      margin-top: 42px; border-top: 0.5px solid var(--line);
+    }
+    .cb {
+      display: grid; grid-template-columns: 48px 1fr;
+      gap: 16px; padding: 18px 0;
+      border-bottom: 0.5px solid var(--line);
+    }
+    .cb-n { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); padding-top: 4px; }
+    .cb-h { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--ink); font-weight: 400; }
+    .cb-d { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.55; }
+    .collab-cta { margin-top: 36px; }
+    .collab-card {
+      background: var(--ink); color: var(--cream);
+      border-radius: 20px; padding: 42px 38px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .cc-label {
+      font-size: 10px; letter-spacing: .36em;
+      text-transform: uppercase; color: var(--sage); font-weight: 500;
+    }
+    .cc-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(26px, 3.2vw, 36px);
+      line-height: 1.25; color: var(--cream);
+    }
+    .cc-steps { margin-top: 8px; }
+    .cs {
+      display: flex; align-items: center; gap: 16px;
+      padding: 13px 0; border-top: 0.5px solid rgba(241,236,226,.15);
+      font-size: 14px; color: rgba(241,236,226,.75);
+    }
+    .cs:last-child { border-bottom: 0.5px solid rgba(241,236,226,.15); }
+    .cs-n {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: rgba(241,236,226,.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--sage);
+    }
+    .cc-cta {
+      background: var(--sage); color: var(--ink);
+      font-size: 12px; letter-spacing: .08em;
+      text-transform: uppercase; font-weight: 700;
+      padding: 14px 22px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+      align-self: flex-start; transition: opacity .2s;
+    }
+    .cc-cta:hover { opacity: .82; }
+    @media (max-width: 820px) { .collab-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ─── COSA PORTARE ─── */
+    .porta { margin-top: 50px; }
+    .porta ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .porta li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; padding: 13px 16px;
+      background: var(--cream-2); border-radius: 10px; border: 0.5px solid var(--line);
+    }
+    .porta li::before { content: "✓"; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 12px; }
+
+    /* ─── ROUTING ─── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── SMALL SCREEN HELPERS ─── */
+    @media (max-width: 520px) {
+      .nav-cta { padding: 8px 14px; font-size: 11px; }
+      .brand .b1 { font-size: 24px; }
+      .strip { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" data-nav="home">
+      <span class="b1"><em>Be</em>More</span>
+      <span class="b2">Wellness Community</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#eventi" data-nav="eventi">Eventi</a>
+      <a href="#manifesto" data-nav="manifesto">Manifesto</a>
+      <a href="#newsletter" data-nav="newsletter">Community</a>
+    </nav>
+    <a href="#evento/20-giugno-2026" class="nav-cta" data-nav="evento">Prenota →</a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════
+     HOME
+════════════════════════════════════════ -->
+<main id="page-home" class="page" data-screen-label="Home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Wellness Community</span>
+        <h1>Rimettiti in <em>equilibrio</em>.<br/>Mente, corpo,<br/>presenza.</h1>
+        <p class="lead">BeMore è una community di esperienze wellness che si sostiene a vicenda. Ogni mese, in un luogo diverso, un nuovo rituale di movimento, respiro e cura — semplice, accessibile, mai improvvisato.</p>
+        <div class="meta-row">
+          <span class="meta-pill"><span class="dot" aria-hidden="true"></span>Prossimo · 20 Giugno 2026</span>
+          <span class="meta-pill">Terrazza BonHome · Messina</span>
+          <span class="meta-pill">15 posti · 25€</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img
+          src="assets/mor-shani-55wo5KpgYBk-unsplash.jpg"
+          alt=""
+          loading="eager"
+        />
+        <div class="hv-overlay">
+          <div class="hv-label">Wellness Community</div>
+          <div class="hv-word">Equi<br/><em>librio.</em></div>
+          <div class="hv-sub">Est. 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip-inner">
+      <span>Movimento</span><span class="sep">·</span>
+      <span>Respiro</span><span class="sep">·</span>
+      <span>Cura del sé</span><span class="sep">·</span>
+      <span>Connessione</span><span class="sep">·</span>
+      <span>Ritmo</span><span class="sep">·</span>
+      <span>Equilibrio</span><span class="sep">·</span>
+      <span>Movimento</span><span class="sep">·</span>
+      <span>Respiro</span><span class="sep">·</span>
+      <span>Cura del sé</span><span class="sep">·</span>
+      <span>Connessione</span><span class="sep">·</span>
+      <span>Ritmo</span><span class="sep">·</span>
+      <span>Equilibrio</span><span class="sep">·</span>
+    </div>
+  </div>
+
+  <!-- Events (preview) -->
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px">Prossimi eventi</div>
+          <h2>Esperienze che <em>trasformano</em></h2>
+        </div>
+        <div class="right">
+          Un evento al mese, un tema, un luogo. Le iscrizioni aprono 14 giorni prima sull'evento — prenotazione su WhatsApp o via newsletter.
+        </div>
+      </div>
+      <div class="events" id="events-list"></div>
+    </div>
+  </section>
+
+  <!-- Manifesto block -->
+  <section>
+    <div class="container">
+      <div class="manifesto">
+        <div class="mn-eye">Manifesto · I.</div>
+        <h2>Ogni essere umano ha un potenziale infinito. <em>Impariamo insieme a usarlo.</em></h2>
+        <div class="mn-pillars">
+          <div class="p">
+            <div class="n">/ 01</div>
+            <div class="h">Risorse già presenti</div>
+            <div class="b">La natura ci ha dotato di strumenti straordinari — nel corpo, nel respiro, nella mente. Non ci manca niente. Ci manca sapere come usarli.</div>
+          </div>
+          <div class="p">
+            <div class="n">/ 02</div>
+            <div class="h">Strumenti per la vita reale</div>
+            <div class="b">Ogni evento consegna pratiche concrete: tecniche di respiro, movimento, presenza e connessione applicabili nelle situazioni di ogni giorno.</div>
+          </div>
+          <div class="p">
+            <div class="n">/ 03</div>
+            <div class="h">Una community che si eleva</div>
+            <div class="b">Non una performance, non una competizione. Persone che si incontrano per crescere insieme e si supportano oltre l'evento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collabora con noi -->
+  <section>
+    <div class="container">
+      <div class="collab-grid">
+        <div class="collab-left">
+          <div class="eyebrow">Collabora con noi</div>
+          <h2>Porta <em>BeMore</em><br/>nella tua città.</h2>
+          <p>Se la nostra missione ti parla — se credi nel potenziale umano e vuoi essere un punto di riferimento per le persone intorno a te — c'è un modo per farlo diventare la tua attività.</p>
+          <p>BeMore cresce attraverso persone che aprono il proprio account business e portano questa visione nel loro territorio. Tu costruisci la tua community. Tu crei il tuo reddito.</p>
+          <div class="collab-benefits">
+            <div class="cb">
+              <div class="cb-n">/ 01</div>
+              <div>
+                <div class="cb-h">La tua attività</div>
+                <div class="cb-d">Apri il tuo account business e porta BeMore dove sei — con i tuoi tempi, i tuoi valori, la tua rete.</div>
+              </div>
+            </div>
+            <div class="cb">
+              <div class="cb-n">/ 02</div>
+              <div>
+                <div class="cb-h">Reddito concreto</div>
+                <div class="cb-d">Ogni evento che organizzi genera la tua community e il tuo introito. Più cresci, più guadagni.</div>
+              </div>
+            </div>
+            <div class="cb">
+              <div class="cb-n">/ 03</div>
+              <div>
+                <div class="cb-h">Non parti da zero</div>
+                <div class="cb-d">Ti affianchiamo con il metodo, i materiali e l'esperienza già maturata. Tu porti la voglia di fare.</div>
+              </div>
+            </div>
+          </div>
+          <div class="collab-cta">
+            <a class="btn btn-primary"
+               href="https://wa.me/?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
+               target="_blank" rel="noopener noreferrer">
+              Candidati ora →
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="collab-card">
+            <div class="cc-label">Diventa collaboratore BeMore</div>
+            <div class="cc-title">Trasforma la tua passione per il benessere in un'attività concreta.</div>
+            <div class="cc-steps">
+              <div class="cs"><span class="cs-n">1</span><span>Inviaci un messaggio di candidatura</span></div>
+              <div class="cs"><span class="cs-n">2</span><span>Scopri il modello in una call</span></div>
+              <div class="cs"><span class="cs-n">3</span><span>Apri il tuo account business</span></div>
+              <div class="cs"><span class="cs-n">4</span><span>Organizza il tuo primo evento</span></div>
+            </div>
+            <a class="cc-cta"
+               href="https://wa.me/?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
+               target="_blank" rel="noopener noreferrer">
+              Scrivici su WhatsApp →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Community signup -->
+  <section id="newsletter-home">
+    <div class="container news">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Unisciti</div>
+        <h2>Entra nella <em>community</em> BeMore.</h2>
+        <p>Riceverai per primo l'invito ai prossimi eventi, una micro-pratica al mese (respiro, ricetta, ritual), e l'accesso al gruppo WhatsApp delle partecipanti.</p>
+        <div class="meta-row" style="margin-top:24px">
+          <span class="meta-pill"><span class="dot" aria-hidden="true"></span>1 email al mese</span>
+          <span class="meta-pill">Niente spam · cancellazione 1 click</span>
+        </div>
+      </div>
+      <div class="news-card">
+        <label class="eyebrow">Iscriviti alla newsletter</label>
+        <form class="news-form" id="newsletter-form" novalidate>
+          <div class="news-row">
+            <input type="text" name="nome" placeholder="Nome" autocomplete="given-name" required />
+            <input type="text" name="cognome" placeholder="Cognome" autocomplete="family-name" />
+          </div>
+          <input type="email" name="email" placeholder="Email" autocomplete="email" required />
+          <input type="tel" name="whatsapp" placeholder="WhatsApp (facoltativo)" autocomplete="tel" />
+          <button class="news-cta" type="submit">Unisciti alla community →</button>
+          <p class="news-tiny">Iscrivendoti accetti di ricevere la newsletter mensile BeMore. Trattiamo i tuoi dati con rispetto.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════════════════════════════
+     EVENTI (full list)
+════════════════════════════════════════ -->
+<main id="page-eventi" class="page" data-screen-label="Eventi">
+  <section style="padding-top:60px">
+    <div class="container">
+      <div class="crumb"><a href="#home" data-nav="home">Home</a> · Prossimi eventi</div>
+      <div class="sec-head" style="margin-bottom:34px">
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px">Tutti gli eventi</div>
+          <h2>Esperienze che <em>trasformano</em></h2>
+        </div>
+        <div class="right">
+          Il calendario dei prossimi rituali BeMore. Un evento al mese, in luoghi diversi.
+        </div>
+      </div>
+      <div class="events" id="events-list-full"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════════════════════════════
+     EVENTO DETTAGLIO
+════════════════════════════════════════ -->
+<main id="page-evento" class="page" data-screen-label="Evento">
+  <div id="evento-content"></div>
+</main>
+
+<!-- ════════════════════════════════════════
+     MANIFESTO
+════════════════════════════════════════ -->
+<main id="page-manifesto" class="page" data-screen-label="Manifesto">
+  <section class="mf-hero">
+    <div class="container">
+      <div class="crumb"><a href="#home" data-nav="home">Home</a> · Manifesto</div>
+      <div class="mf-eyebrow">Manifesto BeMore</div>
+      <h1 class="mf-title">Tutto ciò che puoi essere <em>è già dentro di te.</em></h1>
+    </div>
+  </section>
+  <section style="padding:0">
+    <div class="container mf-body">
+      <div class="l">
+        <div class="lbl">Il paradigma</div>
+        <p>"Il potenziale umano è infinito. La natura ci ha già consegnato ogni strumento — sta a noi imparare a usarli."</p>
+      </div>
+      <div class="r">
+        <p>Ogni essere umano porta dentro di sé risorse straordinarie. Strumenti che la natura ci ha donato in quanto esseri umani — nel respiro, nel corpo, nella mente, nelle connessioni che costruiamo. Risorse reali, potenti, già presenti in ognuno di noi.</p>
+        <p>Il problema è che nessuno ce lo ha insegnato. Cresciamo senza manuale. Impariamo a fare, a performare, a produrre — ma raramente impariamo ad essere. A sentire. Ad accedere a ciò che già abbiamo.</p>
+        <p>BeMore nasce per questo. Non per aggiungere qualcosa a chi sei — ma per aiutarti a scoprire, risvegliare e usare il potenziale che porti già con te. Ogni evento è un'occasione concreta: pratiche di movimento, respiro, presenza e connessione che diventano strumenti reali, applicabili nelle situazioni della vita di ogni giorno.</p>
+        <p>Il filo conduttore di ogni nostro rituale è uno solo: consegnarti strumenti per elevare te stesso. Perché le circostanze cambiano quando cambi tu — e tu cambi quando smetti di cercare fuori ciò che esiste già dentro.</p>
+        <p>Se senti che puoi essere di più — non perché manchi qualcosa, ma perché c'è ancora tanto da scoprire — sei esattamente dove devi essere.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <a href="#home" class="brand" data-nav="home" style="margin-bottom:18px;display:inline-flex">
+          <span class="b1"><em>Be</em>More</span>
+          <span class="b2">Wellness Community</span>
+        </a>
+        <p style="max-width:32ch;font-size:13px;line-height:1.6;margin:0">Una community wellness che cresce con te. Un evento al mese, un rituale alla volta, un equilibrio costruito insieme.</p>
+      </div>
+      <div>
+        <h4>Naviga</h4>
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#eventi" data-nav="eventi">Eventi</a>
+        <a href="#manifesto" data-nav="manifesto">Manifesto</a>
+        <a href="#newsletter" data-nav="newsletter">Community</a>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:hello@bemore.community">hello@bemore.community</a>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <a href="#newsletter" data-nav="newsletter">Unisciti alla community</a>
+        <a href="#evento/20-giugno-2026" data-nav="evento">Prossimo evento</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div>© 2026 BeMore Community · Italia</div>
+      <div>Privacy · Cookie · Termini</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── EVENTS DATA ───
+  const EVENTS = [
+    {
+      id: "30-maggio-2026",
+      day: "30", month: "MAG", monthNum: "05", year: "2026",
+      title: "Wellness Sunday",
+      subtitle: "Yoga &amp; wellness bar",
+      loc: "Terrazza BonHome · Messina",
+      status: "soldout",
+      statusLabel: "Sold out",
+      detail: {
+        vol: "Vol. 01 · Wellness Sunday",
+        heroTitle: "Una mattina<br/>per <em>respirare</em>,<br/>muoversi, brindare.",
+        quando: "Sabato 30 Maggio 2026",
+        orario: "10:00 — 12:30",
+        dove: "Terrazza Panoramica BonHome",
+        luogo: "Sant'Agata · Messina",
+        con: "Mimma · yoga &amp; camminata zen<br/>Mileidy · wellness bar",
+        posti: "15 max · su prenotazione",
+        kit: "Barretta Energy · campione siero Vit. C · card BeMore · ricetta MAMI Morning",
+        foto: "assets/terrazza.png",
+        fotoAlt: "BeMore · Wellness Sunday · 30 Maggio 2026",
+        prezzoVal: "25€",
+        prezzoLabel: "welcome kit incluso",
+        earlyBird: null,
+        waText: "Ciao%2C%20vorrei%20sapere%20di%20pi%C3%B9%20sugli%20eventi%20BeMore",
+        program: [
+          { t: "10:00", h: "Accoglienza &amp; Welcome Drink", d: "Arrivo in terrazza, OxiGlow Spritz, connessione con il gruppo" },
+          { t: "10:20", h: "Camminata Zen con Mimma", d: "Movimento consapevole · respiro e presenza" },
+          { t: "11:00", h: "Pratica Yoga con Mimma", d: "Sessione guidata · energia, equilibrio, corpo" },
+          { t: "11:50", h: "Wellness Bar con Mileidy", d: "Due cocktail wellness · momento di condivisione" },
+          { t: "12:20", h: "Chiusura &amp; Intenzione", d: "Welcome kit · invito al prossimo evento" }
+        ],
+        workshop: null,
+        cosaPortare: null
+      }
+    },
+    {
+      id: "20-giugno-2026",
+      day: "20", month: "GIU", monthNum: "06", year: "2026",
+      title: "Yoga &amp; Massaggio Viso",
+      subtitle: "Meditazione &amp; corso massaggio viso",
+      loc: "Terrazza BonHome · Messina",
+      status: "available",
+      statusLabel: "Disponibile · 20€",
+      detail: {
+        vol: "Vol. 02 · Yoga &amp; Massaggio Viso",
+        heroTitle: "Muoversi, meditare,<br/><em>prendersi cura.</em>",
+        quando: "Sabato 20 Giugno 2026",
+        orario: "10:00 — 12:30",
+        dove: "Terrazza Panoramica BonHome",
+        luogo: "Sant'Agata · Messina",
+        con: "Mimma · yoga &amp; meditazione<br/>Mileidy · wellness bar<br/>Workshop: corso massaggio viso",
+        posti: "20 max · su prenotazione",
+        kit: "In aggiornamento — vi aggiorneremo a breve",
+        foto: "assets/IMG_5701.jpeg",
+        fotoAlt: "BeMore · Yoga &amp; Massaggio Viso · 20 Giugno 2026",
+        prezzoVal: "20€",
+        prezzoLabel: "tutto incluso",
+        earlyBird: {
+          early: "20€",
+          std: "20€",
+          desc: "Riserva il tuo posto con 10€ di acconto (PayPal o Satispay). Il saldo (10€) si paga in loco il giorno dell'evento."
+        },
+        waText: "Ciao%2C%20vorrei%20prenotare%20il%20mio%20posto%20per%20l%27evento%20BeMore%20del%2020%20giugno",
+        program: [
+          { t: "10:00", h: "Accoglienza &amp; Welcome Drink", d: "Arrivo in terrazza · benvenuto · primo momento di connessione" },
+          { t: "10:20", h: "Meditazione guidata con Mimma", d: "Respiro consapevole · presenza · ritmo interiore" },
+          { t: "10:50", h: "Pratica Yoga con Mimma", d: "Sessione di movimento guidata · energia e leggerezza" },
+          { t: "11:40", h: "Corso Massaggio Viso", d: "Workshop pratico · tecniche di automassaggio facciale da portare a casa" },
+          { t: "12:20", h: "Wellness Bar con Mileidy + Chiusura", d: "Due cocktail wellness · welcome kit · invito al prossimo evento" }
+        ],
+        workshop: {
+          title: "Il workshop: massaggio viso",
+          items: [
+            { h: "Automassaggio facciale", d: "Movimenti guidati per tonificare e distendere la muscolatura del viso, passo dopo passo." },
+            { h: "Digitopressione", d: "Punti specifici su viso, mandibola e collo per sciogliere le tensioni accumulate." },
+            { h: "Routine da portare a casa", d: "Una sequenza di 5 minuti da fare ogni mattina — un rituale, non una performance." }
+          ]
+        },
+        cosaPortare: [
+          "Tappetino yoga (o lo forniamo noi)",
+          "Abbigliamento comodo",
+          "Detergente o acqua micellare per il massaggio viso"
+        ],
+        referral: {
+          title: "Porta 3 amici → il tuo ingresso è gratis.",
+          sub: "Se porti 3 persone che si prenotano con l'acconto, il tuo biglietto è completamente gratuito. Cumulabile con l'offerta early bird.",
+          terms: "I 3 amici devono aver confermato con il pagamento dell'acconto (10€). Scrivici su WhatsApp con i loro nomi per attivare l'offerta.",
+          waText: "Ciao%2C%20vorrei%20usare%20l%27offerta%20%22Porta%203%20amici%22%20per%20l%27evento%20del%2020%20giugno.%20I%20miei%20amici%20sono%3A%20"
+        }
+      }
+    },
+    {
+      id: "luglio-2026",
+      day: "19", month: "LUG", monthNum: "07", year: "2026",
+      title: "Sunset Ritual",
+      subtitle: "Tema in definizione",
+      loc: "Location · TBD",
+      status: "soon",
+      statusLabel: "Presto",
+      detail: null
+    },
+    {
+      id: "settembre-2026",
+      day: "13", month: "SET", monthNum: "09", year: "2026",
+      title: "Equinox Reset",
+      subtitle: "Tema in definizione",
+      loc: "Location · TBD",
+      status: "soon",
+      statusLabel: "Presto",
+      detail: null
+    }
+  ];
+
+  // ─── RENDER EVENT LIST ───
+  function renderEvents(targetId) {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    el.innerHTML = EVENTS.map(e => `
+      <a class="event" href="#evento/${e.id}" aria-label="${e.title}, ${e.day} ${e.month} ${e.year}">
+        <div class="event-date">
+          <div class="d">${e.day}</div>
+          <div class="m">${e.month} · ${e.year}</div>
+        </div>
+        <div class="event-body">
+          <div class="ttl">${e.title}<em> · ${e.subtitle}</em></div>
+          <div class="loc">${e.loc}</div>
+        </div>
+        <div class="event-status">
+          <span class="pill ${e.status}">${e.statusLabel}</span>
+          <span class="arr" aria-hidden="true">→</span>
+        </div>
+      </a>
+    `).join("");
+  }
+
+  // ─── RENDER EVENT DETAIL ───
+  function renderEventDetail(eventId) {
+    const e = EVENTS.find(ev => ev.id === eventId) || EVENTS.find(ev => ev.status === "available");
+    if (!e || !e.detail) return;
+    const d = e.detail;
+
+    const progRows = d.program.map(p => `
+      <div class="ed-prog-row">
+        <div class="t">${p.t}</div>
+        <div>
+          <div class="h">${p.h}</div>
+          <div class="d">${p.d}</div>
+        </div>
+      </div>`).join("");
+
+    const referralHtml = d.referral ? `
+      <div class="referral-box">
+        <div class="referral-top">
+          <div class="referral-icon">3→1</div>
+          <div class="referral-copy">
+            <div class="referral-title">${d.referral.title}</div>
+            <div class="referral-sub">${d.referral.sub}</div>
+          </div>
+        </div>
+        <div class="referral-terms">${d.referral.terms}</div>
+      </div>` : "";
+
+    const earlyHtml = d.earlyBird ? (d.earlyBird.early === d.earlyBird.std ? `
+      <div class="earlybird" style="grid-template-columns:1fr">
+        <div class="eb-slot featured">
+          <div class="eb-price">${d.earlyBird.early}</div>
+          <div class="eb-lbl">${d.prezzoLabel}</div>
+        </div>
+        <div class="eb-desc">${d.earlyBird.desc}</div>
+      </div>` : `
+      <div class="earlybird">
+        <div class="eb-slot featured">
+          <div class="eb-price">${d.earlyBird.early}</div>
+          <div class="eb-lbl">Early bird · Primi 8 posti</div>
+        </div>
+        <div class="eb-slot">
+          <div class="eb-price">${d.earlyBird.std}</div>
+          <div class="eb-lbl">Prezzo standard</div>
+        </div>
+        <div class="eb-desc">${d.earlyBird.desc}</div>
+      </div>`) : "";
+
+    const workshopHtml = d.workshop ? `
+      <div class="workshop">
+        <h3>${d.workshop.title}</h3>
+        <div class="workshop-grid">
+          ${d.workshop.items.map(i => `
+            <div class="wc">
+              <div class="wc-ttl">${i.h}</div>
+              <div class="wc-txt">${i.d}</div>
+            </div>`).join("")}
+        </div>
+      </div>` : "";
+
+    const portaHtml = d.cosaPortare ? `
+      <div class="porta">
+        <h3>Cosa portare</h3>
+        <ul>${d.cosaPortare.map(p => `<li>${p}</li>`).join("")}</ul>
+      </div>` : "";
+
+    document.getElementById("evento-content").innerHTML = `
+      <section class="ed-hero">
+        <div class="container">
+          <div class="crumb">
+            <a href="#home">Home</a> ·
+            <a href="#eventi">Eventi</a> ·
+            ${d.quando}
+          </div>
+          <div class="ed-grid">
+            <div>
+              <div class="ed-eyebrow">${d.vol}</div>
+              <h1 class="ed-title">${d.heroTitle}</h1>
+              <dl class="ed-meta">
+                <div class="row"><dt class="k">Quando</dt><dd class="v"><b>${d.quando}</b><br/>${d.orario}</dd></div>
+                <div class="row"><dt class="k">Dove</dt><dd class="v"><b>${d.dove}</b><br/>${d.luogo}</dd></div>
+                <div class="row"><dt class="k">Con</dt><dd class="v">${d.con}</dd></div>
+                <div class="row"><dt class="k">Posti</dt><dd class="v">${d.posti}</dd></div>
+                <div class="row"><dt class="k">Welcome kit</dt><dd class="v">${d.kit}</dd></div>
+              </dl>
+              ${earlyHtml}
+              ${referralHtml}
+              <div class="ed-actions">
+                <a class="btn btn-primary"
+                   href="https://wa.me/?text=${d.waText}"
+                   target="_blank" rel="noopener noreferrer">
+                  Prenota su WhatsApp →
+                </a>
+                <button class="btn btn-secondary" onclick="scrollToNewsletter()">
+                  Iscriviti alla newsletter
+                </button>
+              </div>
+            </div>
+            <div class="ed-photo">
+              <img src="${d.foto}" alt="${d.fotoAlt}" loading="lazy" />
+              <div class="price">
+                <div class="v">${d.prezzoVal}</div>
+                <div class="l">${d.prezzoLabel}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="ed-program">
+            <h3>Cronoprogramma</h3>
+            ${progRows}
+          </div>
+          ${workshopHtml}
+          ${portaHtml}
+        </div>
+      </section>`;
+  }
+
+  renderEvents("events-list");
+  renderEvents("events-list-full");
+
+  // ─── ROUTING ───
+  function showPage(name) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    const target = document.getElementById("page-" + name);
+    if (target) target.classList.add("active");
+    document.querySelectorAll(".nav-links a").forEach(a => {
+      a.classList.toggle("active", a.dataset.nav === name);
+    });
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  function handleHash() {
+    const h = location.hash.replace(/^#/, "");
+    if (!h || h === "home") { showPage("home"); return; }
+    if (h === "eventi")     { showPage("eventi"); return; }
+    if (h === "manifesto")  { showPage("manifesto"); return; }
+    if (h === "newsletter") {
+      showPage("home");
+      setTimeout(() => document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" }), 60);
+      return;
+    }
+    if (h.startsWith("evento/")) {
+      const eventId = h.slice(7);
+      showPage("evento");
+      renderEventDetail(eventId);
+      return;
+    }
+    showPage("home");
+  }
+
+  window.addEventListener("hashchange", handleHash);
+  handleHash();
+
+  // ─── NEWSLETTER FORM ───
+  document.getElementById("newsletter-form")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const btn = this.querySelector(".news-cta");
+    btn.textContent = "Iscritta ✓ — A presto!";
+    btn.disabled = true;
+    btn.style.background = "var(--ink-2)";
+  });
+
+  // ─── SCROLL TO NEWSLETTER ───
+  function scrollToNewsletter() {
+    showPage("home");
+    setTimeout(() => document.getElementById("newsletter-home")?.scrollIntoView({ behavior: "smooth" }), 60);
+    history.pushState(null, "", "#newsletter");
+  }
+</script>
+
+</body>
+</html>
