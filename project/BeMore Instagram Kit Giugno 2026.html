@@ -16,6 +16,8 @@
     --sage: #3F5A4D;
     --muted: #5C6B62;
     --mint: #9FE1CB;
+    --wa: #25D366;
+    --wa-dark: #128C4A;
     --line: rgba(31,42,36,.14);
     --line-strong: rgba(31,42,36,.28);
   }
@@ -30,194 +32,100 @@
     min-height: 100%;
   }
 
-  /* ── Page layout ── */
   .page { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
 
-  /* ── Header ── */
   .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 28px;
-    border-bottom: 0.5px solid var(--line-strong);
-    margin-bottom: 48px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-bottom: 28px; border-bottom: 0.5px solid var(--line-strong); margin-bottom: 48px;
   }
   .brand { font-family: 'Italiana', serif; font-size: 32px; letter-spacing: .18em; color: var(--ink); }
   .page-meta { text-align: right; }
   .page-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--ink); }
   .page-sub { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
-  /* ── Week header ── */
-  .week-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 52px 0 24px;
-  }
-  .week-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .28em;
-    text-transform: uppercase;
-    color: var(--muted);
-    white-space: nowrap;
-  }
+  .week-header { display: flex; align-items: center; gap: 16px; margin: 52px 0 24px; }
+  .week-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
   .week-rule { flex: 1; height: 0.5px; background: var(--line-strong); }
-  .week-theme {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--sage);
-    white-space: nowrap;
-  }
+  .week-theme { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: var(--sage); white-space: nowrap; }
 
-  /* ── Post card ── */
-  .post-card {
-    background: var(--cream);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    border: 0.5px solid var(--line-strong);
-  }
+  .post-card { background: var(--cream); border-radius: 16px; overflow: hidden; margin-bottom: 16px; border: 0.5px solid var(--line-strong); }
 
-  .card-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 20px;
-    border-bottom: 0.5px solid var(--line);
-    background: var(--cream-2);
-  }
-  .date-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .1em;
-    color: var(--ink);
-    background: white;
-    border: 0.5px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 3px 10px;
-  }
-  .type-badge {
-    font-size: 9.5px;
-    letter-spacing: .28em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 999px;
-    padding: 3px 10px;
-  }
-  .type-feed { background: var(--sage); color: var(--cream); }
+  .card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 0.5px solid var(--line); background: var(--cream-2); }
+  .date-pill { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; color: var(--ink); background: white; border: 0.5px solid var(--line-strong); border-radius: 999px; padding: 3px 10px; }
+  .type-badge { font-size: 9.5px; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; border-radius: 999px; padding: 3px 10px; }
+  .type-feed  { background: var(--sage); color: var(--cream); }
   .type-story { background: var(--ink); color: var(--mint); }
-  .card-num {
-    margin-left: auto;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: .1em;
+  .card-num { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: .1em; }
+
+  /* ── Tabs ── */
+  .card-tabs { display: flex; gap: 0; border-bottom: 0.5px solid var(--line); }
+  .tab-btn {
+    flex: 1; padding: 10px 16px;
+    font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); transition: color .15s, background .15s;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
   }
+  .tab-btn.active { color: var(--ink); background: var(--cream); }
+  .tab-btn.active.tab-ig { border-bottom: 2px solid var(--sage); }
+  .tab-btn.active.tab-wa { border-bottom: 2px solid var(--wa); color: var(--wa-dark); }
+  .tab-btn .tab-icon { font-size: 13px; }
 
-  .card-body { padding: 20px 20px 0; }
+  .tab-pane { display: none; padding: 20px 20px 0; }
+  .tab-pane.active { display: block; }
 
-  .section-label {
-    font-size: 9px;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
+  .section-label { font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
 
-  /* Caption textarea */
   .caption-box {
-    width: 100%;
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-size: 13.5px;
-    line-height: 1.65;
-    color: var(--ink);
-    background: white;
-    border: 0.5px solid var(--line-strong);
-    border-radius: 10px;
-    padding: 14px 16px;
-    resize: none;
-    outline: none;
-    cursor: text;
-    white-space: pre-wrap;
-    min-height: 60px;
-    transition: border-color .15s;
+    width: 100%; font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 13.5px; line-height: 1.65; color: var(--ink);
+    background: white; border: 0.5px solid var(--line-strong);
+    border-radius: 10px; padding: 14px 16px;
+    resize: none; outline: none; cursor: text;
+    min-height: 60px; transition: border-color .15s;
   }
   .caption-box:focus { border-color: var(--sage); }
+  .caption-box.wa-box:focus { border-color: var(--wa); }
 
-  /* Hashtags */
-  .hashtag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-  }
+  .hashtag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
   .htag {
-    font-size: 11px;
-    color: var(--sage);
+    font-size: 11px; color: var(--sage);
     background: color-mix(in srgb, var(--sage) 10%, transparent);
     border: 0.5px solid color-mix(in srgb, var(--sage) 30%, transparent);
-    border-radius: 999px;
-    padding: 2px 10px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background .12s;
+    border-radius: 999px; padding: 2px 10px; font-weight: 500;
   }
-  .htag:hover { background: color-mix(in srgb, var(--sage) 20%, transparent); }
 
-  /* Image tip */
   .image-tip {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 14px;
-    padding: 10px 14px;
-    background: color-mix(in srgb, var(--ink) 4%, transparent);
-    border-radius: 8px;
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.5;
+    display: flex; align-items: flex-start; gap: 8px; margin-top: 14px;
+    padding: 10px 14px; background: color-mix(in srgb, var(--ink) 4%, transparent);
+    border-radius: 8px; font-size: 12px; color: var(--muted); line-height: 1.5;
   }
   .image-tip-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
-  /* Copy button */
-  .card-foot {
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .wa-tip {
+    display: flex; align-items: flex-start; gap: 8px; margin-top: 14px;
+    padding: 10px 14px; background: color-mix(in srgb, var(--wa) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--wa) 25%, transparent);
+    border-radius: 8px; font-size: 12px; color: #0d5c2a; line-height: 1.5;
   }
-  .copy-btn {
-    font-family: 'Manrope', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--cream);
-    background: var(--sage);
-    border: none;
-    border-radius: 999px;
-    padding: 7px 18px;
-    cursor: pointer;
-    transition: background .15s, transform .1s;
-  }
-  .copy-btn:hover { background: var(--ink); }
-  .copy-btn:active { transform: scale(.97); }
-  .copy-btn.copied { background: #2E7D5A; }
-  .copy-all-note { font-size: 11px; color: var(--muted); }
 
-  /* Footer */
-  .page-footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 0.5px solid var(--line-strong);
-    text-align: center;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: .1em;
+  .card-foot { padding: 12px 20px; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+  .copy-btn {
+    font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+    border: none; border-radius: 999px; padding: 7px 18px;
+    cursor: pointer; transition: background .15s, transform .1s;
   }
+  .copy-btn:active { transform: scale(.97); }
+  .copy-ig { color: var(--cream); background: var(--sage); }
+  .copy-ig:hover { background: var(--ink); }
+  .copy-ig.copied { background: #2E7D5A; }
+  .copy-wa { color: white; background: var(--wa); }
+  .copy-wa:hover { background: var(--wa-dark); }
+  .copy-wa.copied { background: var(--wa-dark); }
+
+  .page-footer { margin-top: 64px; padding-top: 24px; border-top: 0.5px solid var(--line-strong); text-align: center; font-size: 11px; color: var(--muted); letter-spacing: .1em; }
 
   @media (max-width: 480px) {
     .page { padding: 24px 16px 60px; }
@@ -227,37 +135,37 @@
 </style>
 </head>
 <body>
-
 <div class="page">
 
-  <!-- Header -->
   <div class="page-header">
     <div class="brand">BeMore</div>
     <div class="page-meta">
-      <div class="page-title">Social Kit Instagram</div>
+      <div class="page-title">Social Kit · Instagram &amp; WhatsApp</div>
       <div class="page-sub">Evento 20 Giugno 2026</div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       SETTIMANA 1 — LANCIO
-  ══════════════════════════════════════════ -->
+  <!-- ══ SETTIMANA 1 — LANCIO ══ -->
   <div class="week-header">
     <span class="week-label">Settimana 1 · 1–7 Giugno</span>
     <div class="week-rule"></div>
     <span class="week-theme">Lancio</span>
   </div>
 
-  <!-- Post 1 → Feed lancio -->
+  <!-- 01 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">1 Giu</span>
       <span class="type-badge type-feed">Post · Feed</span>
       <span class="card-num">01 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p01')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p01')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p01-ig" class="tab-pane active">
       <div class="section-label">Caption</div>
-      <textarea class="caption-box" rows="12" id="cap-01">🌿 Sabato 20 giugno · Sant'Agata, Messina
+      <textarea class="caption-box" rows="12" id="ig-01">🌿 Sabato 20 giugno · Sant'Agata, Messina
 
 Una mattina per respirare, muoversi, prendersi cura.
 
@@ -270,73 +178,90 @@ Un rituale completo per iniziare l'estate con leggerezza — in terrazza, con vi
 ✦ Posti limitati a 20 · acconto di 10€ per confermare
 
 → Link in bio per prenotare.</textarea>
-
       <div style="margin-top:14px">
         <div class="section-label">Hashtag</div>
         <div class="hashtag-row">
-          <span class="htag">#BeMore</span>
-          <span class="htag">#Wellness</span>
-          <span class="htag">#Yoga</span>
-          <span class="htag">#Meditazione</span>
-          <span class="htag">#MassaggioViso</span>
-          <span class="htag">#Messina</span>
-          <span class="htag">#SantAgata</span>
-          <span class="htag">#WellnessCommunity</span>
-          <span class="htag">#Benessere</span>
-          <span class="htag">#YogaItalia</span>
-          <span class="htag">#Mindfulness</span>
+          <span class="htag">#BeMore</span><span class="htag">#Wellness</span><span class="htag">#Yoga</span><span class="htag">#Meditazione</span><span class="htag">#MassaggioViso</span><span class="htag">#Messina</span><span class="htag">#SantAgata</span><span class="htag">#WellnessCommunity</span><span class="htag">#Benessere</span><span class="htag">#YogaItalia</span><span class="htag">#Mindfulness</span>
         </div>
       </div>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Tappetini viola in terrazza con luce calda, oppure angolo basso verso la porta-finestra con cielo blu.</span></div>
+    </div>
+    <div id="p01-wa" class="tab-pane">
+      <div class="section-label">Messaggio broadcast</div>
+      <textarea class="caption-box wa-box" rows="12" id="wa-01">🌿 BeMore · 20 Giugno 2026
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Foto dell'evento precedente: tappetini viola in terrazza con luce calda, oppure angolo basso verso la porta-finestra con cielo blu.</span>
-      </div>
+Una mattina per respirare, muoversi, prendersi cura.
+
+✨ Yoga · Meditazione · Corso Massaggio Viso
+📍 Terrazza Panoramica BonHome · Sant'Agata, Messina
+🕙 Sabato 20 giugno · h 10:00 – 12:30
+💚 20€ tutto incluso · welcome kit + workshop massaggio
+
+Posti limitati a 20.
+👉 Riserva il tuo posto con 10€ di acconto (PayPal o Satispay).
+Il saldo (10€) si paga in loco.
+
+Per prenotare rispondi a questo messaggio 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Usa come broadcast alla lista contatti. Rimuovi l'emoji 📍 se il tono ti sembra troppo formale. Puoi aggiungere il link PayPal.me diretto.</span></div>
     </div>
     <div class="card-foot">
-      <span class="copy-all-note">Seleziona tutto con Ctrl+A nella caption</span>
-      <button class="copy-btn" onclick="copyCaption('cap-01', this)">Copia caption →</button>
+      <button class="copy-btn copy-ig" id="btn-ig-01" onclick="copyCaption('ig-01', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" id="btn-wa-01" onclick="copyCaption('wa-01', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 2 → Story lancio -->
+  <!-- 02 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">1 Giu</span>
       <span class="type-badge type-story">Post · Story</span>
       <span class="card-num">02 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p02')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p02')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p02-ig" class="tab-pane active">
       <div class="section-label">Testo story</div>
-      <textarea class="caption-box" rows="5" id="cap-02">Prenotazioni aperte 🌿
+      <textarea class="caption-box" rows="5" id="ig-02">Prenotazioni aperte 🌿
 
 20 Giugno · Yoga · Meditazione · Massaggio Viso
 
 20€ · 20 posti · acconto 10€
 
 → Link in bio</textarea>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Sfondo scuro con testo bianco. Aggiungi sticker "Link" → pagina prenotazione.</span></div>
+    </div>
+    <div id="p02-wa" class="tab-pane">
+      <div class="section-label">Messaggio status / risposta rapida</div>
+      <textarea class="caption-box wa-box" rows="5" id="wa-02">🌿 Prenotazioni aperte — 20 Giugno
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Story sfondo scuro (tema notte) con testo bianco, oppure foto event + sticker link. Aggiungi sticker "Link" → pagina prenotazione.</span>
-      </div>
+Yoga · Meditazione · Massaggio Viso
+20€ · 20 posti · acconto 10€
+
+Scrivi qui per prenotare il tuo posto!</textarea>
+      <div class="wa-tip"><span>💡</span><span>Ideale come risposta rapida a chi chiede info, o come aggiornamento di stato WhatsApp.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-02', this)">Copia testo →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-02', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-02', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 3 → Feed referral -->
+  <!-- 03 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">5 Giu</span>
       <span class="type-badge type-feed">Post · Feed</span>
       <span class="card-num">03 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p03')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p03')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p03-ig" class="tab-pane active">
       <div class="section-label">Caption</div>
-      <textarea class="caption-box" rows="14" id="cap-03">Portate qualcuno con voi. 🌿
+      <textarea class="caption-box" rows="14" id="ig-03">Portate qualcuno con voi. 🌿
 
 Se porti 3 amici al prossimo BeMore, il tuo ingresso è completamente gratuito.
 
@@ -351,79 +276,96 @@ Prenotate, scriveteci i loro nomi su WhatsApp, fine.
 
 Offerta valida fino a esaurimento posti.
 → Link in bio per prenotare.</textarea>
-
       <div style="margin-top:14px">
         <div class="section-label">Hashtag</div>
         <div class="hashtag-row">
-          <span class="htag">#BeMore</span>
-          <span class="htag">#Wellness</span>
-          <span class="htag">#Yoga</span>
-          <span class="htag">#Amici</span>
-          <span class="htag">#Messina</span>
-          <span class="htag">#WellnessCommunity</span>
-          <span class="htag">#Benessere</span>
-          <span class="htag">#GruppoAmici</span>
+          <span class="htag">#BeMore</span><span class="htag">#Wellness</span><span class="htag">#Yoga</span><span class="htag">#Amici</span><span class="htag">#Messina</span><span class="htag">#WellnessCommunity</span><span class="htag">#Benessere</span><span class="htag">#GruppoAmici</span>
         </div>
       </div>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Foto di gruppo dall'evento. Tono caldo e conviviale.</span></div>
+    </div>
+    <div id="p03-wa" class="tab-pane">
+      <div class="section-label">Messaggio broadcast</div>
+      <textarea class="caption-box wa-box" rows="12" id="wa-03">🌿 Porta 3 amici — entra gratis!
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Foto di gruppo dall'evento (se disponibile), oppure immagine di persone insieme in uno spazio naturale/verde. Il tono deve essere caldo e conviviale.</span>
-      </div>
+Se porti 3 persone al BeMore del 20 giugno, il tuo ingresso è completamente gratuito.
+
+Venite in 4 — uno entra gratis.
+Prenotate e mandateci i nomi su WhatsApp, fine.
+
+✦ Sabato 20 giugno · 10:00 – 12:30
+✦ Yoga · Meditazione · Corso Massaggio Viso
+✦ 20€ a persona · acconto 10€ per confermare
+
+Offerta valida fino a esaurimento posti.
+Scrivi qui per prenotare 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Perfetto per mandarlo a gruppi di amici o a chi era al 30 maggio. Il "venite in 4" funziona molto bene nei gruppi.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-03', this)">Copia caption →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-03', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-03', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       SETTIMANA 2 — URGENCY
-  ══════════════════════════════════════════ -->
+  <!-- ══ SETTIMANA 2 — URGENCY ══ -->
   <div class="week-header">
     <span class="week-label">Settimana 2 · 8–14 Giugno</span>
     <div class="week-rule"></div>
     <span class="week-theme">Urgency</span>
   </div>
 
-  <!-- Post 4 → Story urgency -->
+  <!-- 04 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">8 Giu</span>
       <span class="type-badge type-story">Post · Story</span>
       <span class="card-num">04 / 09</span>
     </div>
-    <div class="card-body">
-      <div class="section-label">Testo story — aggiorna "X" con i posti reali rimasti</div>
-      <textarea class="caption-box" rows="5" id="cap-04">🌿 Restano solo X posti
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p04')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p04')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p04-ig" class="tab-pane active">
+      <div class="section-label">Testo story — aggiorna "X" con i posti reali</div>
+      <textarea class="caption-box" rows="5" id="ig-04">🌿 Restano solo X posti
 
 20 Giugno · Yoga · Meditazione · Massaggio Viso
 
 Prenota ora → link in bio</textarea>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Sfondo verde scuro con testo grande. Aggiorna "X" prima di pubblicare.</span></div>
+    </div>
+    <div id="p04-wa" class="tab-pane">
+      <div class="section-label">Broadcast urgency — aggiorna "X"</div>
+      <textarea class="caption-box wa-box" rows="6" id="wa-04">🔥 Restano solo X posti per il 20 giugno!
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Story con contatore visivo. Puoi usare una foto dell'evento con sticker testo sopra, oppure sfondo sage/verde scuro con testo grande. Ricorda di aggiornare "X" con il numero reale.</span>
-      </div>
+Yoga · Meditazione · Massaggio Viso
+20€ · acconto 10€ per confermare il tuo posto
+
+Scrivi qui per prenotare 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Manda questo broadcast ogni volta che si liberano o si occupano ~5 posti. Aggiorna il numero X ogni volta.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-04', this)">Copia testo →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-04', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-04', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 5 → Feed programma -->
+  <!-- 05 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">11 Giu</span>
       <span class="type-badge type-feed">Post · Feed</span>
       <span class="card-num">05 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p05')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p05')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p05-ig" class="tab-pane active">
       <div class="section-label">Caption</div>
-      <textarea class="caption-box" rows="18" id="cap-05">Ecco cosa ti aspetta sabato 20 giugno. 🌿
+      <textarea class="caption-box" rows="18" id="ig-05">Ecco cosa ti aspetta sabato 20 giugno. 🌿
 
-10:00 · Accoglienza &amp; Welcome Drink
+10:00 · Accoglienza & Welcome Drink
 → Arrivo in terrazza · benvenuto · connessione
 
 10:20 · Meditazione guidata con Mimma
@@ -444,79 +386,92 @@ Due ore e mezza per riconnettersi con il corpo e la mente.
 20€ tutto incluso. Posti quasi esauriti.
 
 → Link in bio per prenotare.</textarea>
-
       <div style="margin-top:14px">
         <div class="section-label">Hashtag</div>
         <div class="hashtag-row">
-          <span class="htag">#BeMore</span>
-          <span class="htag">#Wellness</span>
-          <span class="htag">#Yoga</span>
-          <span class="htag">#Meditazione</span>
-          <span class="htag">#MassaggioViso</span>
-          <span class="htag">#Messina</span>
-          <span class="htag">#WellnessCommunity</span>
-          <span class="htag">#Programma</span>
-          <span class="htag">#Benessere</span>
+          <span class="htag">#BeMore</span><span class="htag">#Wellness</span><span class="htag">#Yoga</span><span class="htag">#Meditazione</span><span class="htag">#MassaggioViso</span><span class="htag">#Messina</span><span class="htag">#WellnessCommunity</span><span class="htag">#Programma</span>
         </div>
       </div>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Carosello: prima slide "Il programma", poi una slide per ogni momento. Oppure singola foto con programma sovrapposto.</span></div>
+    </div>
+    <div id="p05-wa" class="tab-pane">
+      <div class="section-label">Messaggio broadcast</div>
+      <textarea class="caption-box wa-box" rows="15" id="wa-05">🌿 Il programma del 20 giugno:
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Carosello ideale: prima slide con titolo "Il programma", poi una slide per ogni momento del rituale. Oppure singola foto dell'evento con programma scritto nell'immagine.</span>
-      </div>
+10:00 · Accoglienza & Welcome Drink
+10:20 · Meditazione guidata con Mimma
+10:50 · Pratica Yoga con Mimma
+11:40 · Corso Massaggio Viso
+12:20 · Wellness Bar con Mileidy
+
+Due ore e mezza per riconnettersi con il corpo e la mente.
+20€ tutto incluso. Posti quasi esauriti.
+
+Non hai ancora prenotato? Scrivi qui 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Ottimo da inviare sia a chi non ha ancora prenotato, sia come "anteprima" a chi è già iscritto per creare hype.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-05', this)">Copia caption →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-05', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-05', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 6 → Story countdown -->
+  <!-- 06 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">13 Giu</span>
       <span class="type-badge type-story">Post · Story</span>
       <span class="card-num">06 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p06')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p06')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p06-ig" class="tab-pane active">
       <div class="section-label">Testo story</div>
-      <textarea class="caption-box" rows="5" id="cap-06">🌿 Mancano 7 giorni
+      <textarea class="caption-box" rows="5" id="ig-06">🌿 Mancano 7 giorni
 
 20 Giugno · Terrazza BonHome
 
 Hai già il tuo posto?
 → Link in bio</textarea>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Aggiungi sticker countdown Instagram impostato al 20 giugno ore 10:00.</span></div>
+    </div>
+    <div id="p06-wa" class="tab-pane">
+      <div class="section-label">Messaggio broadcast</div>
+      <textarea class="caption-box wa-box" rows="5" id="wa-06">🌿 Mancano 7 giorni al 20 giugno!
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Aggiungi sticker countdown Instagram impostato al 20 giugno ore 10:00. Sfondo con foto evento o immagine natura mattutina.</span>
-      </div>
+Hai già il tuo posto?
+Scrivi qui per prenotare 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Breve e diretto. Ideale come follow-up a chi non ha risposto al primo broadcast.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-06', this)">Copia testo →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-06', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-06', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       SETTIMANA 3 — RETENTION
-  ══════════════════════════════════════════ -->
+  <!-- ══ SETTIMANA 3 — RETENTION ══ -->
   <div class="week-header">
     <span class="week-label">Settimana 3 · 15–20 Giugno</span>
     <div class="week-rule"></div>
     <span class="week-theme">Retention</span>
   </div>
 
-  <!-- Post 7 → Feed experiential -->
+  <!-- 07 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">15 Giu</span>
       <span class="type-badge type-feed">Post · Feed</span>
       <span class="card-num">07 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p07')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p07')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p07-ig" class="tab-pane active">
       <div class="section-label">Caption</div>
-      <textarea class="caption-box" rows="14" id="cap-07">Un posto al sole, un corpo che si muove, una mente che si ferma. 🌿
+      <textarea class="caption-box" rows="14" id="ig-07">Un posto al sole, un corpo che si muove, una mente che si ferma. 🌿
 
 Per due ore e mezza dimentichi tutto il resto.
 
@@ -530,112 +485,138 @@ Terrazza Panoramica BonHome · Sant'Agata
 
 Pochi posti rimasti. Acconto 10€ per confermare.
 → Link in bio.</textarea>
-
       <div style="margin-top:14px">
         <div class="section-label">Hashtag</div>
         <div class="hashtag-row">
-          <span class="htag">#BeMore</span>
-          <span class="htag">#Wellness</span>
-          <span class="htag">#Yoga</span>
-          <span class="htag">#Messina</span>
-          <span class="htag">#WellnessCommunity</span>
-          <span class="htag">#Benessere</span>
-          <span class="htag">#Mindfulness</span>
-          <span class="htag">#SantAgata</span>
-          <span class="htag">#Rituale</span>
+          <span class="htag">#BeMore</span><span class="htag">#Wellness</span><span class="htag">#Yoga</span><span class="htag">#Messina</span><span class="htag">#WellnessCommunity</span><span class="htag">#Benessere</span><span class="htag">#Mindfulness</span><span class="htag">#SantAgata</span><span class="htag">#Rituale</span>
         </div>
       </div>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Foto intima: luce mattutina, tappetino, terrazza. Atmosfera più tranquilla rispetto al post di lancio.</span></div>
+    </div>
+    <div id="p07-wa" class="tab-pane">
+      <div class="section-label">Messaggio broadcast</div>
+      <textarea class="caption-box wa-box" rows="12" id="wa-07">🌿 Un posto al sole, un corpo che si muove, una mente che si ferma.
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Immagine evocativa e tranquilla: luce del mattino, terrazza, tappetino. Atmosfera più intima rispetto al post di lancio. Foto verticale se possibile.</span>
-      </div>
+Per due ore e mezza dimentichi tutto il resto.
+
+Non serve esperienza. Non serve essere bravi.
+Serve solo voglia di stare bene.
+
+BeMore — Sabato 20 Giugno
+Yoga · Meditazione · Corso Massaggio Viso
+Terrazza BonHome · Sant'Agata
+
+Pochi posti rimasti. Acconto 10€ per confermare.
+Scrivi qui per prenotare 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Copy emozionale, ottimo per chi è indeciso. Mandalo a chi ha mostrato interesse ma non ha ancora confermato.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-07', this)">Copia caption →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-07', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-07', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 8 → Story 48h -->
+  <!-- 08 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">18 Giu</span>
       <span class="type-badge type-story">Post · Story</span>
       <span class="card-num">08 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p08')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p08')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p08-ig" class="tab-pane active">
       <div class="section-label">Testo story</div>
-      <textarea class="caption-box" rows="5" id="cap-08">48 ore · e ci siamo 🌿
+      <textarea class="caption-box" rows="5" id="ig-08">48 ore · e ci siamo 🌿
 
 20 Giugno · Yoga · Meditazione · Massaggio Viso
 
 Non hai ancora prenotato? → Link in bio</textarea>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Testo su sfondo scuro o foto in bianco/nero. Urgenza senza aggressività.</span></div>
+    </div>
+    <div id="p08-wa" class="tab-pane">
+      <div class="section-label">Reminder 48h · ai prenotati + a chi è indeciso</div>
+      <textarea class="caption-box wa-box" rows="7" id="wa-08">🌿 Mancano 48 ore!
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Story semplice e diretta. Testo su sfondo scuro oppure su foto in bianco/nero dell'evento. L'urgenza deve sentirsi senza essere aggressiva.</span>
-      </div>
+Sabato 20 giugno · h 10:00
+Terrazza BonHome · Sant'Agata
+
+Per chi è già prenotato: a presto ✦
+Per chi non lo è ancora: scrivi qui, vediamo se c'è ancora posto 👇</textarea>
+      <div class="wa-tip"><span>💡</span><span>Versione doppia: incoraggia chi è prenotato e crea last-minute urgency per chi non lo è. Un solo messaggio per entrambi i segmenti.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-08', this)">Copia testo →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-08', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-08', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Post 9 → Story day-of -->
+  <!-- 09 -->
   <div class="post-card">
     <div class="card-head">
       <span class="date-pill">20 Giu · mattina</span>
       <span class="type-badge type-story">Post · Story</span>
       <span class="card-num">09 / 09</span>
     </div>
-    <div class="card-body">
+    <div class="card-tabs">
+      <button class="tab-btn tab-ig active" onclick="switchTab(this,'ig','p09')"><span class="tab-icon">📷</span> Instagram</button>
+      <button class="tab-btn tab-wa" onclick="switchTab(this,'wa','p09')"><span class="tab-icon">💬</span> WhatsApp</button>
+    </div>
+    <div id="p09-ig" class="tab-pane active">
       <div class="section-label">Testo story</div>
-      <textarea class="caption-box" rows="5" id="cap-09">Ci vediamo oggi 🌿
+      <textarea class="caption-box" rows="5" id="ig-09">Ci vediamo oggi 🌿
 
 Terrazza BonHome · Sant'Agata
 h 10:00
 
 A presto ✦</textarea>
+      <div class="image-tip"><span class="image-tip-icon">📸</span><span>Foto della terrazza mentre allestite. Sfondo chiaro, testo minimalista.</span></div>
+    </div>
+    <div id="p09-wa" class="tab-pane">
+      <div class="section-label">Messaggio ai prenotati · mattina dell'evento</div>
+      <textarea class="caption-box wa-box" rows="7" id="wa-09">🌿 Ci vediamo oggi!
 
-      <div class="image-tip">
-        <span class="image-tip-icon">📸</span>
-        <span>Story pubblicata la mattina prima di partire. Sfondo chiaro, testo minimalista. Puoi aggiungere una foto della terrazza scattata sul posto mentre allestite.</span>
-      </div>
+Terrazza Panoramica BonHome · Sant'Agata
+Sabato 20 giugno · h 10:00
+
+Vi aspettiamo con il welcome drink pronto ✦
+
+Per info last-minute rispondete qui!</textarea>
+      <div class="wa-tip"><span>💡</span><span>Mandalo al gruppo o in broadcast ai prenotati la mattina stessa. Include il reminder dell'orario e crea attesa positiva.</span></div>
     </div>
     <div class="card-foot">
-      <span></span>
-      <button class="copy-btn" onclick="copyCaption('cap-09', this)">Copia testo →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-09', this, 'ig')">Copia Instagram →</button>
+      <button class="copy-btn copy-wa" onclick="copyCaption('wa-09', this, 'wa')">Copia WhatsApp →</button>
     </div>
   </div>
 
-  <!-- Page footer -->
   <div class="page-footer">
-    BeMore · Social Kit Giugno 2026 · 9 contenuti · 3 settimane
+    BeMore · Social Kit Giugno 2026 · 9 contenuti · Instagram + WhatsApp · 3 settimane
   </div>
-
 </div>
 
 <script>
-  function copyCaption(id, btn) {
+  function switchTab(btn, channel, postId) {
+    const card = btn.closest('.post-card');
+    card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    card.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.getElementById(postId + '-' + channel).classList.add('active');
+  }
+
+  function copyCaption(id, btn, channel) {
     const el = document.getElementById(id);
-    // Decode HTML entities in the textarea value
     const text = el.value;
+    const orig = btn.textContent;
+    const cls = channel === 'wa' ? 'copy-wa' : 'copy-ig';
     navigator.clipboard.writeText(text).then(() => {
-      const orig = btn.textContent;
       btn.textContent = 'Copiato ✓';
       btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = orig;
-        btn.classList.remove('copied');
-      }, 2000);
-    }).catch(() => {
-      el.select();
-      document.execCommand('copy');
-    });
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+    }).catch(() => { el.select(); document.execCommand('copy'); });
   }
 </script>
-
 </body>
 </html>
