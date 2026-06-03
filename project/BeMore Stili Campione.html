@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BeMore — Campione Stili Grafiche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&family=Italiana&family=Manrope:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:#F1ECE2; --ink:#1F2A24; --sage:#3F5A4D;
+    --sage-light:#567A69; --muted:#7A8F84; --mint:#9FE1CB;
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:#F5F0E8; font-family:'Manrope',sans-serif; -webkit-font-smoothing:antialiased; }
+
+  .page { max-width:600px; margin:0 auto; padding:40px 20px 80px; }
+
+  .page-hd { text-align:center; margin-bottom:52px; }
+  .page-hd .brand { font-family:'Italiana',serif; font-size:26px; letter-spacing:.18em; color:var(--ink); }
+  .page-hd .sub { font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+  .page-hd .tip { margin-top:14px; font-size:12.5px; color:var(--muted); line-height:1.7; }
+
+  .style-hd {
+    display:flex; align-items:center; gap:14px; margin:52px 0 24px;
+  }
+  .style-hd .num { font-family:'Italiana',serif; font-size:42px; color:var(--sage); line-height:1; }
+  .style-hd .info { display:flex; flex-direction:column; gap:4px; }
+  .style-hd .name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; color:var(--ink); }
+  .style-hd .desc { font-size:11px; color:var(--muted); letter-spacing:.02em; line-height:1.55; }
+
+  .card-wrap { margin-bottom:16px; }
+
+  /* ─── CARD BASE ─── */
+  .card { position:relative; overflow:hidden; width:540px; }
+  .card.sq { height:540px; }
+  .card.st { height:960px; }
+
+
+  /* ════════════════════════════════════════
+     STILE A — SPLIT CHIARO
+     Foto top · pannello crema bottom
+  ════════════════════════════════════════ */
+
+  /* Photo zone */
+  .a-photo { position:absolute; top:0; left:0; right:0; overflow:hidden; }
+  .card.sq .a-photo { height:298px; }  /* 55% di 540 */
+  .card.st .a-photo { height:100%; }   /* per le story: foto full height, card sale sopra */
+  .a-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+
+  /* Top vignette (per brand mark leggibile sulla foto) */
+  .a-vignette {
+    position:absolute; top:0; left:0; right:0; height:110px;
+    background:linear-gradient(to bottom, rgba(12,22,16,.44) 0%, transparent 100%);
+    z-index:2;
+  }
+
+  /* Brand mark on photo */
+  .a-topbar {
+    position:absolute; top:0; left:0; right:0;
+    padding:26px 34px;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    z-index:3; color:var(--cream);
+  }
+
+  /* Gradient fade: da trasparente a crema, al confine foto/pannello */
+  .a-fade {
+    position:absolute; left:0; right:0; height:90px;
+    background:linear-gradient(to bottom, transparent, var(--cream));
+    z-index:2;
+  }
+  .card.sq .a-fade { top:240px; }
+
+  /* Cream panel */
+  .a-panel {
+    position:absolute; bottom:0; left:0; right:0;
+    background:var(--cream); color:var(--ink);
+    z-index:3; padding:22px 34px 30px;
+  }
+  .card.sq .a-panel { height:252px; }  /* 46% di 540 */
+  .card.st .a-panel { height:430px; border-radius:20px 20px 0 0; }
+
+  /* Divider */
+  .div-k { height:0.5px; background:rgba(31,42,36,.14); margin:14px 0; }
+
+  /* Pill outline */
+  .pill-k { display:inline-flex; align-items:center; gap:6px; border:0.5px solid rgba(31,42,36,.22); border-radius:999px; padding:6px 13px; font-size:11.5px; color:var(--muted); }
+
+  /* Buttons */
+  .btn-sage { display:inline-flex; align-items:center; background:var(--sage); color:var(--cream); border-radius:999px; padding:9px 20px; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+  .btn-ink  { display:inline-flex; align-items:center; background:var(--ink); color:var(--cream); border-radius:999px; padding:9px 20px; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+  .btn-mint { display:inline-flex; align-items:center; background:var(--mint); color:var(--ink); border-radius:999px; padding:9px 20px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+
+
+  /* ════════════════════════════════════════
+     STILE B — FULL PHOTO SOFT
+     Foto sfocata full · frosted glass card
+  ════════════════════════════════════════ */
+
+  .b-photo { position:absolute; inset:0; overflow:hidden; }
+  .b-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:blur(14px); transform:scale(1.14); }
+
+  /* Velo caldo sopra la foto sfocata */
+  .b-veil { position:absolute; inset:0; background:rgba(241,236,226,.28); }
+
+  /* Top bar */
+  .b-topbar {
+    position:absolute; top:0; left:0; right:0;
+    padding:26px 34px;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    z-index:3; color:var(--ink);
+  }
+
+  /* Frosted glass card */
+  .b-card {
+    position:absolute; bottom:0; left:0; right:0; z-index:3;
+    background:rgba(241,236,226,.78);
+    backdrop-filter:blur(20px) saturate(1.2);
+    -webkit-backdrop-filter:blur(20px) saturate(1.2);
+    border:0.5px solid rgba(241,236,226,.6);
+    padding:28px 34px 34px;
+  }
+  .card.sq .b-card { height:255px; }
+  .card.st .b-card { height:430px; border-radius:20px 20px 0 0; }
+
+  /* Pill outline (light bg context) */
+  .pill-b { display:inline-flex; align-items:center; gap:6px; border:0.5px solid rgba(31,42,36,.25); border-radius:999px; padding:6px 13px; font-size:11.5px; color:var(--muted); }
+
+
+  /* ════════════════════════════════════════
+     STILE C — MINIMALISTA CREMA
+     Sfondo avorio · tipografia pura
+  ════════════════════════════════════════ */
+
+  .c-bg { position:absolute; inset:0; background:var(--cream); }
+
+  /* Pattern botanico leggero (solo linee CSS) */
+  .c-pattern {
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 88% 14%, rgba(63,90,77,.06) 0%, transparent 32%),
+      radial-gradient(circle at 12% 88%, rgba(63,90,77,.04) 0%, transparent 26%);
+  }
+
+  /* Cornice sage sottile */
+  .c-frame {
+    position:absolute; inset:22px;
+    border:0.5px solid rgba(63,90,77,.18);
+    border-radius:4px;
+    pointer-events:none; z-index:1;
+  }
+
+  /* Content */
+  .c-inner {
+    position:absolute; inset:0; z-index:2;
+    padding:40px 40px;
+    display:flex; flex-direction:column;
+    color:var(--ink);
+  }
+
+  /* Vertical line accent */
+  .c-vline {
+    width:1px; background:var(--sage); opacity:.35;
+    align-self:flex-start; flex-shrink:0;
+  }
+
+  /* Horizontal accent line */
+  .c-line { height:0.5px; background:var(--sage); opacity:.3; margin:16px 0; }
+  .c-line-short { height:1px; width:40px; background:var(--sage); opacity:.5; margin:12px 0 16px; }
+
+  /* Pill sage (C style) */
+  .pill-c-sage { display:inline-flex; align-items:center; gap:6px; background:rgba(63,90,77,.1); border:0.5px solid rgba(63,90,77,.3); border-radius:999px; padding:7px 15px; font-size:11.5px; color:var(--sage); }
+
+
+  /* ─── SHARED TYPE TOKENS ─── */
+  .wm   { font-family:'Italiana',serif; letter-spacing:.18em; }
+  .wm-l { font-size:26px; }
+  .wm-s { font-size:20px; }
+  .mn   { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase; }
+  .ey   { font-size:10px; letter-spacing:.3em; text-transform:uppercase; font-weight:500; }
+
+  .t-xl { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:68px; line-height:.91; letter-spacing:-.025em; }
+  .t-lg { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:46px; line-height:.96; letter-spacing:-.018em; }
+  .t-md { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:34px; line-height:1.08; }
+  .t-sm { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:24px; line-height:1.25; }
+  .body { font-size:12.5px; line-height:1.72; }
+  .body-xs { font-size:11px; line-height:1.65; }
+  em.s { font-style:italic; color:var(--sage); }
+  em.c { font-style:italic; color:var(--cream); }
+  em.m { font-style:italic; color:var(--mint); }
+
+  @media(max-width:580px){
+    .card.sq,.card.st { width:calc(100vw - 40px); }
+    .card.sq { height:calc(100vw - 40px); }
+    .card.st { height:calc((100vw - 40px)*16/9); }
+    .t-xl { font-size:clamp(40px,13vw,68px); }
+    .t-lg { font-size:clamp(30px,10vw,46px); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="page-hd">
+  <div class="brand">BeMore</div>
+  <div class="sub">Campione Stili · Scegli il tuo preferito</div>
+  <div class="tip">Ogni stile è mostrato sia in formato Feed (quadrato) che Story (verticale).<br/>Scrivi quale numero ti piace di più e lo applico a tutte e 9 le grafiche.</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     STILE A — SPLIT CHIARO
+══════════════════════════════════════════════ -->
+<div class="style-hd">
+  <div class="num">A</div>
+  <div class="info">
+    <div class="name">Split Chiaro</div>
+    <div class="desc">Foto nitida in alto · pannello crema in basso<br/>Effetto: brochure termale italiana, luminosa, ariosa</div>
+  </div>
+</div>
+
+<!-- A1 · Feed -->
+<div class="card-wrap">
+  <div class="card sq" style="background:var(--cream);">
+    <!-- foto -->
+    <div class="a-photo">
+      <img src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 40%;"/>
+    </div>
+    <!-- vignette + top bar -->
+    <div class="a-vignette"></div>
+    <div class="a-topbar">
+      <div>
+        <div class="wm wm-l">BeMore</div>
+        <div class="mn" style="margin-top:4px;opacity:.6;">Wellness Community</div>
+      </div>
+      <div class="mn" style="opacity:.55;text-align:right;">27 GIU · 2026<br/><span style="opacity:.7;">Vol. 02</span></div>
+    </div>
+    <!-- fade -->
+    <div class="a-fade"></div>
+    <!-- pannello crema -->
+    <div class="a-panel">
+      <div class="ey" style="color:var(--muted);margin-bottom:8px;">Prossimo evento · 27 Giugno</div>
+      <div class="t-lg">Yoga &amp; <em class="s">Rituale Viso.</em></div>
+      <div class="div-k"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="pill-k">📍 KiKlub · Messina</span>
+          <span class="pill-k">🕙 10:00–12:00</span>
+        </div>
+        <span class="btn-sage">Prenota →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A2 · Story -->
+<div class="card-wrap">
+  <div class="card st" style="background:var(--cream);">
+    <!-- foto full -->
+    <div class="a-photo" style="height:100%;">
+      <img src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/>
+    </div>
+    <!-- vignette -->
+    <div class="a-vignette"></div>
+    <!-- top bar -->
+    <div class="a-topbar">
+      <div class="wm wm-l">BeMore</div>
+      <div class="mn" style="opacity:.55;">Vol. 02 · 2026</div>
+    </div>
+    <!-- pannello crema arrotondato (sale dal basso) -->
+    <div class="a-panel" style="height:420px;border-radius:22px 22px 0 0;display:flex;flex-direction:column;">
+      <div class="ey" style="color:var(--sage);margin-bottom:14px;">Prenotazioni aperte</div>
+      <div class="t-lg" style="line-height:1.02;">Una mattina<br/>per <em class="s">te.</em></div>
+      <div class="div-k" style="margin:16px 0 14px;"></div>
+      <div class="body" style="color:var(--muted);flex:1;">
+        Yoga · Corso Rituale Massaggio Viso<br/>
+        KiKlub di Granatari · Messina<br/>
+        Sabato 27 Giugno · h 10:00 – 12:00
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;">
+        <span class="btn-sage">Riserva · 10€ acconto →</span>
+        <div style="background:var(--ink);color:var(--cream);border-radius:10px;padding:9px 14px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1;">20€</div>
+          <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.6;margin-top:2px;">tutto incluso</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     STILE B — FULL PHOTO SOFT
+══════════════════════════════════════════════ -->
+<div class="style-hd">
+  <div class="num">B</div>
+  <div class="info">
+    <div class="name">Full Photo Soft</div>
+    <div class="desc">Foto sfocata come sfondo · card in vetro smerigliato<br/>Effetto: wellness app premium, profondità, spa moderna</div>
+  </div>
+</div>
+
+<!-- B1 · Feed -->
+<div class="card-wrap">
+  <div class="card sq">
+    <!-- foto sfocata full -->
+    <div class="b-photo"><img src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 40%;"/></div>
+    <!-- velo caldo -->
+    <div class="b-veil"></div>
+    <!-- top bar (su sfondo chiaro ora) -->
+    <div class="b-topbar">
+      <div>
+        <div class="wm wm-l" style="color:var(--ink);">BeMore</div>
+        <div class="mn" style="margin-top:4px;color:var(--muted);">Wellness Community</div>
+      </div>
+      <div class="mn" style="color:var(--muted);text-align:right;">27 GIU · 2026<br/><span style="opacity:.7;">Vol. 02</span></div>
+    </div>
+    <!-- frosted glass card -->
+    <div class="b-card">
+      <div class="ey" style="color:var(--sage);margin-bottom:10px;">Prossimo evento · 27 Giugno</div>
+      <div class="t-lg" style="color:var(--ink);">Yoga &amp; <em class="s">Rituale Viso.</em></div>
+      <div class="div-k"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="pill-b">📍 KiKlub · Messina</span>
+          <span class="pill-b">🕙 10:00–12:00</span>
+        </div>
+        <span class="btn-ink">Prenota →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B2 · Story -->
+<div class="card-wrap">
+  <div class="card st">
+    <div class="b-photo"><img src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/></div>
+    <div class="b-veil"></div>
+    <div class="b-topbar">
+      <div class="wm wm-l" style="color:var(--ink);">BeMore</div>
+      <div class="mn" style="color:var(--muted);">Vol. 02 · 2026</div>
+    </div>
+    <div class="b-card" style="height:430px;border-radius:22px 22px 0 0;display:flex;flex-direction:column;">
+      <div class="ey" style="color:var(--sage);margin-bottom:14px;">Prenotazioni aperte</div>
+      <div class="t-lg" style="color:var(--ink);line-height:1.02;">Una mattina<br/>per <em class="s">te.</em></div>
+      <div class="div-k" style="margin:16px 0 14px;"></div>
+      <div class="body" style="color:var(--muted);flex:1;">
+        Yoga · Corso Rituale Massaggio Viso<br/>
+        KiKlub di Granatari · Messina<br/>
+        Sabato 27 Giugno · h 10:00 – 12:00
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px;">
+        <span class="btn-ink">Riserva · 10€ acconto →</span>
+        <div style="background:var(--sage);color:var(--cream);border-radius:10px;padding:9px 14px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1;">20€</div>
+          <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.7;margin-top:2px;">tutto incluso</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     STILE C — MINIMALISTA CREMA
+══════════════════════════════════════════════ -->
+<div class="style-hd">
+  <div class="num">C</div>
+  <div class="info">
+    <div class="name">Minimalista Crema</div>
+    <div class="desc">Sfondo avorio · solo tipografia e colori · nessuna foto<br/>Effetto: biglietto d'invito di lusso, atelier italiano, senza tempo</div>
+  </div>
+</div>
+
+<!-- C1 · Feed -->
+<div class="card-wrap">
+  <div class="card sq">
+    <div class="c-bg"></div>
+    <div class="c-pattern"></div>
+    <div class="c-frame"></div>
+    <div class="c-inner">
+      <!-- top -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div class="wm wm-l" style="color:var(--ink);">BeMore</div>
+          <div class="mn" style="color:var(--muted);margin-top:4px;">Wellness Community</div>
+        </div>
+        <div class="mn" style="color:var(--muted);text-align:right;">27 GIU<br/>2026</div>
+      </div>
+
+      <!-- mid -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div class="c-line-short"></div>
+        <div class="ey" style="color:var(--sage);margin-bottom:14px;">Prossimo evento</div>
+        <div class="t-lg" style="color:var(--ink);">Yoga &amp;<br/><em class="s">Rituale Viso.</em></div>
+        <div class="c-line" style="margin:20px 0;"></div>
+        <div class="body" style="color:var(--muted);">
+          Sabato 27 Giugno 2026<br/>
+          h 10:00 – 12:00 · KiKlub · Messina
+        </div>
+      </div>
+
+      <!-- bottom -->
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span class="pill-c-sage">Posti limitati · 20€</span>
+        <span class="btn-sage">Prenota →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- C2 · Story -->
+<div class="card-wrap">
+  <div class="card st">
+    <div class="c-bg"></div>
+    <div class="c-pattern" style="background-image:radial-gradient(circle at 85% 10%, rgba(63,90,77,.07) 0%, transparent 35%),radial-gradient(circle at 15% 90%, rgba(63,90,77,.05) 0%, transparent 30%),radial-gradient(circle at 50% 50%, rgba(63,90,77,.03) 0%, transparent 50%);"></div>
+    <div class="c-frame"></div>
+    <div class="c-inner">
+      <!-- top -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div class="wm wm-l" style="color:var(--ink);">BeMore</div>
+        <div class="mn" style="color:var(--muted);">Vol. 02 · 2026</div>
+      </div>
+
+      <!-- grossa tipografia centrale -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+        <div class="c-line" style="width:60px;margin:0 0 24px;"></div>
+        <div class="ey" style="color:var(--sage);margin-bottom:18px;">Prenotazioni aperte</div>
+        <div class="t-xl" style="color:var(--ink);font-size:62px;">Una<br/>mattina<br/>per <em class="s">te.</em></div>
+        <div class="c-line" style="width:100%;margin:28px 0;"></div>
+        <div class="body" style="color:var(--muted);line-height:1.85;">
+          Yoga · Corso Rituale Massaggio Viso<br/>
+          Dott.ssa Mimma Luciano · KiKlub · Messina<br/>
+          Sabato 27 Giugno · h 10:00 – 12:00
+        </div>
+      </div>
+
+      <!-- bottom CTA -->
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:11px;color:var(--muted);line-height:1.6;">
+          Riserva con<br/>10€ di acconto
+        </div>
+        <span class="btn-sage" style="font-size:12px;">Prenota · 20€ →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- fine -->
+<div style="text-align:center;margin-top:60px;padding-top:28px;border-top:0.5px solid rgba(31,42,36,.15);">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--muted);">
+    Quale preferisci? A · B · C
+  </div>
+  <div style="font-size:11px;color:rgba(31,42,36,.4);margin-top:8px;letter-spacing:.04em;">
+    Scrivi la lettera e applico lo stile a tutte e 9 le grafiche
+  </div>
+</div>
+
+</div>
+</body>
+</html>
