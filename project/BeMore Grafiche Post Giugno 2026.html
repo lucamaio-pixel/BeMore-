@@ -6,116 +6,129 @@
 <title>BeMore — Grafiche Post · Giugno 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Italiana&family=Manrope:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Italiana&family=Manrope:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
   :root {
     --cream:#F1ECE2; --ink:#1F2A24; --sage:#3F5A4D;
-    --mint:#9FE1CB; --muted:#5C6B62;
-    --line:rgba(241,236,226,.2);
-    --line-ink:rgba(31,42,36,.15);
+    --mint:#9FE1CB; --muted:#7A8F84;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html,body{background:#161c19;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;}
+  html,body{background:#111714;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;}
 
   /* ── page chrome ── */
   .page{max-width:600px;margin:0 auto;padding:40px 20px 80px;}
-  .page-hd{text-align:center;padding-bottom:32px;border-bottom:0.5px solid rgba(255,255,255,.1);margin-bottom:48px;}
-  .page-hd .brand{font-family:'Italiana',serif;font-size:28px;letter-spacing:.18em;color:var(--cream);}
-  .page-hd .sub{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(241,236,226,.4);margin-top:6px;}
-  .page-hd .tip{margin-top:16px;font-size:12px;color:rgba(241,236,226,.45);line-height:1.7;max-width:380px;margin-left:auto;margin-right:auto;}
+  .page-hd{text-align:center;padding-bottom:32px;border-bottom:0.5px solid rgba(255,255,255,.08);margin-bottom:48px;}
+  .page-hd .brand{font-family:'Italiana',serif;font-size:26px;letter-spacing:.18em;color:var(--cream);}
+  .page-hd .sub{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(241,236,226,.35);margin-top:6px;}
+  .page-hd .tip{margin-top:14px;font-size:12px;color:rgba(241,236,226,.4);line-height:1.7;max-width:360px;margin-left:auto;margin-right:auto;}
 
   .week-hd{display:flex;align-items:center;gap:14px;margin:52px 0 28px;}
-  .wl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(241,236,226,.3);white-space:nowrap;}
-  .wr{flex:1;height:0.5px;background:rgba(255,255,255,.1);}
-  .wt{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(159,225,203,.65);white-space:nowrap;}
+  .wl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(241,236,226,.28);white-space:nowrap;}
+  .wr{flex:1;height:0.5px;background:rgba(255,255,255,.08);}
+  .wt{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:rgba(159,225,203,.6);white-space:nowrap;}
 
   .card-wrap{margin-bottom:44px;}
-  .card-lbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(241,236,226,.3);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .card-lbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(241,236,226,.28);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
   .badge{font-size:9px;padding:2px 8px;border-radius:999px;letter-spacing:.14em;}
-  .badge-feed{background:rgba(63,90,77,.45);color:var(--mint);}
-  .badge-story{background:rgba(255,255,255,.07);color:rgba(241,236,226,.55);}
+  .badge-feed{background:rgba(63,90,77,.4);color:var(--mint);}
+  .badge-story{background:rgba(255,255,255,.06);color:rgba(241,236,226,.48);}
 
-  /* ── card shell ── */
-  .card{position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;}
-  .card.square{width:540px;height:540px;}
-  .card.story{width:540px;height:960px;}
+  /* ── CARD SHELL ── */
+  .card{position:relative;overflow:hidden;background:#0d1610;}
+  .card.sq{width:540px;height:540px;}
+  .card.st{width:540px;height:960px;}
 
-  /* ── background image ── */
-  .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-  .bg.blur-soft{filter:blur(5px);transform:scale(1.08);}
-  .bg.blur-med {filter:blur(10px);transform:scale(1.12);}
-  .bg.blur-hard{filter:blur(18px);transform:scale(1.16);}
+  /* ── PHOTO (sempre full-bleed, nitida) ── */
+  .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
-  /* ── overlay library ── */
+  /* ── OVERLAYS (caldi, non flat) ── */
 
-  /* Dark warm — good readability, moody */
-  .ov-dark    {position:absolute;inset:0;background:rgba(12,20,15,.65);}
-  .ov-dark-b  {position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,11,.95) 0%,rgba(8,16,11,.6) 45%,rgba(8,16,11,.18) 100%);}
-  .ov-dark-top{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,16,11,.7) 0%,rgba(8,16,11,.15) 40%,rgba(8,16,11,.0) 60%,rgba(8,16,11,.88) 100%);}
+  /* Vignette scura per leggibilità testo centrato */
+  .ov-vignette{
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 50%,rgba(8,15,11,.25) 0%,rgba(8,15,11,.72) 100%);
+  }
+  /* Gradiente basso: testo in basso su foto */
+  .ov-bottom{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(6,12,9,.92) 0%,rgba(6,12,9,.55) 35%,rgba(6,12,9,.15) 65%,rgba(6,12,9,.08) 100%);
+  }
+  /* Top+bottom (per testo in cima e in fondo) */
+  .ov-frame{
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom,rgba(6,12,9,.6) 0%,rgba(6,12,9,.12) 30%,rgba(6,12,9,.06) 55%,rgba(6,12,9,.78) 100%);
+  }
+  /* Morbido full (per foto chiare) */
+  .ov-soft{
+    position:absolute;inset:0;
+    background:rgba(8,15,11,.46);
+  }
+  /* Molto morbido (foto quasi intera) */
+  .ov-minimal{
+    position:absolute;inset:0;
+    background:linear-gradient(150deg,rgba(8,15,11,.28) 0%,rgba(8,15,11,.52) 100%);
+  }
 
-  /* Frosted light — airy, spa, cream */
-  .ov-frost   {position:absolute;inset:0;background:rgba(241,236,226,.72);}
-  .ov-frost-b {position:absolute;inset:0;background:linear-gradient(to top,rgba(241,236,226,.95) 0%,rgba(241,236,226,.75) 50%,rgba(241,236,226,.3) 100%);}
+  /* ── CONTENT LAYER ── */
+  .layer{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;color:var(--cream);padding:34px 38px;}
+  .layer.center{align-items:center;text-align:center;justify-content:center;}
 
-  /* Soft green tint — sage/wellness */
-  .ov-sage    {position:absolute;inset:0;background:linear-gradient(145deg,rgba(15,30,22,.7) 0%,rgba(40,65,50,.55) 100%);}
-  .ov-sage-b  {position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,16,.96) 0%,rgba(25,48,36,.65) 50%,rgba(25,48,36,.28) 100%);}
+  .top-bar{display:flex;justify-content:space-between;align-items:flex-start;width:100%;}
+  .spacer{flex:1;}
+  .bot-area{margin-top:auto;width:100%;}
 
-  /* ── inner layout ── */
-  .inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;padding:38px 40px;}
+  /* ── TYPE ── */
+  .wm   {font-family:'Italiana',serif;letter-spacing:.18em;}
+  .wm-lg{font-size:26px;}
+  .wm-sm{font-size:20px;}
+  .wm-xs{font-size:16px;}
+  .mono {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;}
+  .ey   {font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;}
 
-  .top-bar{display:flex;justify-content:space-between;align-items:flex-start;}
-  .wordmark{font-family:'Italiana',serif;letter-spacing:.18em;}
-  .wordmark.lg{font-size:26px;}
-  .wordmark.sm{font-size:20px;}
-  .mono{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;}
-  .eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;}
-
-  .mid{flex:1;display:flex;flex-direction:column;justify-content:center;}
-  .bot{margin-top:auto;}
-
-  /* ── type scale ── */
-  .t-xl {font-family:'Cormorant Garamond',serif;font-weight:300;font-size:72px;line-height:.92;letter-spacing:-.025em;}
-  .t-lg {font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:.95;letter-spacing:-.02em;}
-  .t-md {font-family:'Cormorant Garamond',serif;font-weight:400;font-size:40px;line-height:1.05;letter-spacing:-.015em;}
-  .t-quote{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:38px;line-height:1.18;letter-spacing:-.01em;}
-  .t-ref{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:64px;line-height:.88;letter-spacing:-.025em;}
-  .body{font-size:12.5px;line-height:1.7;}
-  .body-xs{font-size:11px;line-height:1.6;}
+  /* headline scale */
+  .t-hero{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:66px;line-height:.91;letter-spacing:-.025em;}
+  .t-big {font-family:'Cormorant Garamond',serif;font-weight:300;font-size:78px;line-height:.88;letter-spacing:-.03em;}
+  .t-med {font-family:'Cormorant Garamond',serif;font-weight:400;font-size:46px;line-height:.96;letter-spacing:-.018em;}
+  .t-sm  {font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;line-height:1.1;}
+  .body  {font-size:12.5px;line-height:1.74;}
+  .body-s{font-size:11.5px;line-height:1.68;}
   em.m{font-style:italic;color:var(--mint);}
-  em.s{font-style:italic;color:var(--sage);}
   em.c{font-style:italic;color:var(--cream);}
+  em.s{font-style:italic;opacity:.85;}
 
-  /* ── atoms ── */
-  .rule-w{height:0.5px;background:var(--line);margin:16px 0;}
-  .rule-k{height:0.5px;background:var(--line-ink);margin:16px 0;}
+  /* thin decorative line */
+  .deco-line{width:36px;height:0.5px;background:rgba(241,236,226,.5);display:block;margin:0 auto;}
+  .deco-line.left{margin:0;}
+  .deco-h{height:0.5px;background:rgba(241,236,226,.2);width:100%;}
 
-  .pill-glass{display:inline-flex;align-items:center;gap:8px;background:rgba(241,236,226,.14);border:0.5px solid rgba(241,236,226,.28);border-radius:999px;padding:8px 16px;font-size:12px;letter-spacing:.04em;backdrop-filter:blur(8px);color:var(--cream);}
-  .pill-mint{display:inline-flex;align-items:center;background:var(--mint);border-radius:999px;padding:9px 20px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);}
-  .pill-ink{display:inline-flex;align-items:center;background:var(--ink);border-radius:999px;padding:9px 20px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cream);}
-  .price-chip{background:rgba(241,236,226,.93);border-radius:12px;padding:12px 16px;display:inline-flex;flex-direction:column;align-items:center;backdrop-filter:blur(8px);}
-  .price-chip .pv{font-family:'Cormorant Garamond',serif;font-size:32px;line-height:1;color:var(--ink);}
-  .price-chip .pl{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  /* pills */
+  .pill-w  {display:inline-flex;align-items:center;gap:6px;border:0.5px solid rgba(241,236,226,.28);border-radius:999px;padding:7px 14px;font-size:11.5px;color:rgba(241,236,226,.78);}
+  .pill-mint{display:inline-flex;align-items:center;background:var(--mint);border-radius:999px;padding:9px 20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
+  .pill-cream{display:inline-flex;align-items:center;background:rgba(241,236,226,.9);border-radius:999px;padding:9px 20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
 
-  /* ── schedule ── */
+  /* price badge */
+  .price{background:rgba(241,236,226,.9);color:var(--ink);border-radius:10px;padding:9px 14px;display:inline-flex;flex-direction:column;align-items:center;}
+  .price .pv{font-family:'Cormorant Garamond',serif;font-size:27px;line-height:1;}
+  .price .pl{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.6;margin-top:2px;}
+
+  /* schedule */
   .sched{display:flex;flex-direction:column;}
-  .sched-row{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:11px 0;}
-  .sched-row+.sched-row{border-top:0.5px solid var(--line-ink);}
-  .sched.inv .sched-row+.sched-row{border-top-color:var(--line);}
-  .sr-t{font-family:'DM Mono',monospace;font-size:11px;padding-top:2px;}
+  .sr{display:grid;grid-template-columns:50px 1fr;gap:10px;padding:9px 0;}
+  .sr+.sr{border-top:0.5px solid rgba(241,236,226,.14);}
+  .sr-t{font-family:'DM Mono',monospace;font-size:10px;color:var(--mint);padding-top:3px;}
   .sr-h{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;}
 
-  /* ── editable number ── */
-  .big-n{font-family:'Italiana',serif;font-size:200px;line-height:.82;letter-spacing:-.02em;color:var(--mint);background:none;border:none;outline:none;width:2.2ch;caret-color:var(--mint);}
+  /* big editable number */
+  .bign{font-family:'Italiana',serif;font-size:190px;line-height:.82;letter-spacing:-.02em;background:none;border:none;outline:none;caret-color:var(--mint);}
 
   @media(max-width:580px){
-    .card.square,.card.story{width:calc(100vw - 40px);}
-    .card.square{height:calc(100vw - 40px);}
-    .card.story{height:calc((100vw - 40px)*16/9);}
-    .t-xl{font-size:clamp(42px,12vw,72px);}
-    .t-lg{font-size:clamp(34px,10vw,56px);}
-    .big-n{font-size:clamp(120px,33vw,200px);}
-    .inner{padding:clamp(20px,5vw,38px) clamp(22px,5.5vw,40px);}
+    .card.sq,.card.st{width:calc(100vw - 40px);}
+    .card.sq{height:calc(100vw - 40px);}
+    .card.st{height:calc((100vw - 40px)*16/9);}
+    .t-hero{font-size:clamp(42px,13vw,66px);}
+    .t-big {font-size:clamp(50px,16vw,78px);}
+    .bign  {font-size:clamp(120px,35vw,190px);}
+    .layer{padding:clamp(24px,5.5vw,34px) clamp(26px,6vw,38px);}
   }
 </style>
 </head>
@@ -124,12 +137,13 @@
 
 <div class="page-hd">
   <div class="brand">BeMore</div>
-  <div class="sub">Grafiche Post · Giugno 2026 · KiKlub</div>
-  <div class="tip">Apri dal telefono → fai uno screenshot di ogni card → pubblica.<br/>Su iPhone: tasto laterale + volume. Su Android: tasto laterale + volume giù.</div>
+  <div class="sub">Grafiche Post · Giugno 2026</div>
+  <div class="tip">Apri dal telefono → screenshot di ogni card → pubblica.<br/>iPhone: tasto laterale + volume su · Android: laterale + volume giù</div>
 </div>
 
+
 <!-- ══════════════════════════════════
-     SETTIMANA 1 · LANCIO · 1–7 giu
+     SETTIMANA 1 · LANCIO
 ══════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 1 · 1–7 Giugno</span>
@@ -137,112 +151,112 @@
   <span class="wt">Lancio</span>
 </div>
 
-<!-- 01 · FEED · annuncio apertura posti ─────────────────────────── -->
+<!-- ── 01 · FEED · Annuncio lancio ─────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>1 Giugno</span></div>
-  <div class="card square">
-    <!-- foto KiKlub sfocata → testo in primo piano -->
-    <img class="bg blur-soft" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 45%;"/>
-    <div class="ov-dark-top"></div>
-    <div class="inner" style="color:var(--cream);">
-      <div class="top-bar">
-        <div>
-          <div class="wordmark lg">BeMore</div>
-          <div class="mono" style="margin-top:4px;opacity:.6">Wellness Community</div>
-        </div>
-        <div style="text-align:right;">
-          <div class="mono" style="opacity:.55">27 GIU · 2026</div>
-          <div class="mono" style="margin-top:3px;opacity:.45">Vol. 02</div>
-        </div>
+  <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>1 Giugno · Lancio</span></div>
+  <div class="card sq">
+    <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 40%;"/>
+    <div class="ov-frame"></div>
+    <div class="layer center">
+      <!-- brand mark top -->
+      <div class="top-bar" style="position:absolute;top:0;left:0;right:0;padding:28px 36px;">
+        <div class="wm wm-sm" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.5;">27 GIU · 2026</div>
       </div>
 
-      <div class="mid" style="justify-content:flex-end;padding-bottom:6px;">
-        <div class="eyebrow" style="opacity:.7;margin-bottom:12px;">Prossimo evento BeMore</div>
-        <div class="t-lg">Yoga &amp;<br/><em class="m">Rituale Viso.</em></div>
-        <div class="rule-w" style="margin:18px 0 14px;"></div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <span class="pill-glass">📍 KiKlub · Messina</span>
-          <span class="pill-glass">🕙 10:00–12:00</span>
-        </div>
+      <!-- titolo centrale -->
+      <span class="deco-line" style="margin-bottom:22px;"></span>
+      <div class="ey" style="opacity:.65;margin-bottom:16px;letter-spacing:.35em;">Sabato 27 Giugno 2026</div>
+      <div class="t-hero" style="max-width:10ch;">
+        Yoga &amp;<br/>
+        <em class="m">Rituale Viso.</em>
+      </div>
+      <div style="margin:20px auto;height:0.5px;width:40px;background:rgba(241,236,226,.35);"></div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;">
+        <span class="pill-w">📍 KiKlub · Messina</span>
+        <span class="pill-w">🕙 10:00–12:00</span>
       </div>
 
-      <div class="bot" style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;">
-        <span class="pill-mint">Prenota · 20€ →</span>
-        <div class="price-chip"><div class="pv">20€</div><div class="pl">tutto incluso</div></div>
+      <!-- CTA bottom -->
+      <div class="bot-area" style="display:flex;justify-content:center;gap:14px;align-items:center;">
+        <span class="pill-mint">Prenota il tuo posto →</span>
+        <div class="price"><div class="pv">20€</div><div class="pl">incluso</div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 02 · STORY · lancio (foto nitida, overlay gradiente basso) ─── -->
+<!-- ── 02 · STORY · Lancio ──────────────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>02</span><span class="badge badge-story">Post · Story</span><span>1 Giugno</span></div>
-  <div class="card story">
-    <img class="bg" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/>
-    <div class="ov-sage-b"></div>
-    <div class="inner" style="color:var(--cream);">
+  <div class="card-lbl"><span>02</span><span class="badge badge-story">Post · Story</span><span>1 Giugno · Lancio</span></div>
+  <div class="card st">
+    <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/>
+    <div class="ov-bottom"></div>
+    <div class="layer">
+      <!-- top -->
       <div class="top-bar">
-        <div class="wordmark lg">BeMore</div>
-        <div class="mono" style="opacity:.55">Vol. 02 · 2026</div>
+        <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.45;">Vol. 02 · 2026</div>
       </div>
 
-      <div class="bot">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:18px;">Prenotazioni aperte</div>
-        <div class="t-xl">Una mattina<br/><em class="m">per te.</em></div>
-        <div class="rule-w" style="margin:22px 0 16px;"></div>
-        <div class="body" style="opacity:.8;margin-bottom:22px;">
+      <!-- bottom block -->
+      <div class="bot-area">
+        <div class="ey" style="color:var(--mint);margin-bottom:18px;letter-spacing:.3em;">Prenotazioni aperte</div>
+        <div class="t-big" style="margin-bottom:6px;">Una</div>
+        <div class="t-big" style="margin-bottom:6px;">mattina</div>
+        <div class="t-big"><em class="m">per te.</em></div>
+        <div class="deco-h" style="margin:22px 0 18px;"></div>
+        <div class="body" style="opacity:.75;margin-bottom:24px;">
           Yoga · Corso Rituale Massaggio Viso<br/>
-          KiKlub di Granatari · Messina<br/>
+          Dott.ssa Mimma Luciano · KiKlub · Messina<br/>
           Sabato 27 Giugno · h 10:00 – 12:00
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;">
           <span class="pill-mint">Riserva · 10€ acconto →</span>
-          <div class="price-chip"><div class="pv">20€</div><div class="pl">tutto incluso</div></div>
+          <div class="price"><div class="pv">20€</div><div class="pl">tutto incluso</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 03 · FEED · referral "Venite in 4" ─────────────────────────── -->
+<!-- ── 03 · FEED · Referral "Venite in 4" ───────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>03</span><span class="badge badge-feed">Post · Feed</span><span>5 Giugno · Referral</span></div>
-  <div class="card square">
-    <!-- foto sfocatissima → quasi texture -->
-    <img class="bg blur-hard" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 55%;"/>
-    <div class="ov-sage" style="background:linear-gradient(150deg,rgba(12,22,16,.82) 0%,rgba(12,22,16,.9) 100%);"></div>
-    <div class="inner" style="color:var(--cream);">
-      <div class="top-bar">
-        <div class="wordmark sm" style="color:var(--mint)">BeMore</div>
-        <div class="mono" style="opacity:.5">27 Giugno</div>
+  <div class="card sq">
+    <img class="photo" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 55%;"/>
+    <div class="ov-vignette" style="background:radial-gradient(ellipse at 50% 50%,rgba(8,15,11,.35) 0%,rgba(8,15,11,.82) 100%);"></div>
+    <div class="layer center">
+      <div class="top-bar" style="position:absolute;top:0;left:0;right:0;padding:28px 36px;">
+        <div class="wm wm-sm" style="opacity:.8;">BeMore</div>
+        <div class="mono" style="opacity:.45;">27 Giugno</div>
       </div>
 
-      <div class="mid">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:18px;">Porta 3 amici →</div>
-        <div class="t-ref">Venite<br/>in <em class="m">quattro.</em></div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-top:18px;opacity:.7;line-height:1.35;">
-          Uno entra gratis.
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="ey" style="color:var(--mint);margin-bottom:20px;letter-spacing:.3em;">Un'offerta per le tue amiche</div>
+        <div class="t-hero" style="font-size:58px;max-width:9ch;">
+          Venite<br/>in <em class="m">quattro.</em>
         </div>
-        <div class="rule-w" style="margin:20px 0;"></div>
-        <div class="body" style="opacity:.72;">
-          Se porti 3 amici che si prenotano con l'acconto,<br/>
-          il tuo biglietto è completamente gratuito.
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;opacity:.7;margin-top:12px;font-style:italic;">
+          Una entra gratis.
+        </div>
+        <div style="margin:20px 0;height:0.5px;width:40px;background:rgba(241,236,226,.3);"></div>
+        <div class="body-s" style="opacity:.65;max-width:32ch;">
+          Porta 3 amiche che si prenotano con l'acconto<br/>e il tuo biglietto è completamente gratuito.
         </div>
       </div>
 
-      <div class="bot" style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="body-xs" style="opacity:.6;">
-          Yoga · Rituale Massaggio Viso<br/>
-          Sabato 27 Giugno · 20€ a persona
-        </div>
-        <span class="pill-mint" style="white-space:nowrap;">Info →</span>
+      <div class="bot-area" style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+        <span class="pill-w">Yoga · Rituale Massaggio Viso</span>
+        <span class="pill-mint">Info →</span>
       </div>
     </div>
   </div>
 </div>
 
+
 <!-- ══════════════════════════════════
-     SETTIMANA 2 · URGENCY · 8–14 giu
+     SETTIMANA 2 · URGENCY
 ══════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 2 · 8–14 Giugno</span>
@@ -250,111 +264,110 @@
   <span class="wt">Urgency</span>
 </div>
 
-<!-- 04 · STORY · posti rimasti (numero editabile) ──────────────── -->
+<!-- ── 04 · STORY · Posti rimasti (numero editabile) ─────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>04</span><span class="badge badge-story">Post · Story</span><span>8 Giugno · Urgency · tocca il numero per cambiarlo</span></div>
-  <div class="card story">
-    <img class="bg blur-med" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 40%;"/>
-    <div class="ov-dark" style="background:rgba(10,18,13,.78);"></div>
-    <div class="inner" style="color:var(--cream);">
+  <div class="card st">
+    <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 40%;"/>
+    <div class="ov-bottom" style="background:linear-gradient(to top,rgba(6,12,9,.96) 0%,rgba(6,12,9,.65) 40%,rgba(6,12,9,.22) 70%,rgba(6,12,9,.1) 100%);"></div>
+    <div class="layer">
       <div class="top-bar">
-        <div class="wordmark lg">BeMore</div>
-        <div class="mono" style="opacity:.5">27 Giugno 2026</div>
+        <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.4;">27 Giugno 2026</div>
       </div>
 
-      <div class="mid" style="align-items:flex-start;">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:16px;">Posti rimasti</div>
-        <input class="big-n" type="text" value="8" maxlength="2" inputmode="numeric"
+      <div class="bot-area">
+        <div class="ey" style="color:var(--mint);margin-bottom:14px;letter-spacing:.3em;">Posti rimasti</div>
+        <input class="bign" type="text" value="8" maxlength="2" inputmode="numeric"
+          style="color:var(--cream);"
           oninput="this.style.width=Math.max(1,this.value.length)+'ch'"/>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;letter-spacing:.04em;opacity:.8;margin-top:10px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;opacity:.75;margin-top:8px;font-style:italic;">
           posti rimasti.
         </div>
-        <div class="rule-w" style="width:100%;margin-top:28px;"></div>
-        <div class="body" style="opacity:.72;margin-top:0;">
+        <div class="deco-h" style="margin:24px 0 16px;"></div>
+        <div class="body" style="opacity:.68;margin-bottom:22px;">
           Yoga · Corso Rituale Massaggio Viso<br/>
-          Sabato 27 Giugno · KiKlub · Messina
+          KiKlub · Villa Morgana · Messina
         </div>
-      </div>
-
-      <div class="bot">
         <span class="pill-mint">Prenota ora · 10€ acconto →</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 05 · FEED · programma (look frosted, foto sfocata chiara) ──── -->
+<!-- ── 05 · FEED · Programma ────────────────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>05</span><span class="badge badge-feed">Post · Feed</span><span>11 Giugno · Programma</span></div>
-  <div class="card square">
-    <img class="bg blur-hard" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 50%;"/>
-    <div class="ov-frost"></div>
-    <div class="inner" style="color:var(--ink);">
+  <div class="card sq">
+    <img class="photo" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 50%;"/>
+    <div class="ov-soft" style="background:rgba(8,15,11,.62);"></div>
+    <div class="layer">
+      <!-- top -->
       <div class="top-bar">
         <div>
-          <div style="font-family:'Italiana',serif;font-size:22px;letter-spacing:.18em;">BeMore</div>
-          <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:3px;">27 Giugno 2026</div>
+          <div class="wm wm-sm" style="opacity:.9;">BeMore</div>
+          <div class="mono" style="margin-top:4px;opacity:.42;">Cronoprogramma</div>
         </div>
-        <div style="font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);text-align:right;">
-          Cronoprogramma
-        </div>
+        <div class="mono" style="opacity:.42;text-align:right;">27 Giugno<br/>KiKlub</div>
       </div>
 
-      <div class="mid">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;line-height:1.12;margin-bottom:16px;">
-          Una mattina per <em style="color:var(--sage);">te.</em>
+      <!-- mid: schedule -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;margin:18px 0;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;font-style:italic;opacity:.9;margin-bottom:16px;">
+          Una mattina per te.
         </div>
         <div class="sched">
-          <div class="sched-row" style="border-top:0.5px solid var(--line-ink);border-bottom:0.5px solid var(--line-ink);">
-            <div class="sr-t" style="color:var(--sage);">10:00</div>
+          <div class="sr">
+            <div class="sr-t">10:00</div>
             <div class="sr-h">Accoglienza &amp; Welcome Drink</div>
           </div>
-          <div class="sched-row" style="border-bottom:0.5px solid var(--line-ink);">
-            <div class="sr-t" style="color:var(--sage);">10:20</div>
-            <div class="sr-h">Pratica Yoga con Mimma</div>
+          <div class="sr">
+            <div class="sr-t">10:20</div>
+            <div class="sr-h">Pratica Yoga · Dott.ssa Mimma Luciano</div>
           </div>
-          <div class="sched-row" style="border-bottom:0.5px solid var(--line-ink);">
-            <div class="sr-t" style="color:var(--sage);">11:10</div>
+          <div class="sr">
+            <div class="sr-t">11:10</div>
             <div class="sr-h">Corso Rituale Massaggio Viso</div>
           </div>
-          <div class="sched-row" style="border-bottom:0.5px solid var(--line-ink);">
-            <div class="sr-t" style="color:var(--sage);">11:50</div>
+          <div class="sr">
+            <div class="sr-t">11:50</div>
             <div class="sr-h">Wellness Bar con Mileidy</div>
           </div>
         </div>
       </div>
 
-      <div class="bot" style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;">
-        <div style="font-size:12px;color:var(--muted);line-height:1.6;">
-          KiKlub · Villa Morgana · Messina<br/>
-          <strong style="color:var(--ink);">Sabato 27 Giugno · 10:00–12:00</strong>
+      <!-- bottom -->
+      <div class="bot-area" style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="body-s" style="opacity:.6;line-height:1.6;">
+          KiKlub · Messina<br/>
+          Sabato 27 Giugno
         </div>
-        <span class="pill-ink">20€ →</span>
+        <span class="pill-mint">20€ →</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 06 · STORY · countdown 7 giorni ────────────────────────────── -->
+<!-- ── 06 · STORY · Countdown 7 giorni ─────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>06</span><span class="badge badge-story">Post · Story</span><span>13 Giugno · Countdown</span></div>
-  <div class="card story">
-    <img class="bg blur-soft" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 25%;"/>
-    <div class="ov-sage-b"></div>
-    <div class="inner" style="color:var(--cream);">
+  <div class="card st">
+    <img class="photo" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 25%;"/>
+    <div class="ov-bottom"></div>
+    <div class="layer">
       <div class="top-bar">
-        <div class="wordmark lg">BeMore</div>
-        <div class="mono" style="opacity:.5">Giugno 2026</div>
+        <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.4;">Giugno 2026</div>
       </div>
 
-      <div class="bot">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:16px;">Mancano</div>
-        <div style="display:flex;align-items:baseline;gap:14px;">
-          <div style="font-family:'Italiana',serif;font-size:148px;line-height:.82;color:var(--cream);">7</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;opacity:.75;line-height:1.15;">giorni<br/>all'evento.</div>
+      <div class="bot-area">
+        <div class="ey" style="color:var(--mint);margin-bottom:16px;letter-spacing:.3em;">Mancano</div>
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:8px;">
+          <div style="font-family:'Italiana',serif;font-size:160px;line-height:.82;color:var(--cream);">7</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;opacity:.8;line-height:1.05;font-style:italic;">giorni<br/>all'evento.</div>
         </div>
-        <div class="rule-w" style="margin:22px 0 16px;"></div>
-        <div class="body" style="opacity:.78;margin-bottom:22px;">
+        <div class="deco-h" style="margin:22px 0 16px;"></div>
+        <div class="body" style="opacity:.72;margin-bottom:22px;">
           Yoga · Corso Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina<br/>
           Sabato 27 Giugno · h 10:00 – 12:00
@@ -365,8 +378,9 @@
   </div>
 </div>
 
+
 <!-- ══════════════════════════════════
-     SETTIMANA 3 · RETENTION · 15–27 giu
+     SETTIMANA 3 · RETENTION
 ══════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 3 · 15–27 Giugno</span>
@@ -374,98 +388,96 @@
   <span class="wt">Retention</span>
 </div>
 
-<!-- 07 · FEED · experiential copy ──────────────────────────────── -->
+<!-- ── 07 · FEED · Experiential quote ───────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>07</span><span class="badge badge-feed">Post · Feed</span><span>15 Giugno · Experiential</span></div>
-  <div class="card square">
-    <img class="bg" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 50%;"/>
-    <div class="ov-dark" style="background:rgba(10,18,13,.6);"></div>
-    <div class="inner" style="color:var(--cream);">
-      <div class="top-bar">
-        <div class="wordmark sm" style="color:var(--mint)">BeMore</div>
-        <div class="mono" style="opacity:.5">27 Giugno</div>
+  <div class="card sq">
+    <img class="photo" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 50%;"/>
+    <div class="ov-minimal" style="background:rgba(8,15,11,.5);"></div>
+    <div class="layer center">
+      <div class="top-bar" style="position:absolute;top:0;left:0;right:0;padding:28px 36px;">
+        <div class="wm wm-sm" style="opacity:.8;">BeMore</div>
+        <div class="mono" style="opacity:.4;">27 Giugno</div>
       </div>
 
-      <div class="mid">
-        <div class="t-quote">
+      <div>
+        <span class="deco-line" style="margin-bottom:22px;opacity:.6;"></span>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:38px;line-height:1.15;letter-spacing:-.01em;max-width:15ch;font-style:italic;">
           Un posto al sole,<br/>
           un corpo che <em class="m">si muove,</em><br/>
           una mente che si ferma.
         </div>
+        <div style="margin:20px auto;height:0.5px;width:40px;background:rgba(241,236,226,.3);"></div>
+        <div class="body-s" style="opacity:.62;">
+          Yoga · Rituale Massaggio Viso<br/>
+          Sabato 27 Giugno · 20€ · Pochi posti rimasti
+        </div>
       </div>
 
-      <div class="bot">
-        <div class="rule-w"></div>
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <div class="body" style="opacity:.75;line-height:1.65;">
-            Yoga · Rituale Massaggio Viso<br/>
-            Sabato 27 Giugno · 20€ · Pochi posti
-          </div>
-          <span class="pill-mint" style="margin-left:14px;white-space:nowrap;">Prenota →</span>
-        </div>
+      <div class="bot-area" style="display:flex;justify-content:center;">
+        <span class="pill-mint">Prenota →</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 08 · STORY · 48h reminder ──────────────────────────────────── -->
+<!-- ── 08 · STORY · 48h reminder ────────────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>08</span><span class="badge badge-story">Post · Story</span><span>18 Giugno · 48h Reminder</span></div>
-  <div class="card story">
-    <img class="bg blur-med" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 60%;"/>
-    <div class="ov-dark" style="background:rgba(8,16,11,.82);"></div>
-    <div class="inner" style="color:var(--cream);">
+  <div class="card st">
+    <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 55%;"/>
+    <div class="ov-bottom" style="background:linear-gradient(to top,rgba(6,12,9,.96) 0%,rgba(6,12,9,.6) 38%,rgba(6,12,9,.2) 65%,rgba(6,12,9,.1) 100%);"></div>
+    <div class="layer">
       <div class="top-bar">
-        <div class="wordmark lg">BeMore</div>
-        <div class="mono" style="opacity:.5">27 Giugno 2026</div>
+        <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.4;">27 Giugno 2026</div>
       </div>
 
-      <div class="mid" style="align-items:flex-start;">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:16px;">Mancano</div>
-        <div style="font-family:'Italiana',serif;font-size:180px;line-height:.82;color:var(--cream);">48</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;letter-spacing:.04em;opacity:.75;margin-top:12px;">
+      <div class="bot-area">
+        <div class="ey" style="color:var(--mint);margin-bottom:16px;letter-spacing:.3em;">Mancano</div>
+        <div style="font-family:'Italiana',serif;font-size:190px;line-height:.82;color:var(--cream);">48</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;opacity:.75;margin-top:12px;font-style:italic;">
           ore · e ci siamo.
         </div>
-        <div class="rule-w" style="width:100%;margin-top:28px;"></div>
-        <div class="body" style="opacity:.7;margin-top:0;">
+        <div class="deco-h" style="margin:24px 0 16px;"></div>
+        <div class="body" style="opacity:.65;margin-bottom:22px;">
           Yoga · Corso Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina
         </div>
-      </div>
-
-      <div class="bot">
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <div class="body-xs" style="opacity:.6;">
-            Hai il tuo posto?<br/>Scrivi su WhatsApp per prenotare.
+          <div class="body-s" style="opacity:.55;">
+            Hai già il tuo posto?<br/>
+            Scrivi su WhatsApp.
           </div>
-          <span class="pill-mint" style="white-space:nowrap;">Prenota →</span>
+          <span class="pill-cream">Prenota →</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 09 · STORY · mattina dell'evento ───────────────────────────── -->
+<!-- ── 09 · STORY · Mattina dell'evento ─────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>09</span><span class="badge badge-story">Post · Story</span><span>27 Giugno · mattina</span></div>
-  <div class="card story">
-    <img class="bg" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 35%;"/>
-    <div class="ov-sage-b"></div>
-    <div class="inner" style="color:var(--cream);">
+  <div class="card-lbl"><span>09</span><span class="badge badge-story">Post · Story</span><span>27 Giugno · mattina dell'evento</span></div>
+  <div class="card st">
+    <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 35%;"/>
+    <div class="ov-bottom" style="background:linear-gradient(to top,rgba(6,12,9,.88) 0%,rgba(6,12,9,.5) 38%,rgba(6,12,9,.1) 65%,transparent 100%);"></div>
+    <div class="layer">
       <div class="top-bar">
-        <div class="wordmark lg">BeMore</div>
-        <div class="mono" style="opacity:.5">27 · 06 · 2026</div>
+        <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
+        <div class="mono" style="opacity:.4;">27 · 06 · 2026</div>
       </div>
 
-      <div class="bot">
-        <div class="eyebrow" style="color:var(--mint);margin-bottom:16px;">Sabato 27 Giugno</div>
-        <div class="t-xl">Ci vediamo<br/><em class="m">oggi.</em></div>
-        <div class="rule-w" style="margin:22px 0 16px;"></div>
-        <div class="body" style="opacity:.8;margin-bottom:22px;">
+      <div class="bot-area">
+        <div class="ey" style="color:var(--mint);margin-bottom:18px;letter-spacing:.3em;">Sabato 27 Giugno</div>
+        <div class="t-big" style="margin-bottom:6px;">Ci vediamo</div>
+        <div class="t-big"><em class="m">oggi.</em></div>
+        <div class="deco-h" style="margin:22px 0 16px;"></div>
+        <div class="body" style="opacity:.75;margin-bottom:22px;">
           KiKlub di Granatari · Messina<br/>
           h 10:00 · Welcome drink pronto ✦
         </div>
-        <span class="pill-glass">Wellness Community · Vol. 02</span>
+        <span class="pill-w">Wellness Community · Vol. 02</span>
       </div>
     </div>
   </div>
