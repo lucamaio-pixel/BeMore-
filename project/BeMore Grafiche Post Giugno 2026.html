@@ -156,37 +156,36 @@
   <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>1 Giugno · Lancio</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 40%;"/>
-    <div class="ov-frame"></div>
-    <!-- velo extra al centro per leggibilità titolo -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 52%,rgba(6,12,9,.55) 0%,rgba(6,12,9,.05) 68%);"></div>
-    <div class="layer center">
-      <!-- brand mark top -->
-      <div class="top-bar" style="position:absolute;top:0;left:0;right:0;padding:28px 36px;">
-        <div class="wm wm-sm" style="opacity:.9;">BeMore</div>
+    <!-- overlay uniforme forte — foto esterna molto luminosa -->
+    <div style="position:absolute;inset:0;background:rgba(6,12,9,.62);"></div>
+    <!-- gradiente bottom per separare CTA -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,9,.55) 0%,transparent 50%);"></div>
+
+    <div class="layer" style="align-items:center;text-align:center;justify-content:space-between;padding:30px 36px;">
+      <!-- top brand -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;width:100%;">
+        <div class="wm wm-sm">BeMore</div>
         <div class="mono" style="opacity:.5;">27 GIU · 2026</div>
       </div>
 
-      <!-- ghost word dietro tutto -->
-      <div style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:174px;font-weight:300;font-style:italic;opacity:.07;color:var(--cream);letter-spacing:-.03em;white-space:nowrap;transform:translateY(8px);">Calm.</div>
+      <!-- blocco titolo centrato -->
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div style="width:32px;height:0.5px;background:rgba(241,236,226,.4);margin-bottom:16px;"></div>
+        <div class="ey" style="opacity:.7;margin-bottom:14px;letter-spacing:.32em;">Sabato 27 Giugno 2026</div>
+        <div class="t-hero" style="font-size:60px;line-height:.94;">
+          Yoga &amp;<br/><em class="m">Rituale Viso.</em>
+        </div>
+        <div style="width:32px;height:0.5px;background:rgba(241,236,226,.4);margin:18px 0 14px;"></div>
+        <!-- info chiave: dove + quando + chi -->
+        <div style="font-size:13px;line-height:1.9;opacity:.88;">
+          📍 KiKlub · Villa Morgana · Messina<br/>
+          🕙 Sabato 27 Giugno · 10:00–12:00<br/>
+          🧘 Yoga con la Dott.ssa Mimma Luciano
+        </div>
       </div>
 
-      <!-- titolo centrale -->
-      <span class="deco-line" style="margin-bottom:18px;"></span>
-      <div style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;opacity:.5;margin-bottom:14px;font-family:'DM Mono',monospace;">calm · breathe · relax</div>
-      <div class="ey" style="opacity:.65;margin-bottom:16px;letter-spacing:.35em;">Sabato 27 Giugno 2026</div>
-      <div class="t-hero" style="max-width:10ch;text-shadow:0 2px 20px rgba(0,0,0,.65),0 4px 40px rgba(0,0,0,.4);">
-        Yoga &amp;<br/>
-        <em class="m">Rituale Viso.</em>
-      </div>
-      <div style="margin:20px auto;height:0.5px;width:40px;background:rgba(241,236,226,.35);"></div>
-      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;">
-        <span class="pill-w">📍 KiKlub · Messina</span>
-        <span class="pill-w">🕙 10:00–12:00</span>
-      </div>
-
-      <!-- CTA bottom -->
-      <div class="bot-area" style="display:flex;justify-content:center;gap:14px;align-items:center;">
+      <!-- CTA -->
+      <div style="display:flex;justify-content:center;gap:12px;align-items:center;width:100%;">
         <span class="pill-mint">Prenota il tuo posto →</span>
         <div class="price"><div class="pv">20€</div><div class="pl">incluso</div></div>
       </div>
