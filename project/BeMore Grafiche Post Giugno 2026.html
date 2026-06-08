@@ -122,9 +122,12 @@
   .bign{font-family:'Italiana',serif;font-size:190px;line-height:.82;letter-spacing:-.02em;background:none;border:none;outline:none;caret-color:var(--mint);}
 
   @media(max-width:580px){
-    .card.sq,.card.st{width:calc(100vw - 40px);}
-    .card.sq{height:calc(100vw - 40px);}
-    .card.st{height:calc((100vw - 40px)*16/9);}
+    /* card a tutta larghezza — esce dai margini della pagina */
+    .card-wrap{margin-left:-20px;margin-right:-20px;}
+    .card-lbl{padding-left:20px;}
+    .card.sq,.card.st{width:100vw;}
+    .card.sq{height:100vw;}
+    .card.st{height:calc(100vw * 16/9);}
     .t-hero{font-size:clamp(42px,13vw,66px);}
     .t-big {font-size:clamp(50px,16vw,78px);}
     .bign  {font-size:clamp(120px,35vw,190px);}
