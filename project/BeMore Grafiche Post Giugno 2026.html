@@ -122,9 +122,12 @@
   .bign{font-family:'Italiana',serif;font-size:190px;line-height:.82;letter-spacing:-.02em;background:none;border:none;outline:none;caret-color:var(--mint);}
 
   @media(max-width:580px){
-    .card.sq,.card.st{width:calc(100vw - 40px);}
-    .card.sq{height:calc(100vw - 40px);}
-    .card.st{height:calc((100vw - 40px)*16/9);}
+    /* card a tutta larghezza — esce dai margini della pagina */
+    .card-wrap{margin-left:-20px;margin-right:-20px;}
+    .card-lbl{padding-left:20px;}
+    .card.sq,.card.st{width:100vw;}
+    .card.sq{height:100vw;}
+    .card.st{height:calc(100vw * 16/9);}
     .t-hero{font-size:clamp(42px,13vw,66px);}
     .t-big {font-size:clamp(50px,16vw,78px);}
     .bign  {font-size:clamp(120px,35vw,190px);}
@@ -146,14 +149,14 @@
      SETTIMANA 1 · LANCIO
 ══════════════════════════════════ -->
 <div class="week-hd">
-  <span class="wl">Settimana 1 · 1–7 Giugno</span>
+  <span class="wl">Settimana 1 · 8–14 Giugno</span>
   <div class="wr"></div>
   <span class="wt">Lancio</span>
 </div>
 
 <!-- ── 01 · FEED · Annuncio lancio ─────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>1 Giugno · Lancio</span></div>
+  <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>8 Giugno · Lancio</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 40%;"/>
     <!-- overlay uniforme forte — foto esterna molto luminosa -->
@@ -203,7 +206,7 @@
 
 <!-- ── 02 · STORY · Lancio ──────────────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>02</span><span class="badge badge-story">Post · Story</span><span>1 Giugno · Lancio</span></div>
+  <div class="card-lbl"><span>02</span><span class="badge badge-story">Post · Story</span><span>8 Giugno · Lancio</span></div>
   <div class="card st">
     <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/>
     <div class="ov-bottom"></div>
@@ -227,7 +230,7 @@
           Sabato 27 Giugno · h 10:00 – 12:00
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <span class="pill-mint">Riserva · 10€ acconto →</span>
+          <span class="pill-mint">Prenota il tuo posto →</span>
           <div class="price"><div class="pv">20€</div><div class="pl">tutto incluso</div></div>
         </div>
       </div>
@@ -237,7 +240,7 @@
 
 <!-- ── 03 · FEED · Referral "Venite in 4" ───────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>03</span><span class="badge badge-feed">Post · Feed</span><span>5 Giugno · Referral</span></div>
+  <div class="card-lbl"><span>03</span><span class="badge badge-feed">Post · Feed</span><span>11 Giugno · Referral</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 55%;"/>
     <div class="ov-vignette" style="background:radial-gradient(ellipse at 50% 50%,rgba(8,15,11,.35) 0%,rgba(8,15,11,.82) 100%);"></div>
@@ -250,14 +253,14 @@
       <div style="display:flex;flex-direction:column;align-items:center;">
         <div class="ey" style="color:var(--mint);margin-bottom:20px;letter-spacing:.3em;">Un'offerta per le tue amiche</div>
         <div class="t-hero" style="font-size:58px;max-width:9ch;">
-          Venite<br/>in <em class="m">quattro.</em>
+          Venite<br/>in <em class="m">cinque.</em>
         </div>
         <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;opacity:.7;margin-top:12px;font-style:italic;">
           Una entra gratis.
         </div>
         <div style="margin:20px 0;height:0.5px;width:40px;background:rgba(241,236,226,.3);"></div>
         <div class="body-s" style="opacity:.65;max-width:32ch;">
-          Porta 3 amiche che si prenotano con l'acconto<br/>e il tuo biglietto è completamente gratuito.
+          Porta 4 amiche che si prenotano<br/>e il tuo biglietto è completamente gratuito.
         </div>
       </div>
 
@@ -274,14 +277,14 @@
      SETTIMANA 2 · URGENCY
 ══════════════════════════════════ -->
 <div class="week-hd">
-  <span class="wl">Settimana 2 · 8–14 Giugno</span>
+  <span class="wl">Settimana 2 · 15–21 Giugno</span>
   <div class="wr"></div>
   <span class="wt">Urgency</span>
 </div>
 
 <!-- ── 04 · STORY · Posti rimasti (numero editabile) ─────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>04</span><span class="badge badge-story">Post · Story</span><span>8 Giugno · Urgency · tocca il numero per cambiarlo</span></div>
+  <div class="card-lbl"><span>04</span><span class="badge badge-story">Post · Story</span><span>15 Giugno · Urgency · tocca il numero per cambiarlo</span></div>
   <div class="card st">
     <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 40%;"/>
     <div class="ov-bottom" style="background:linear-gradient(to top,rgba(6,12,9,.96) 0%,rgba(6,12,9,.65) 40%,rgba(6,12,9,.22) 70%,rgba(6,12,9,.1) 100%);"></div>
@@ -304,7 +307,7 @@
           Yoga · Corso Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina
         </div>
-        <span class="pill-mint">Prenota ora · 10€ acconto →</span>
+        <span class="pill-mint">Prenota ora →</span>
       </div>
     </div>
   </div>
@@ -312,7 +315,7 @@
 
 <!-- ── 05 · FEED · Programma ────────────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>05</span><span class="badge badge-feed">Post · Feed</span><span>11 Giugno · Programma</span></div>
+  <div class="card-lbl"><span>05</span><span class="badge badge-feed">Post · Feed</span><span>17 Giugno · Programma</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 50%;"/>
     <div class="ov-soft" style="background:rgba(8,15,11,.62);"></div>
@@ -334,19 +337,19 @@
         <div class="sched">
           <div class="sr">
             <div class="sr-t">10:00</div>
-            <div class="sr-h">Accoglienza &amp; Welcome Drink</div>
+            <div class="sr-h">Saluti &amp; Kit di Benvenuto</div>
           </div>
           <div class="sr">
-            <div class="sr-t">10:20</div>
+            <div class="sr-t">10:15</div>
             <div class="sr-h">Pratica Yoga · Dott.ssa Mimma Luciano</div>
           </div>
           <div class="sr">
             <div class="sr-t">11:10</div>
-            <div class="sr-h">Corso Rituale Massaggio Viso</div>
+            <div class="sr-h">Corso Rituale Massaggio Viso <em style="color:var(--mint);font-style:normal;">#yogaface</em></div>
           </div>
           <div class="sr">
-            <div class="sr-t">11:50</div>
-            <div class="sr-h">Wellness Bar con Mileidy</div>
+            <div class="sr-t">11:45</div>
+            <div class="sr-h">Wellness Drink con Mileidy</div>
           </div>
         </div>
       </div>
@@ -365,7 +368,7 @@
 
 <!-- ── 06 · STORY · Countdown 7 giorni ─────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>06</span><span class="badge badge-story">Post · Story</span><span>13 Giugno · Countdown</span></div>
+  <div class="card-lbl"><span>06</span><span class="badge badge-story">Post · Story</span><span>20 Giugno · Countdown</span></div>
   <div class="card st">
     <img class="photo" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 25%;"/>
     <div class="ov-bottom"></div>
@@ -395,17 +398,17 @@
 
 
 <!-- ══════════════════════════════════
-     SETTIMANA 3 · RETENTION
+     SETTIMANA 3 · CHIUSURA
 ══════════════════════════════════ -->
 <div class="week-hd">
-  <span class="wl">Settimana 3 · 15–27 Giugno</span>
+  <span class="wl">Settimana 3 · 22–27 Giugno</span>
   <div class="wr"></div>
-  <span class="wt">Retention</span>
+  <span class="wt">Chiusura</span>
 </div>
 
 <!-- ── 07 · FEED · Experiential quote ───────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>07</span><span class="badge badge-feed">Post · Feed</span><span>15 Giugno · Experiential</span></div>
+  <div class="card-lbl"><span>07</span><span class="badge badge-feed">Post · Feed</span><span>22 Giugno · Experiential</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0157.jpeg" alt="" style="object-position:center 50%;"/>
     <div class="ov-minimal" style="background:rgba(8,15,11,.5);"></div>
@@ -438,7 +441,7 @@
 
 <!-- ── 08 · STORY · 48h reminder ────────────────────────── -->
 <div class="card-wrap">
-  <div class="card-lbl"><span>08</span><span class="badge badge-story">Post · Story</span><span>18 Giugno · 48h Reminder</span></div>
+  <div class="card-lbl"><span>08</span><span class="badge badge-story">Post · Story</span><span>25 Giugno · 48h Reminder</span></div>
   <div class="card st">
     <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 55%;"/>
     <div class="ov-bottom" style="background:linear-gradient(to top,rgba(6,12,9,.96) 0%,rgba(6,12,9,.6) 38%,rgba(6,12,9,.2) 65%,rgba(6,12,9,.1) 100%);"></div>
