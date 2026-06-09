@@ -1020,13 +1020,13 @@
     {
       id: "27-giugno-2026",
       day: "27", month: "GIU", monthNum: "06", year: "2026",
-      title: "Yoga &amp; Rituale Viso",
-      subtitle: "Yoga &amp; corso rituale massaggio viso",
+      title: "Reset &amp; Glow",
+      subtitle: "Yoga · Rituale Massaggio Viso",
       loc: "KiKlub · Villa Morgana · Messina",
       status: "available",
       statusLabel: "Disponibile · 20€",
       detail: {
-        vol: "Vol. 02 · Yoga &amp; Rituale Viso",
+        vol: "Vol. 02 · Reset &amp; Glow",
         heroTitle: "Muoversi, respirare,<br/><em>prendersi cura.</em>",
         quando: "Sabato 27 Giugno 2026",
         orario: "10:00 — 12:00",
@@ -1036,7 +1036,7 @@
         posti: "20 max · su prenotazione",
         kit: "In aggiornamento — vi aggiorneremo a breve",
         foto: "assets/IMG_0155.jpeg",
-        fotoAlt: "BeMore · Yoga &amp; Rituale Viso · 27 Giugno 2026",
+        fotoAlt: "BeMore · Reset &amp; Glow · 27 Giugno 2026",
         prezzoVal: "20€",
         prezzoLabel: "tutto incluso",
         earlyBird: {
@@ -1047,9 +1047,9 @@
         waText: "Ciao%2C%20vorrei%20prenotare%20il%20mio%20posto%20per%20l%27evento%20BeMore%20del%2027%20giugno",
         program: [
           { t: "10:00", h: "Saluti &amp; Kit di Benvenuto", d: "Arrivo al KiKlub · accoglienza · primo momento di connessione" },
-          { t: "10:15", h: "Pratica Yoga con la Dott.ssa Mimma Luciano", d: "Sessione di movimento guidata · energia e leggerezza" },
+          { t: "10:15", h: "Pratica Yoga · Dott.ssa Mimma Luciano", d: "Yoga dolce di respiro · per tutti · adatto a ogni livello" },
           { t: "11:10", h: "Corso Rituale Massaggio Viso #yogaface", d: "Workshop pratico · maschera viso inclusa · tecniche da portare a casa" },
-          { t: "11:45", h: "Wellness Drink con Mileidy", d: "Momento di benessere · wellness drink · chiusura" }
+          { t: "11:45", h: "Wellness Drink con Mileidy", d: "Benessere · chiusura · welcome drink" }
         ],
         workshop: {
           title: "Il workshop: rituale massaggio viso",
@@ -1066,9 +1066,9 @@
         ],
         referral: {
           title: "Porta 4 amici → il tuo ingresso è gratis.",
-          sub: "Se porti 4 persone che si prenotano, il tuo biglietto è completamente gratuito. Venite in 5, una entra gratis.",
-          terms: "I 4 amici devono aver completato la prenotazione (20€ ciascuno). Scrivici su WhatsApp con i loro nomi per attivare l'offerta.",
-          waText: "Ciao%2C%20vorrei%20usare%20l%27offerta%20%22Porta%203%20amici%22%20per%20l%27evento%20del%2027%20giugno.%20I%20miei%20amici%20sono%3A%20"
+          sub: "Se porti 4 persone che si prenotano, il tuo biglietto è completamente gratuito. Venite in 5, uno entra gratis.",
+          terms: "I 4 amici devono completare la prenotazione (20€). Scrivici su WhatsApp con i loro nomi per attivare l'offerta.",
+          waText: "Ciao%2C%20vorrei%20usare%20l%27offerta%20%22Porta%204%20amici%22%20per%20Reset%20%26%20Glow%20del%2027%20giugno.%20I%20miei%20amici%20sono%3A%20"
         }
       }
     },
@@ -1134,7 +1134,7 @@
     const referralHtml = d.referral ? `
       <div class="referral-box">
         <div class="referral-top">
-          <div class="referral-icon">3→1</div>
+          <div class="referral-icon">4→1</div>
           <div class="referral-copy">
             <div class="referral-title">${d.referral.title}</div>
             <div class="referral-sub">${d.referral.sub}</div>
@@ -1275,7 +1275,7 @@
   document.getElementById("newsletter-form")?.addEventListener("submit", function(e) {
     e.preventDefault();
     const btn = this.querySelector(".news-cta");
-    btn.textContent = "Iscritta ✓ — A presto!";
+    btn.textContent = "Iscritto ✓ — A presto!";
     btn.disabled = true;
     btn.style.background = "var(--ink-2)";
   });
