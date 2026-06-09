@@ -717,6 +717,7 @@
           <span class="meta-pill"><span class="dot" aria-hidden="true"></span>Prossimo · 27 Giugno 2026</span>
           <span class="meta-pill">KiKlub · Villa Morgana · Messina</span>
           <span class="meta-pill">20 posti · 20€</span>
+          <span class="meta-pill">Vol. 01 · Sold out</span>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -829,7 +830,7 @@
           </div>
           <div class="collab-cta">
             <a class="btn btn-primary"
-               href="https://wa.me/?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
+               href="https://wa.me/393931808550?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
                target="_blank" rel="noopener noreferrer">
               Candidati ora →
             </a>
@@ -846,7 +847,7 @@
               <div class="cs"><span class="cs-n">4</span><span>Organizza il tuo primo evento</span></div>
             </div>
             <a class="cc-cta"
-               href="https://wa.me/?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
+               href="https://wa.me/393931808550?text=Ciao%2C%20ho%20visto%20BeMore%20e%20sono%20interessato%2Fa%20a%20collaborare%20e%20aprire%20la%20mia%20attivit%C3%A0.%20Possiamo%20parlarne%3F"
                target="_blank" rel="noopener noreferrer">
               Scrivici su WhatsApp →
             </a>
@@ -962,7 +963,7 @@
       </div>
       <div>
         <h4>Contatti</h4>
-        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://wa.me/393931808550" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="mailto:hello@bemore.community">hello@bemore.community</a>
       </div>
@@ -1044,6 +1045,7 @@
           std: "20€",
           desc: "Posti riservati e limitati. Prenota il tuo posto scrivendo su WhatsApp — 20€ alla prenotazione."
         },
+        soldOutNote: "✦ Il Vol. 01 è andato sold out — i posti finiscono davvero.",
         waText: "Ciao%2C%20vorrei%20prenotare%20il%20mio%20posto%20per%20l%27evento%20BeMore%20del%2027%20giugno",
         program: [
           { t: "10:00", h: "Saluti &amp; Kit di Benvenuto", d: "Arrivo al KiKlub · accoglienza · primo momento di connessione" },
@@ -1143,6 +1145,9 @@
         <div class="referral-terms">${d.referral.terms}</div>
       </div>` : "";
 
+    const soldOutHtml = d.soldOutNote ? `
+      <div style="margin-top:12px;font-size:13px;color:var(--accent);font-weight:500;letter-spacing:.02em;">${d.soldOutNote}</div>` : "";
+
     const earlyHtml = d.earlyBird ? (d.earlyBird.early === d.earlyBird.std ? `
       <div class="earlybird" style="grid-template-columns:1fr">
         <div class="eb-slot featured">
@@ -1201,10 +1206,11 @@
                 <div class="row"><dt class="k">Welcome kit</dt><dd class="v">${d.kit}</dd></div>
               </dl>
               ${earlyHtml}
+              ${soldOutHtml}
               ${referralHtml}
               <div class="ed-actions">
                 <a class="btn btn-primary"
-                   href="https://wa.me/?text=${d.waText}"
+                   href="https://wa.me/393931808550?text=${d.waText}"
                    target="_blank" rel="noopener noreferrer">
                   Prenota su WhatsApp →
                 </a>
