@@ -41,33 +41,12 @@
   /* ── PHOTO (sempre full-bleed, nitida) ── */
   .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
-  /* ── OVERLAYS (caldi, non flat) ── */
-
-  /* Vignette scura per leggibilità testo centrato */
-  .ov-vignette{
-    position:absolute;inset:0;
-    background:radial-gradient(ellipse at 50% 50%,rgba(8,15,11,.25) 0%,rgba(8,15,11,.72) 100%);
-  }
-  /* Gradiente basso: testo in basso su foto */
-  .ov-bottom{
-    position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(6,12,9,.92) 0%,rgba(6,12,9,.55) 35%,rgba(6,12,9,.15) 65%,rgba(6,12,9,.08) 100%);
-  }
-  /* Top+bottom (per testo in cima e in fondo) */
-  .ov-frame{
-    position:absolute;inset:0;
-    background:linear-gradient(to bottom,rgba(6,12,9,.6) 0%,rgba(6,12,9,.12) 30%,rgba(6,12,9,.06) 55%,rgba(6,12,9,.78) 100%);
-  }
-  /* Morbido full (per foto chiare) */
-  .ov-soft{
-    position:absolute;inset:0;
-    background:rgba(8,15,11,.46);
-  }
-  /* Molto morbido (foto quasi intera) */
-  .ov-minimal{
-    position:absolute;inset:0;
-    background:linear-gradient(150deg,rgba(8,15,11,.28) 0%,rgba(8,15,11,.52) 100%);
-  }
+  /* ── OVERLAYS ── */
+  .ov-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(8,15,11,.25) 0%,rgba(8,15,11,.72) 100%);}
+  .ov-bottom{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,9,.92) 0%,rgba(6,12,9,.55) 35%,rgba(6,12,9,.15) 65%,rgba(6,12,9,.08) 100%);}
+  .ov-frame{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,9,.6) 0%,rgba(6,12,9,.12) 30%,rgba(6,12,9,.06) 55%,rgba(6,12,9,.78) 100%);}
+  .ov-soft{position:absolute;inset:0;background:rgba(8,15,11,.46);}
+  .ov-minimal{position:absolute;inset:0;background:linear-gradient(150deg,rgba(8,15,11,.28) 0%,rgba(8,15,11,.52) 100%);}
 
   /* ── CONTENT LAYER ── */
   .layer{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;color:var(--cream);padding:34px 38px;}
@@ -85,7 +64,6 @@
   .mono {font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;}
   .ey   {font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;}
 
-  /* headline scale */
   .t-hero{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:66px;line-height:.91;letter-spacing:-.025em;}
   .t-big {font-family:'Cormorant Garamond',serif;font-weight:300;font-size:78px;line-height:.88;letter-spacing:-.03em;}
   .t-med {font-family:'Cormorant Garamond',serif;font-weight:400;font-size:46px;line-height:.96;letter-spacing:-.018em;}
@@ -96,33 +74,27 @@
   em.c{font-style:italic;color:var(--cream);}
   em.s{font-style:italic;opacity:.85;}
 
-  /* thin decorative line */
   .deco-line{width:36px;height:0.5px;background:rgba(241,236,226,.5);display:block;margin:0 auto;}
   .deco-line.left{margin:0;}
   .deco-h{height:0.5px;background:rgba(241,236,226,.2);width:100%;}
 
-  /* pills */
   .pill-w  {display:inline-flex;align-items:center;gap:6px;border:0.5px solid rgba(241,236,226,.28);border-radius:999px;padding:7px 14px;font-size:11.5px;color:rgba(241,236,226,.78);}
   .pill-mint{display:inline-flex;align-items:center;background:var(--mint);border-radius:999px;padding:9px 20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
   .pill-cream{display:inline-flex;align-items:center;background:rgba(241,236,226,.9);border-radius:999px;padding:9px 20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
 
-  /* price badge */
   .price{background:rgba(241,236,226,.9);color:var(--ink);border-radius:10px;padding:9px 14px;display:inline-flex;flex-direction:column;align-items:center;}
   .price .pv{font-family:'Cormorant Garamond',serif;font-size:27px;line-height:1;}
   .price .pl{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.6;margin-top:2px;}
 
-  /* schedule */
   .sched{display:flex;flex-direction:column;}
   .sr{display:grid;grid-template-columns:50px 1fr;gap:10px;padding:9px 0;}
   .sr+.sr{border-top:0.5px solid rgba(241,236,226,.14);}
   .sr-t{font-family:'DM Mono',monospace;font-size:10px;color:var(--mint);padding-top:3px;}
   .sr-h{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;}
 
-  /* big editable number */
   .bign{font-family:'Italiana',serif;font-size:190px;line-height:.82;letter-spacing:-.02em;background:none;border:none;outline:none;caret-color:var(--mint);}
 
   @media(max-width:580px){
-    /* card a tutta larghezza — esce dai margini della pagina */
     .card-wrap{margin-left:-20px;margin-right:-20px;}
     .card-lbl{padding-left:20px;}
     .card.sq,.card.st{width:100vw;}
@@ -145,23 +117,21 @@
 </div>
 
 
-<!-- ══════════════════════════════════
+<!-- ═══════════════════════════════════
      SETTIMANA 1 · LANCIO
-══════════════════════════════════ -->
+═════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 1 · 8–14 Giugno</span>
   <div class="wr"></div>
   <span class="wt">Lancio</span>
 </div>
 
-<!-- ── 01 · FEED · Annuncio lancio ─────────────────────── -->
+<!-- ── 01 · FEED · Annuncio lancio ──────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>01</span><span class="badge badge-feed">Post · Feed</span><span>8 Giugno · Lancio</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0158.jpeg" alt="" style="object-position:center 40%;"/>
-    <!-- overlay uniforme forte — foto esterna molto luminosa -->
     <div style="position:absolute;inset:0;background:rgba(6,12,9,.62);"></div>
-    <!-- gradiente bottom per separare CTA -->
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,12,9,.55) 0%,transparent 50%);"></div>
 
     <div class="layer" style="align-items:center;text-align:center;justify-content:space-between;padding:30px 36px;">
@@ -171,16 +141,15 @@
         <div class="mono" style="opacity:.5;">27 GIU · 2026</div>
       </div>
 
-      <!-- risultato emotivo — è il messaggio principale -->
+      <!-- nome evento + risultato emotivo -->
       <div style="display:flex;flex-direction:column;align-items:center;">
         <div class="ey" style="opacity:.55;margin-bottom:16px;letter-spacing:.3em;">Sabato 27 Giugno · Messina</div>
         <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:62px;line-height:.91;letter-spacing:-.025em;font-style:italic;">
-          Esci<br/>più leggera.
+          Reset<br/>&amp; Glow.
         </div>
         <div style="width:32px;height:0.5px;background:rgba(241,236,226,.38);margin:17px 0 15px;"></div>
-        <!-- attività come mezzo, non come titolo — con rassicurazione yoga -->
         <div style="font-size:12.5px;line-height:2;opacity:.82;">
-          🧘 Yoga dolce di respiro · per tutte,<br/>
+          🧘 Yoga dolce di respiro · per tutti,<br/>
           <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;opacity:.75;">anche alla prima lezione · con la Dott.ssa Mimma Luciano</span>
         </div>
         <div style="height:0.5px;width:100%;background:rgba(241,236,226,.12);margin:10px 0;"></div>
@@ -204,20 +173,18 @@
   </div>
 </div>
 
-<!-- ── 02 · STORY · Lancio ──────────────────────────────── -->
+<!-- ── 02 · STORY · Lancio ─────────────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>02</span><span class="badge badge-story">Post · Story</span><span>8 Giugno · Lancio</span></div>
   <div class="card st">
     <img class="photo" src="/assets/IMG_0155.jpeg" alt="" style="object-position:center 30%;"/>
     <div class="ov-bottom"></div>
     <div class="layer">
-      <!-- top -->
       <div class="top-bar">
         <div class="wm wm-lg" style="opacity:.9;">BeMore</div>
         <div class="mono" style="opacity:.45;">Vol. 02 · 2026</div>
       </div>
 
-      <!-- bottom block -->
       <div class="bot-area">
         <div class="ey" style="color:var(--mint);margin-bottom:18px;letter-spacing:.3em;">Prenotazioni aperte</div>
         <div class="t-big" style="margin-bottom:6px;">Una</div>
@@ -238,7 +205,7 @@
   </div>
 </div>
 
-<!-- ── 03 · FEED · Referral "Venite in 4" ───────────────── -->
+<!-- ── 03 · FEED · Referral "Venite in 5" ───────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>03</span><span class="badge badge-feed">Post · Feed</span><span>11 Giugno · Referral</span></div>
   <div class="card sq">
@@ -251,21 +218,21 @@
       </div>
 
       <div style="display:flex;flex-direction:column;align-items:center;">
-        <div class="ey" style="color:var(--mint);margin-bottom:20px;letter-spacing:.3em;">Un'offerta per le tue amiche</div>
+        <div class="ey" style="color:var(--mint);margin-bottom:20px;letter-spacing:.3em;">Un'offerta per i tuoi amici</div>
         <div class="t-hero" style="font-size:58px;max-width:9ch;">
           Venite<br/>in <em class="m">cinque.</em>
         </div>
         <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;opacity:.7;margin-top:12px;font-style:italic;">
-          Una entra gratis.
+          Uno entra gratis.
         </div>
         <div style="margin:20px 0;height:0.5px;width:40px;background:rgba(241,236,226,.3);"></div>
         <div class="body-s" style="opacity:.65;max-width:32ch;">
-          Porta 4 amiche che si prenotano<br/>e il tuo biglietto è completamente gratuito.
+          Porta 4 amici che si prenotano<br/>e il tuo biglietto è completamente gratuito.
         </div>
       </div>
 
       <div class="bot-area" style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
-        <span class="pill-w">Yoga · Rituale Massaggio Viso</span>
+        <span class="pill-w">Reset &amp; Glow · 27 Giugno</span>
         <span class="pill-mint">Info →</span>
       </div>
     </div>
@@ -273,9 +240,9 @@
 </div>
 
 
-<!-- ══════════════════════════════════
+<!-- ═══════════════════════════════════
      SETTIMANA 2 · URGENCY
-══════════════════════════════════ -->
+═════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 2 · 15–21 Giugno</span>
   <div class="wr"></div>
@@ -304,7 +271,7 @@
         </div>
         <div class="deco-h" style="margin:24px 0 16px;"></div>
         <div class="body" style="opacity:.68;margin-bottom:22px;">
-          Yoga · Corso Rituale Massaggio Viso<br/>
+          Reset &amp; Glow · Yoga &amp; Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina
         </div>
         <span class="pill-mint">Prenota ora →</span>
@@ -313,23 +280,21 @@
   </div>
 </div>
 
-<!-- ── 05 · FEED · Programma ────────────────────────────── -->
+<!-- ── 05 · FEED · Programma ──────────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>05</span><span class="badge badge-feed">Post · Feed</span><span>17 Giugno · Programma</span></div>
   <div class="card sq">
     <img class="photo" src="/assets/IMG_0156.jpeg" alt="" style="object-position:center 50%;"/>
     <div class="ov-soft" style="background:rgba(8,15,11,.62);"></div>
     <div class="layer">
-      <!-- top -->
       <div class="top-bar">
         <div>
           <div class="wm wm-sm" style="opacity:.9;">BeMore</div>
-          <div class="mono" style="margin-top:4px;opacity:.42;">Cronoprogramma</div>
+          <div class="mono" style="margin-top:4px;opacity:.42;">Reset &amp; Glow</div>
         </div>
         <div class="mono" style="opacity:.42;text-align:right;">27 Giugno<br/>KiKlub</div>
       </div>
 
-      <!-- mid: schedule -->
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;margin:18px 0;">
         <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;font-style:italic;opacity:.9;margin-bottom:16px;">
           Una mattina per te.
@@ -354,7 +319,6 @@
         </div>
       </div>
 
-      <!-- bottom -->
       <div class="bot-area" style="display:flex;justify-content:space-between;align-items:center;">
         <div class="body-s" style="opacity:.6;line-height:1.6;">
           KiKlub · Messina<br/>
@@ -366,7 +330,7 @@
   </div>
 </div>
 
-<!-- ── 06 · STORY · Countdown 7 giorni ─────────────────── -->
+<!-- ── 06 · STORY · Countdown 7 giorni ────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>06</span><span class="badge badge-story">Post · Story</span><span>20 Giugno · Countdown</span></div>
   <div class="card st">
@@ -386,7 +350,7 @@
         </div>
         <div class="deco-h" style="margin:22px 0 16px;"></div>
         <div class="body" style="opacity:.72;margin-bottom:22px;">
-          Yoga · Corso Rituale Massaggio Viso<br/>
+          Reset &amp; Glow · Yoga &amp; Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina<br/>
           Sabato 27 Giugno · h 10:00 – 12:00
         </div>
@@ -397,16 +361,16 @@
 </div>
 
 
-<!-- ══════════════════════════════════
+<!-- ═══════════════════════════════════
      SETTIMANA 3 · CHIUSURA
-══════════════════════════════════ -->
+═════════════════════════════════ -->
 <div class="week-hd">
   <span class="wl">Settimana 3 · 22–27 Giugno</span>
   <div class="wr"></div>
   <span class="wt">Chiusura</span>
 </div>
 
-<!-- ── 07 · FEED · Experiential quote ───────────────────── -->
+<!-- ── 07 · FEED · Experiential quote ───────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>07</span><span class="badge badge-feed">Post · Feed</span><span>22 Giugno · Experiential</span></div>
   <div class="card sq">
@@ -427,7 +391,7 @@
         </div>
         <div style="margin:20px auto;height:0.5px;width:40px;background:rgba(241,236,226,.3);"></div>
         <div class="body-s" style="opacity:.62;">
-          Yoga · Rituale Massaggio Viso<br/>
+          Reset &amp; Glow · Yoga &amp; Rituale Massaggio Viso<br/>
           Sabato 27 Giugno · 20€ · Pochi posti rimasti
         </div>
       </div>
@@ -439,7 +403,7 @@
   </div>
 </div>
 
-<!-- ── 08 · STORY · 48h reminder ────────────────────────── -->
+<!-- ── 08 · STORY · 48h reminder ──────────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>08</span><span class="badge badge-story">Post · Story</span><span>25 Giugno · 48h Reminder</span></div>
   <div class="card st">
@@ -459,7 +423,7 @@
         </div>
         <div class="deco-h" style="margin:24px 0 16px;"></div>
         <div class="body" style="opacity:.65;margin-bottom:22px;">
-          Yoga · Corso Rituale Massaggio Viso<br/>
+          Reset &amp; Glow · Yoga &amp; Rituale Massaggio Viso<br/>
           KiKlub · Villa Morgana · Messina
         </div>
         <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -474,7 +438,7 @@
   </div>
 </div>
 
-<!-- ── 09 · STORY · Mattina dell'evento ─────────────────── -->
+<!-- ── 09 · STORY · Mattina dell'evento ─────────────── -->
 <div class="card-wrap">
   <div class="card-lbl"><span>09</span><span class="badge badge-story">Post · Story</span><span>27 Giugno · mattina dell'evento</span></div>
   <div class="card st">
@@ -495,7 +459,7 @@
           KiKlub di Granatari · Messina<br/>
           h 10:00 · Welcome drink pronto ✦
         </div>
-        <span class="pill-w">Wellness Community · Vol. 02</span>
+        <span class="pill-w">Reset &amp; Glow · Vol. 02</span>
       </div>
     </div>
   </div>
