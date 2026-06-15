@@ -126,6 +126,25 @@
 
   .page-footer { margin-top: 64px; padding-top: 24px; border-top: 0.5px solid var(--line-strong); text-align: center; font-size: 11px; color: var(--muted); letter-spacing: .1em; }
 
+  .type-reel { background: linear-gradient(120deg,#C13584,#F56040); color: #fff; }
+  .type-grow { background: var(--mint); color: var(--ink); }
+
+  .routine-step { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-bottom: 0.5px solid var(--line); font-size: 13.5px; line-height: 1.55; color: var(--ink); }
+  .routine-step:last-child { border-bottom: none; }
+  .routine-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 999px; background: var(--sage); color: var(--cream); font-family: 'DM Mono', monospace; font-size: 11px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .routine-step b { font-weight: 700; }
+  .routine-step .when { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--muted); }
+
+  .reel-tip {
+    display: flex; align-items: flex-start; gap: 8px; margin-top: 14px;
+    padding: 11px 14px; background: color-mix(in srgb, #C13584 7%, transparent);
+    border: 0.5px solid color-mix(in srgb, #C13584 22%, transparent);
+    border-radius: 8px; font-size: 12.5px; color: #7a2456; line-height: 1.55;
+  }
+  .reel-tip-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .reel-step { font-size: 12.5px; line-height: 1.6; color: var(--ink); margin: 2px 0; }
+  .reel-step b { color: var(--sage); }
+
   @media (max-width: 480px) {
     .page { padding: 24px 16px 60px; }
     .page-header { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -622,8 +641,189 @@ A sabato! ✨</textarea>
     </div>
   </div>
 
+  <!-- ══ CRESCITA — FOLLOWER & SCONOSCIUTI ══ -->
+  <div class="week-header">
+    <span class="week-label">Crescita · ogni settimana</span>
+    <div class="week-rule"></div>
+    <span class="week-theme">Più follower · più sconosciuti in target</span>
+  </div>
+
+  <!-- ROUTINE GIORNALIERA -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">Ogni giorno</span>
+      <span class="type-badge type-grow">Routine · 7 min</span>
+      <span class="card-num">Base</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">La tua giornata su Instagram — solo 3 gesti, niente di più</div>
+      <div class="routine-step">
+        <span class="routine-num">1</span>
+        <div><b>Mattina <span class="when">· 2 min</span></b><br/>Apri Instagram → pubblica il contenuto del giorno (lo trovi qui sopra, già pronto). Copia, incolla, pubblica. Stop.</div>
+      </div>
+      <div class="routine-step">
+        <span class="routine-num">2</span>
+        <div><b>Sera <span class="when">· 5 min</span></b><br/>Nella barra di ricerca scrivi <b>#messina</b> (o #yogasicilia, #benesseremessina). Apri 5 post di gente in target → lascia 3 commenti <i>veri</i> (es. "Che posto stupendo, sei di Messina?"). Esci.<br/><span style="color:var(--muted);font-size:12px;">→ Chi commenti va a vedere chi sei. È così che arrivano gli sconosciuti.</span></div>
+      </div>
+      <div class="routine-step">
+        <span class="routine-num">3</span>
+        <div><b>1 volta a settimana <span class="when">· 10 min</span></b><br/>Pubblica <b>un Reel</b> (qui sotto te ne ho preparati 3 pronti) e manda <b>3 DM ai partner locali</b> (messaggio pronto qui sotto). Questi due gesti sono quelli che fanno crescere davvero.</div>
+      </div>
+      <div class="image-tip"><span class="image-tip-icon">🌿</span><span>Se un giorno salti, non succede niente. La costanza vale più della perfezione: meglio 3 gesti piccoli sempre, che 1 ora una volta al mese.</span></div>
+    </div>
+  </div>
+
+  <!-- REEL 1 -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">Reel 1</span>
+      <span class="type-badge type-reel">Reel · prima dell'evento</span>
+      <span class="card-num">Il posto</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">Cosa filmare — col telefono, 15 secondi</div>
+      <div class="reel-step"><b>1.</b> Filma 15 secondi del luogo: tappetini, candele, la terrazza, il panorama. Muovi il telefono <b>lentamente</b> (panoramica o avvicinamento).</div>
+      <div class="reel-step"><b>2.</b> Apri Instagram → Reel → carica le clip.</div>
+      <div class="reel-step"><b>3.</b> Aggiungi la scritta qui sotto sul video e una musica in tendenza.</div>
+      <div class="section-label" style="margin-top:16px;">Scritta da mettere sul video</div>
+      <textarea class="caption-box" rows="5" id="ig-reel1">Sabato. Messina.
+20 persone · 2 ore
+Yoga + Rituale Viso 🌿
+Esci diverso da come entri</textarea>
+      <div class="section-label" style="margin-top:14px;">Didascalia del Reel</div>
+      <textarea class="caption-box" rows="4" id="ig-reel1c">🌿 Reset & Glow · Sabato 27 giugno · Messina
+Yoga + Rituale Massaggio Viso · 20€ tutto incluso
+Posti limitati → link in bio per prenotare.</textarea>
+      <div class="hashtag-row" style="margin-top:12px;">
+        <span class="htag">#messina</span><span class="htag">#yogasicilia</span><span class="htag">#benesseremessina</span><span class="htag">#sicilia</span><span class="htag">#yogaitalia</span><span class="htag">#wellness</span><span class="htag">#BeMore</span>
+      </div>
+      <div class="reel-tip"><span class="reel-tip-icon">🎵</span><span><b>Musica:</b> nella schermata audio scegli una traccia con la freccetta in tendenza (↗). È quella che Instagram spinge agli sconosciuti. Tema: calma / acustica.</span></div>
+    </div>
+    <div class="card-foot">
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel1', this, 'ig')">Copia scritta →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel1c', this, 'ig')">Copia didascalia →</button>
+    </div>
+  </div>
+
+  <!-- REEL 2 -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">Reel 2</span>
+      <span class="type-badge type-reel">Reel · durante / dopo l'evento</span>
+      <span class="card-num">Dietro le quinte</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">Cosa filmare — durante l'evento, clip da 3 secondi</div>
+      <div class="reel-step"><b>1.</b> Durante l'evento riprendi 5-6 momenti brevi (3 sec ciascuno): mani nella pratica yoga, la maschera viso, il welcome drink, le risate, la foto di gruppo.</div>
+      <div class="reel-step"><b>2.</b> Mettile in fila in un Reel (Instagram unisce le clip da solo).</div>
+      <div class="reel-step"><b>3.</b> Scritta + musica trending. Pubblica entro 24h dall'evento, quando l'entusiasmo è alto.</div>
+      <div class="section-label" style="margin-top:16px;">Scritta da mettere sul video</div>
+      <textarea class="caption-box" rows="4" id="ig-reel2">Una mattina al BeMore 🌿
+Questo è quello che ti sei perso.
+Il prossimo? → Link in bio</textarea>
+      <div class="section-label" style="margin-top:14px;">Didascalia del Reel</div>
+      <textarea class="caption-box" rows="5" id="ig-reel2c">Grazie a chi c'era 🌿
+Due ore di yoga, cura e respiro — insieme.
+Il bello è che ogni volta conosciamo persone nuove.
+Vuoi esserci al prossimo? Scrivici o prenota dal link in bio.</textarea>
+      <div class="hashtag-row" style="margin-top:12px;">
+        <span class="htag">#messina</span><span class="htag">#yogasicilia</span><span class="htag">#benesseremessina</span><span class="htag">#wellnesscommunity</span><span class="htag">#sicilia</span><span class="htag">#BeMore</span>
+      </div>
+      <div class="reel-tip"><span class="reel-tip-icon">💡</span><span>I Reel "dietro le quinte" sono i più potenti: gli sconosciuti vedono che è reale, c'è gente vera, ci si diverte. È quello che li convince a venire.</span></div>
+    </div>
+    <div class="card-foot">
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel2', this, 'ig')">Copia scritta →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel2c', this, 'ig')">Copia didascalia →</button>
+    </div>
+  </div>
+
+  <!-- REEL 3 -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">Reel 3</span>
+      <span class="type-badge type-reel">Reel · valore (porta sconosciuti)</span>
+      <span class="card-num">Il tip da 30 sec</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">Cosa filmare — un consiglio utile, 30 secondi</div>
+      <div class="reel-step"><b>1.</b> Tu o Mimma mostrate <b>un solo esercizio semplice</b>: un movimento di automassaggio viso, oppure una respirazione per calmarsi. Primo piano, luce naturale.</div>
+      <div class="reel-step"><b>2.</b> Niente di complicato: 1 cosa sola, spiegata lenta.</div>
+      <div class="reel-step"><b>3.</b> Scritta sotto + musica soft. Questo è il Reel che porta più sconosciuti, perché è utile → la gente lo salva e lo condivide.</div>
+      <div class="section-label" style="margin-top:16px;">Scritta da mettere sul video</div>
+      <textarea class="caption-box" rows="5" id="ig-reel3">Prova questo per 30 secondi 🌿
+[nome del movimento]
+Salva il Reel per stasera ✦
+— BeMore, Messina</textarea>
+      <div class="section-label" style="margin-top:14px;">Didascalia del Reel</div>
+      <textarea class="caption-box" rows="5" id="ig-reel3c">Un piccolo gesto di cura che puoi fare ovunque 🌿
+Salvalo e provalo stasera prima di dormire.
+Queste tecniche le approfondiamo dal vivo ai nostri incontri a Messina.
+Il prossimo è il 27 giugno → link in bio.</textarea>
+      <div class="hashtag-row" style="margin-top:12px;">
+        <span class="htag">#automassaggio</span><span class="htag">#yogaface</span><span class="htag">#benessere</span><span class="htag">#messina</span><span class="htag">#yogasicilia</span><span class="htag">#selfcare</span><span class="htag">#BeMore</span>
+      </div>
+      <div class="reel-tip"><span class="reel-tip-icon">📈</span><span>Chiedi sempre "<b>Salva il Reel</b>" nella scritta: i salvataggi dicono a Instagram che il contenuto è utile, e lui lo mostra a più sconosciuti.</span></div>
+    </div>
+    <div class="card-foot">
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel3', this, 'ig')">Copia scritta →</button>
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-reel3c', this, 'ig')">Copia didascalia →</button>
+    </div>
+  </div>
+
+  <!-- POST FOTO DI GRUPPO -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">Dopo l'evento</span>
+      <span class="type-badge type-grow">Post · il motore di crescita</span>
+      <span class="card-num">Foto gruppo</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">Caption del post foto di gruppo</div>
+      <textarea class="caption-box" rows="8" id="ig-gruppo">Questo è il BeMore 🌿
+
+Persone che fino a stamattina non si conoscevano, e che dopo due ore se ne vanno più leggere.
+
+Grazie a ognuna di voi per esserci state ✦
+Il prossimo incontro è già nell'aria — se vuoi esserci, seguici e scrivici.
+
+📍 Messina · @bemore</textarea>
+      <div class="hashtag-row" style="margin-top:12px;">
+        <span class="htag">#BeMore</span><span class="htag">#messina</span><span class="htag">#wellnesscommunity</span><span class="htag">#yogasicilia</span><span class="htag">#benesseremessina</span><span class="htag">#community</span>
+      </div>
+      <div class="image-tip"><span class="image-tip-icon">📢</span><span><b>Il gesto più importante di tutti:</b> a fine evento fai una bella foto di gruppo e di' a voce alta: <i>"Stasera la posto su @bemore — taggatevi e mettetela nelle vostre storie!"</i> Quando 15 persone la ricondividono, i LORO amici (sconosciuti per te) scoprono BeMore. È il modo n°1 con cui crescono questi eventi.</span></div>
+    </div>
+    <div class="card-foot">
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-gruppo', this, 'ig')">Copia caption →</button>
+    </div>
+  </div>
+
+  <!-- DM PARTNER LOCALI -->
+  <div class="post-card">
+    <div class="card-head">
+      <span class="date-pill">1 volta a settimana</span>
+      <span class="type-badge type-grow">DM · partner locali</span>
+      <span class="card-num">Moltiplicatore</span>
+    </div>
+    <div class="tab-pane active" style="display:block;">
+      <div class="section-label">A chi scrivere — account di Messina con 500–3.000 follower</div>
+      <div class="reel-step">Estetiste · nutrizioniste · istruttrici yoga/pilates · centri benessere · caffè salutari · fotografe lifestyle.</div>
+      <div class="section-label" style="margin-top:16px;">Messaggio da mandare in DM (copia-incolla, cambia il nome)</div>
+      <textarea class="caption-box" rows="7" id="ig-partner">Ciao [nome] 🌿 seguo il tuo profilo da un po' e mi piace molto quello che fai.
+
+Organizzo a Messina delle piccole esperienze di benessere — yoga e rituale viso — e la prossima è sabato 27 giugno.
+
+Mi piacerebbe capire se ha senso fare qualcosa insieme: una menzione reciproca, o averti come ospite. Ti va se ne parliamo?
+
+Sono BeMore ✦</textarea>
+      <div class="reel-tip"><span class="reel-tip-icon">🤝</span><span><b>La matematica:</b> manda 10 DM → rispondono in 2-3 → almeno 1 collaborazione. Una sola story condivisa da un account da 2.000 follower porta più sconosciuti in target di una settimana di tuoi post.</span></div>
+    </div>
+    <div class="card-foot">
+      <button class="copy-btn copy-ig" onclick="copyCaption('ig-partner', this, 'ig')">Copia messaggio →</button>
+    </div>
+  </div>
+
   <div class="page-footer">
-    BeMore · Social Kit · Reset &amp; Glow · 27 Giugno 2026 · 9 contenuti + messaggio di conferma · Instagram + WhatsApp
+    BeMore · Social Kit · Reset &amp; Glow · 27 Giugno 2026 · 9 contenuti + conferma + sezione crescita (routine, 3 Reel, foto gruppo, DM partner) · Instagram + WhatsApp
   </div>
 </div>
 
