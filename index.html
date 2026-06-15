@@ -487,6 +487,9 @@
     .btn-primary:hover { background: var(--ink-2); }
     .btn-secondary { background: transparent; color: var(--ink); border: 0.5px solid var(--ink); }
     .btn-secondary:hover { background: var(--cream-2); }
+    .btn-pay { background: var(--sage); color: var(--cream); }
+    .btn-pay:hover { background: #2f463b; }
+    .ed-pay-note { margin-top: 14px; font-size: 12.5px; color: var(--muted); line-height: 1.5; max-width: 460px; }
     @media (max-width: 820px) {
       .ed-grid { grid-template-columns: 1fr; gap: 30px; }
       .ed-photo { aspect-ratio: 1/1; order: -1; }
@@ -1214,10 +1217,16 @@
                    target="_blank" rel="noopener noreferrer">
                   Prenota su WhatsApp →
                 </a>
+                <a class="btn btn-pay"
+                   href="https://paypal.me/LucaMaio518/20"
+                   target="_blank" rel="noopener noreferrer">
+                  Paga e blocca il posto · 20€
+                </a>
                 <button class="btn btn-secondary" onclick="scrollToNewsletter()">
                   Iscriviti alla newsletter
                 </button>
               </div>
+              <p class="ed-pay-note">Vuoi prima fare due domande? Scrivici su WhatsApp. Vuoi bloccare subito il tuo posto? Paga i 20€ con PayPal (anche con carta, senza account) e ti confermiamo entro poche ore.</p>
             </div>
             <div class="ed-photo">
               <img src="${d.foto}" alt="${d.fotoAlt}" loading="lazy" />
